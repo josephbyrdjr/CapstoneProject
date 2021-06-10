@@ -25,6 +25,9 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.jdbcAuthentication().dataSource(dataSource)
+				.authoritiesByUsernameQuery(
+						"select * from authorities inner join user on user.id = authorities.user_id where user.username = ?"
+				)
 		.passwordEncoder(new BCryptPasswordEncoder());
 
 

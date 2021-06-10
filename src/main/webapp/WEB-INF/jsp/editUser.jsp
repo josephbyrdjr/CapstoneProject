@@ -14,11 +14,9 @@ pageEncoding="ISO-8859-1"%>
         <div class="container">
             <form method="POST" action="/register" class="form-signin">
                 <div class="container">
-                    <h2 class="form-heading">Register</h2>
+                    <h2 class="form-heading">Edit User</h2>
 
                     <hr>
-                     <input type="number" class="form-control"
-                    placeholder="Enter ID" name="userId" id="userId" required> <br>
 
                      <input type="text" class="form-control"
                     placeholder="Enter Name" name="username" id="username" required>
@@ -28,7 +26,7 @@ pageEncoding="ISO-8859-1"%>
                     required> <br>
 
                      <hr>
-                    <button type="submit" class="btn btn-md btn-primary">Register</button>
+                    <button type="submit" class="btn btn-md btn-primary">Edit User</button>
                 </div>
             </form>
         </div>

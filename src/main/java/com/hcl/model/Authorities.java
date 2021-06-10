@@ -10,11 +10,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Authorities {
     @Id
-    String username;
+    @Column(name = "user_id")
+    Long id;
     String authority;
 
-    public Authorities(String username) {
-        this.username = username;
-        this.authority = "ROLE_USER";
-    }
 }

@@ -10,4 +10,5 @@ public interface UserService {
 	void insertUsers(List<User> users);
 	List<User> getAllUsers();
 	User getUserById(long userID);
+	void updateUser(User user);
 }

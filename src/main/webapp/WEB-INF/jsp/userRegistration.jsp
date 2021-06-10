@@ -17,8 +17,8 @@ pageEncoding="ISO-8859-1"%>
                     <h2 class="form-heading">Register</h2>
 
                     <hr>
-                     <input type="number" class="form-control"
-                    placeholder="Enter ID" name="userId" id="userId" required> <br>
+<%--                     <input type="number" class="form-control"--%>
+<%--                    placeholder="Enter ID" name="userId" id="userId" required> <br>--%>
 
                      <input type="text" class="form-control"
                     placeholder="Enter Name" name="username" id="username" required>

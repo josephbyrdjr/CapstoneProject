@@ -13,26 +13,14 @@ public class User {
 
 	@Id
 	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	private String username;
 	private String password;
 	private boolean enabled;
 
 	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@PrimaryKeyJoinColumn
+	@JoinColumn(name = "user_id")
 	private Authorities authorities = new Authorities();
-
-	public User(long id, String username, String password) {
-		super();
-		this.id = id;
-		this.username = username;
-		this.password = password;
-		enabled = true;
-	}
-
-	@Override
-	public String toString() {
-		return "User [userId=" + id + ", username=" + username + ", pwd=" + password + "]";
-	}
-
-	
 }

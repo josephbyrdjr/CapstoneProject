@@ -22,6 +22,11 @@
         </div>
 
         <div style="position:absolute;top:15px;right:15px; z-index:999" >
+            <form method="GET" action="/editUser">
+                <button class="btn bt-sm btn-primary" type="submit">Edit User</button>
+            </form>
+        </div>
+        <div style="position:absolute;top:60px;right:15px; z-index:999" >
             <form method="POST" action="/logout">
                 <button class="btn bt-sm btn-primary" type="submit">Log Out</button>
             </form>

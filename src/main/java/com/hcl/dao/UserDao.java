@@ -9,4 +9,5 @@ public interface UserDao {
     void insertUsers(List<User> users);
     List<User> getAllUsers();
     User getUserById(Long userId);
+    void updateUser(User user);
 }

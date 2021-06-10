@@ -26,7 +26,6 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
     }
 
     public void insertUser(User user) {
-        user.setAuthorities(new Authorities(user.getUsername()));
         userRepo.save(user);
     }
 
@@ -40,5 +39,9 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 
     public User getUserById(Long userId){
         return userRepo.findById(userId).orElse(null);
+    }
+
+    public void updateUser(User user){
+        userRepo.save(user);
     }
 }
