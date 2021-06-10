@@ -12,7 +12,7 @@ pageEncoding="ISO-8859-1"%>
     <body>
         <br>
         <div class="container">
-            <form method="POST" action="/register" class="form-signin">
+            <form method="POST" action="/editUser" class="form-signin">
                 <div class="container">
                     <h2 class="form-heading">Edit User</h2>
 

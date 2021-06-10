@@ -1,7 +1,6 @@
 package com.hcl.dao.impl;
 
 import com.hcl.dao.UserDao;
-import com.hcl.model.Authorities;
 import com.hcl.model.User;
 import com.hcl.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,5 +42,9 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
 
     public void updateUser(User user){
         userRepo.save(user);
+    }
+
+    public User getUserByUsername(String username){
+        return userRepo.getUserByUsername(username);
     }
 }

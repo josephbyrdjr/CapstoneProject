@@ -1,6 +1,6 @@
 package com.hcl.controllers;
 
-import com.hcl.model.Authorities;
+//import com.hcl.model.Authorities;
 import com.hcl.model.User;
 import com.hcl.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +36,8 @@ public class UserController {
         User user = new User();
         user.setUsername(username);
         user.setPassword(bCrypt.encode(pwd));
-        Authorities authorities = new Authorities();
-        authorities.setAuthority("ROLE_USER");
-        user.setAuthorities(authorities);
+        user.setAuthority("ROLE_USER");
+        user.setEnabled(true);
         userService.insertUser(user);
         model.addAttribute("msg", "New User Added");
         return "login";
@@ -58,17 +57,17 @@ public class UserController {
         return "editUser";
     }
 
-    @PutMapping("/editUser")
+    @PostMapping("/editUser")
     public String editUser(@RequestParam String username, @RequestParam String pwd,
                                   Model model) {
         BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = (User)auth.getPrincipal();
+        User user = userService.getUserByUsername(auth.getName());
         user.setUsername(username);
         user.setPassword(bCrypt.encode(pwd));
         userService.updateUser(user);
         model.addAttribute("msg", "User updated");
-        return "login";
+        return "home";
     }
 
 }
