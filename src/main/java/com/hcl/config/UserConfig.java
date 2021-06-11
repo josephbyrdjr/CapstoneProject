@@ -29,9 +29,7 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 						"select username, password, enabled from users where username=?")
 				.authoritiesByUsernameQuery(
 						"select username, password from users where username = ?")
-		.passwordEncoder(new BCryptPasswordEncoder());
-
-
+				.passwordEncoder(new BCryptPasswordEncoder());
 	}
 
 	@Override
