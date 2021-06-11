@@ -28,8 +28,13 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 				.usersByUsernameQuery(
 						"select username, password, 1 from users where username=?")
 				.authoritiesByUsernameQuery(
-						"select username, password from users where username = ?")
-				.passwordEncoder(new BCryptPasswordEncoder());
+						"select u.username, a.authority from users u "
+						+ "join user_authorities ua "
+						+ "on u.id = ua.user_id "
+						+ "join authorities a "
+						+ "on ua.authorities_id = a.id "
+						+ "where u.username = ?")
+		.passwordEncoder(new BCryptPasswordEncoder());
 	}
 
 	@Override

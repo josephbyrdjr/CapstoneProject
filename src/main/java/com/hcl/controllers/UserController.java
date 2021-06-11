@@ -1,8 +1,14 @@
 package com.hcl.controllers;
 
 //import com.hcl.model.Authorities;
-import com.hcl.model.User;
+import com.hcl.model.*;
+import com.hcl.service.AuthService;
 import com.hcl.service.UserService;
+
+import java.util.Set;
+import java.util.HashSet;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -15,6 +21,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 public class UserController {
     @Autowired
     UserService userService;
+    
+    @Autowired 
+    AuthService authService;
 
     @GetMapping("/")
     public String displayHome(Model model) {
@@ -34,10 +43,15 @@ public class UserController {
                                   Model model) {
         BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
         User user = new User();
+        Set<Authorities> auths = new HashSet<>();
         user.setUsername(username);
         user.setPassword(bCrypt.encode(pwd));
         user.setEnabled(true);
         userService.insertUser(user);
+        Authorities a = authService.findById(1l);
+        auths.add(a); /// ENum Need
+        user.setAuths(auths);
+        userService.updateUser(user);
         model.addAttribute("msg", "New User Added");
         return "login";
     }

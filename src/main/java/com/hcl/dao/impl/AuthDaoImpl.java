@@ -26,5 +26,11 @@ public class AuthDaoImpl implements AuthDao{
     public List<Authorities> getAllAuths() {
     	return repo.findAll();
     }
+    
+    public Authorities findById(long id) {
+    	System.out.println(repo.findById(id).orElse(null));
+    	return repo.findById(id).orElse(null);
+    	
+    }
 
 }
