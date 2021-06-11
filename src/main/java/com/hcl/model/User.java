@@ -21,7 +21,7 @@ public class User {
 	private String password;
 	private boolean enabled;
 	
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinTable( name = "user_authorities", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "authorities_id"))
 	Set<Authorities> auths; 
 	

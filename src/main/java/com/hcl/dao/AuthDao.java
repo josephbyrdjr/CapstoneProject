@@ -9,4 +9,5 @@ public interface AuthDao {
 	void insertAuth(Authorities auth);
     void insertAuths(List<Authorities> auths);
     List<Authorities> getAllAuths();
+    Authorities findById(long id);
 }
