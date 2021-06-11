@@ -2,6 +2,9 @@ package com.hcl.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.Set;
+
 import javax.persistence.*;
 
 
@@ -18,5 +21,10 @@ public class User {
 	private String username;
 	private String password;
 	private boolean enabled;
-	private String authority;
+	
+	@ManyToMany
+	@JoinTable( name = "user_authorities", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "authorities_id"))
+	Set<Authorities> auths; 
+	
+	
 }
