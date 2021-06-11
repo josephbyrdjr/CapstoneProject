@@ -36,7 +36,6 @@ public class UserController {
         User user = new User();
         user.setUsername(username);
         user.setPassword(bCrypt.encode(pwd));
-        user.setAuthority("ROLE_USER");
         user.setEnabled(true);
         userService.insertUser(user);
         model.addAttribute("msg", "New User Added");
@@ -62,11 +61,12 @@ public class UserController {
                                   Model model) {
         BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getUserByUsername(auth.getName());
+        User user = userService.getUserByUsername(auth.getName()); ///// Streams ??
         user.setUsername(username);
         user.setPassword(bCrypt.encode(pwd));
         userService.updateUser(user);
         model.addAttribute("msg", "User updated");
+        model.addAttribute("username", username);
         return "home";
     }
 
