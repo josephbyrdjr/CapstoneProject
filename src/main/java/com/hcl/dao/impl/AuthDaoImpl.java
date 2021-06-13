@@ -11,7 +11,7 @@ import com.hcl.repository.AuthRepository;
 
 @Repository
 public class AuthDaoImpl implements AuthDao{
-	
+
 	@Autowired
 	private AuthRepository repo;
 	
@@ -28,7 +28,7 @@ public class AuthDaoImpl implements AuthDao{
     }
     
     public Authorities findById(long id) {
-    	System.out.println(repo.findById(id).orElse(null));
+		System.out.println("in aut dao");
     	return repo.findById(id).orElse(null);
     	
     }

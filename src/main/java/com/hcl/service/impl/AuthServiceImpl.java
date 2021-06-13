@@ -26,6 +26,7 @@ public class AuthServiceImpl implements AuthService{
     }
     
     public Authorities findById(long id) {
+		System.out.println("in auth service");
     	return authDao.findById(id);
     }
 }

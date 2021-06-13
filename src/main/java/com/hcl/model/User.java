@@ -1,8 +1,11 @@
 package com.hcl.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -12,6 +15,7 @@ import javax.persistence.*;
 @Data
 @Table(name="users")
 @NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
 	@Id
@@ -22,9 +26,11 @@ public class User {
 	private String password;
 	private boolean enabled;
 	
-	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinTable( name = "user_authorities", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "authorities_id"))
-	Set<Authorities> auths; 
+	Set<Authorities> auths = new HashSet<>();
 	
-	
+	public void addAuth(Authorities auth){
+		auths.add(auth);
+	}
 }
