@@ -51,8 +51,9 @@ public class UserRestController {
         userService.insertUser(user);
     }
 
-//    @DeleteMapping Mapping("user")
-//    private void deleteUser(@RequestBody User user){
-//        userService.dUser(user);
-//    }
+    @DeleteMapping("user/{userId}")
+    private void deleteUser(@PathVariable(name = "userId") long id){
+        userService.getUserById(id).setAuths(new HashSet<>());
+        userService.deleteUserById(id);
+    }
 }

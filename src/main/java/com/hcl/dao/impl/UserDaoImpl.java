@@ -47,4 +47,8 @@ public class UserDaoImpl extends JdbcDaoSupport implements UserDao {
     public User getUserByUsername(String username){
         return userRepo.getUserByUsername(username);
     }
+
+    public void deleteUserById(long userId) {
+        userRepo.deleteById(userId);
+    }
 }

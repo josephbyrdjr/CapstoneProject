@@ -28,7 +28,6 @@ public class AuthDaoImpl implements AuthDao{
     }
     
     public Authorities findById(long id) {
-		System.out.println("in aut dao");
     	return repo.findById(id).orElse(null);
     	
     }
