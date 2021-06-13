@@ -53,6 +53,7 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/register").permitAll()
 				.antMatchers("/home").hasAnyRole("USER", "ADMIN")
+				.antMatchers("/user").permitAll()
 				.anyRequest()
 				.authenticated()
 				.and()
