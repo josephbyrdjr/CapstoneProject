@@ -39,7 +39,6 @@ public class UserRestController {
         user.setPassword(bCrypt.encode(user.getPassword()));
         auths.forEach((auth)->user.addAuth(authService.findById(auth.getId())));
         userService.insertUser(user);
-
     }
 
     @PutMapping("user")

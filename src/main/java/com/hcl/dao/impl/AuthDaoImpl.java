@@ -29,7 +29,6 @@ public class AuthDaoImpl implements AuthDao{
     
     public Authorities findById(long id) {
     	return repo.findById(id).orElse(null);
-    	
     }
 
 	public void deleteById(long id){
