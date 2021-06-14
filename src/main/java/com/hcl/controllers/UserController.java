@@ -40,12 +40,24 @@ public class UserController {
 
     @PostMapping("/register")
     public String grabDisplayData(@RequestParam String username, @RequestParam String pwd,
-                                  Model model) {
+                                  @RequestParam String firstName, @RequestParam String lastName,
+                                  @RequestParam String email, @RequestParam String phoneNumber,
+                                  @RequestParam String address, @RequestParam String apartmentNumber,
+                                  @RequestParam String city, @RequestParam String state, 
+                                  @RequestParam String zip, Model model) {
         BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
         User user = new User();
         user.setUsername(username);
         user.setPassword(bCrypt.encode(pwd));
         user.setEnabled(true);
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setPhoneNumber(phoneNumber);
+        user.setAddress(address);
+        user.setApartmentNumber(apartmentNumber);
+        user.setCity(city);
+        user.setState(state);
+        user.setZip(zip);
         System.out.println(user);
         //userService.insertUser(user);
         //user = userService.getUserByUsername(username);
