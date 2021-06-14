@@ -29,4 +29,8 @@ public class AuthServiceImpl implements AuthService{
 		System.out.println("in auth service");
     	return authDao.findById(id);
     }
+
+	public void deleteById(long id){
+		authDao.deleteById(id);
+	}
 }

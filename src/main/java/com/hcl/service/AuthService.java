@@ -11,5 +11,6 @@ public interface AuthService {
     void insertAuths(List<Authorities> auths);
     List<Authorities> getAllAuths();
     Authorities findById(long id);
+    void deleteById(long id);
     
 }

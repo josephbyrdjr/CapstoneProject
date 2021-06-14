@@ -33,14 +33,13 @@ public class AuthoritiesRestController {
 
     }
 
-//    @PutMapping("authorities")
-//    private void updateAuthorities(@RequestBody Authorities auth{
-//
-//    }
-//
-//    @DeleteMapping("user/{userId}")
-//    private void deleteUser(@PathVariable(name = "userId") long id){
-//        userService.getUserById(id).setAuths(new HashSet<>());
-//        userService.deleteUserById(id);
-//    }
+    @PutMapping("authorities")
+    private void updateAuthorities(@RequestBody Authorities auth){
+        authService.insertAuth(auth);
+    }
+
+    @DeleteMapping("authorities/{authoritiesId}")
+    private void deleteAuthorities(@PathVariable(name = "authoritiesId") long id){
+        authService.deleteById(id);
+    }
 }

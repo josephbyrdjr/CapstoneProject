@@ -10,4 +10,5 @@ public interface AuthDao {
     void insertAuths(List<Authorities> auths);
     List<Authorities> getAllAuths();
     Authorities findById(long id);
+    void deleteById(long id);
 }

@@ -32,4 +32,8 @@ public class AuthDaoImpl implements AuthDao{
     	
     }
 
+	public void deleteById(long id){
+		repo.deleteById(id);
+	}
+
 }

@@ -37,9 +37,7 @@ public class UserRestController {
         Set<Authorities> auths = user.getAuths();
         user.setAuths(new HashSet<>());
         user.setPassword(bCrypt.encode(user.getPassword()));
-        for(Authorities auth: auths){
-            user.addAuth(authService.findById(auth.getId()));
-        }
+        auths.forEach((auth)->user.addAuth(authService.findById(auth.getId())));
         userService.insertUser(user);
 
     }
