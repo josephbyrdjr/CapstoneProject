@@ -53,7 +53,8 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests().antMatchers("/register",
 				"/home", "/user", "/user/**",
-				"/authorities", "/authorities/**").permitAll()
+				"/authorities", "/authorities/**",
+				"/item", "/item/**").permitAll()
 				.anyRequest()
 				.authenticated()
 				.and()
