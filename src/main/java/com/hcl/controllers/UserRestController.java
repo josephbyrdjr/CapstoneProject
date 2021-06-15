@@ -53,4 +53,12 @@ public class UserRestController {
         userService.getUserById(id).setAuths(new HashSet<>());
         userService.deleteUserById(id);
     }
+    
+    @PostMapping("user/{userId}/authority")
+    private void setRole(@PathVariable(name = "userId") long id, @RequestBody Authorities authority) {
+    	User user = userService.getUserById(id);
+    	user.addAuth(authority);
+    	System.out.println("Setting authority to user");
+    	userService.updateUser(user);
+    }
 }
