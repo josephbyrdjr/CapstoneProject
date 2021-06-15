@@ -12,7 +12,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Id;
 
@@ -22,16 +25,24 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name="shoppingCarts")
+@Table(name="orders")
 @NoArgsConstructor
 @AllArgsConstructor
-public class ShoppingCart {
+public class Order {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	//@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
-	//Set<Item> items = new HashSet<>();
+	private int quantity;
+	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JsonIgnore
+	Item item;
+	
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonIgnore
+	User user;
 
 }

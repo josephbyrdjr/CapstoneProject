@@ -42,6 +42,10 @@ public class User {
 	@JoinTable( name = "user_authorities", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "authorities_id"))
 	Set<Authorities> auths = new HashSet<>();
 	
+	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
+	@JsonIgnore
+	Set<Order> orders = new HashSet<>();
+	
 	public void addAuth(Authorities auth){
 		auths.add(auth);
 	}
