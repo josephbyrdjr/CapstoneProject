@@ -27,6 +27,17 @@ public class User {
 	private String password;
 	private boolean enabled;
 	
+	//personal info
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String phoneNumber;
+	private String address;
+	private String apartmentNumber;
+	private String city;
+	private String state;
+	private String zip;
+	
 	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinTable( name = "user_authorities", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "authorities_id"))
 	Set<Authorities> auths = new HashSet<>();
