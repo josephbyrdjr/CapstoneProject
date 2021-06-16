@@ -1,4 +1,4 @@
-package com.hcl.controllers;
+package com.hcl.controllers.rest;
 
 import java.util.HashSet;
 import java.util.List;

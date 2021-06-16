@@ -1,4 +1,4 @@
-package com.hcl.controllers;
+package com.hcl.controllers.rest;
 
 import com.hcl.model.Authorities;
 import com.hcl.model.User;
