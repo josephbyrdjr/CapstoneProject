@@ -43,7 +43,7 @@ public class OrderRestController {
 	}
 	
 	@PostMapping("order")
-	private void createOrder(@RequestBody Order order,
+	private void createOrder(@RequestParam(name = "quantity") int quantity,
 							 @RequestParam(name = "itemId") long itemId, 
 							 @RequestParam(name = "userId") long userId
 							 ) {
@@ -52,7 +52,8 @@ public class OrderRestController {
 		User user = userService.getUserById(userId);
 		Item item = itemService.getItemById(itemId);
 		
-		//Order order = new Order();
+		Order order = new Order();
+		order.setQuantity(quantity);
 		order.setItem(item);
 		order.setUser(user);
 		orderService.insertOrder(order);
