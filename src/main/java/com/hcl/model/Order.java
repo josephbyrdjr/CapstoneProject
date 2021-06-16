@@ -1,6 +1,7 @@
 package com.hcl.model;
 
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,34 +16,37 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.Id;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.*;
 
 @Entity
 @Data
 @Table(name="orders")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Order {
+@EqualsAndHashCode(exclude = { "user"})
+@ToString(exclude = { "user"})
+public class Order implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
 	private int quantity;
-	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JsonIgnore
-	Item item;
-	
-	
+
+
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JsonIgnore
+	Item item;
+
+	@ManyToOne(fetch=FetchType.LAZY,cascade = CascadeType.DETACH)
+	@JsonBackReference
 	User user;
+
 
 }

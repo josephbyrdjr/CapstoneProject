@@ -1,6 +1,7 @@
 package com.hcl.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -38,15 +39,19 @@ public class User {
 	private String state;
 	private String zip;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.EAGER)
+	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinTable( name = "user_authorities", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "authorities_id"))
 	Set<Authorities> auths = new HashSet<>();
 	
-	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch=FetchType.LAZY)
-	@JsonIgnore
+	@OneToMany(mappedBy = "user",  fetch=FetchType.LAZY)
+	@JsonManagedReference
 	Set<Order> orders = new HashSet<>();
 	
 	public void addAuth(Authorities auth){
 		auths.add(auth);
+	}
+
+	public void addOrder(Order order){
+		orders.add(order);
 	}
 }

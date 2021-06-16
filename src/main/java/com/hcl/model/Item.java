@@ -7,16 +7,20 @@ import javax.persistence.Table;
 
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 @Entity
 @Data
 @Table(name="items")
 @NoArgsConstructor
 @AllArgsConstructor
-public class Item {
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+public class Item implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -59,15 +59,7 @@ public class UserController {
         user.setState(state);
         user.setZip(zip);
         System.out.println(user);
-        //userService.insertUser(user);
-        //user = userService.getUserByUsername(username);
         Authorities auth = authService.findById(1L);
-//        Authorities auth = new Authorities();
-//        auth.setId(1);
-//        auth.setAuthority("ROLE_USER");
-        //System.out.println(auth);
-//        auth.addUser(user);
-        //System.out.println(auth);
         user.addAuth(auth);
         System.out.println(user);
         userService.insertUser(user);
