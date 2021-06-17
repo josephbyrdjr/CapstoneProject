@@ -33,12 +33,8 @@ public class CatalogController {
     
     @GetMapping("catalog/{id}")
     public String displayItem(@PathVariable long id, Model model) {
-    	
-    		
-    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getUserByUsername(auth.getName());
-        model.addAttribute("item", itemService.getItemById(id)); 
-        model.addAttribute("userId", user.getId());
+
+        model.addAttribute("item", itemService.getItemById(id));
     	
     	return "item";
     }

@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,12 +46,12 @@ public class OrderRestController {
 	
 	@PostMapping("order")
 	private void createOrder(@RequestParam(name = "quantity") int quantity,
-							 @RequestParam(name = "itemId") long itemId, 
-							 @RequestParam(name = "userId") long userId
+							 @RequestParam(name = "itemId") long itemId
 							 ) {
-		System.out.println(1);
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
 		
-		User user = userService.getUserById(userId);
+		User user = userService.getUserByUsername(auth.getName());
 		Item item = itemService.getItemById(itemId);
 		
 		Order order = new Order();
