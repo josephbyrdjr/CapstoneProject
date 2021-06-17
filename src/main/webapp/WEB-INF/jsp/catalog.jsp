@@ -64,8 +64,9 @@
 				}, 
 				{"mData" : "category"}, 
 				{"mData" : "description"},
-				{"mRender" : function(type, row) {
-					return 'This will be button'
+				{"mData" : "id",
+				"mRender" : function(mData, type, row) {
+					return '<a class="btn btn-primary" href="/catalog/'+mData+'" role="button">View</button>'
 				}}
 				]
 		})
