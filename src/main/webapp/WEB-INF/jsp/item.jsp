@@ -16,46 +16,41 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-<body>
-	<div class="container">
-		<div class="card" style="width: 50rem;">
-			<img class="card-img-top" src=${item.thumbnail} style="width: 200px; height:auto" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">${item.name}</h5>
-				<p class="card-text">${item.description}</p>
-				<form method="POST" action="/order">
-					<button class="btn bt-sm btn-primary" type="submit">Buy</button>
-					<b>Quantity</b><input type="text" class="form-control"
-						placeholder="Enter Quantity" name="quantity" id="quantity"
-						required> <br>
-					<td><input type="hidden" name="userId" value=${userId
-				}
-						size="64" /></td>
-					<td><input type="hidden" name="itemId" value=${item.id
-				}
-						size="64" /></td>
-				</form>
+<body style="background-color:">
+	<div class="card mb-3 bg-danger"
+		style="max-width: 500px; max-height: 20rem; margin: 0 auto; margin-top: 100px">
+		<div class="row no-gutters">
+			<div class="col-md-4">
+				<img src=${item.thumbnail } class="card-img"
+					style="width: auto; height: 20rem; padding: 1px; border: 1px solid #021a40; background-color: #ff0;"
+					alt="...">
+			</div>
+			<div class="col-md-8">
+				<div class="card-body" style="margin-left: 50px;">
+					<h4 class="card-title">${item.name}</h4>
+					<h6 class="card-text">${item.category}</h6>
+					<p class="card-text">${item.description}</p>
+					<p class="card-text">$${item.price}</p>
+					<form method="POST" action="/order">
+						<b>Quantity</b>
+						<div class="input-group">
+							<input type="text" class="form-control" style="width: 150px;"
+								placeholder="Enter Quantity" name="quantity" id="quantity"
+								required> <span>
+								<button class="btn bt-sm btn-primary" style="" type="submit">Buy</button>
+							</span>
+						</div>
 
+						<br>
+						<td><input type="hidden" name="itemId" value=${item.id
+				}
+							size="64" /></td>
+					</form>
+
+
+				</div>
 			</div>
 		</div>
-
-	</div>
-
-
-
-	<div style="position: absolute; top: 60px; right: 15px; z-index: 999">
-		<form method="POST" action="/order">
-			<button class="btn bt-sm btn-primary" type="submit">Buy</button>
-			<b>Quantity</b><input type="text" class="form-control"
-				placeholder="Enter Quantity" name="quantity" id="quantity" required>
-			<br>
-			<td><input type="hidden" name="userId" value=${userId
-				}
-				size="64" /></td>
-			<td><input type="hidden" name="itemId" value=${item.id
-				}
-				size="64" /></td>
-		</form>
 	</div>
 
 	<script
