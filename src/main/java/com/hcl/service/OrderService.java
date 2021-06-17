@@ -12,5 +12,6 @@ public interface OrderService {
 	Order getOrderById(Long orderId);
 	void updateOrder(Order order);
 	void deleteOrderById(long orderId);
+	List<Order> getOrdersByUserId(Long id);
 	
 }

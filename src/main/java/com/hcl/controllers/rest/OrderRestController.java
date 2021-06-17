@@ -43,6 +43,12 @@ public class OrderRestController {
 	private Order getOrder(@PathVariable(value = "orderId") long orderId) {
 		return orderService.getOrderById(orderId);
 	}
+
+	@GetMapping("order/shoppingCart")
+	private Order getOrderByUserId() {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		return orderService.getOrderById(userService.getUserByUsername(auth.getName()).getId());
+	}
 	
 	@PostMapping("order")
 	private void createOrder(@RequestParam(name = "quantity") int quantity,

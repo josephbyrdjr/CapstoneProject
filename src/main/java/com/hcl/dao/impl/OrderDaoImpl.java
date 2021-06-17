@@ -50,4 +50,8 @@ public class OrderDaoImpl implements OrderDao {
 		orderRepo.deleteById(orderId);
 		
 	}
+
+	public List<Order> getOrdersByUserId(Long id){
+		return orderRepo.getOrdersByUserId(id);
+	}
 }
