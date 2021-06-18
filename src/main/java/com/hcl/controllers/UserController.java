@@ -1,6 +1,6 @@
 package com.hcl.controllers;
 
-//import com.hcl.model.Authorities;
+
 import com.hcl.model.*;
 import com.hcl.service.AuthService;
 import com.hcl.service.UserService;
@@ -45,23 +45,13 @@ public class UserController {
                                   @RequestParam String address, @RequestParam String apartmentNumber,
                                   @RequestParam String city, @RequestParam String state, 
                                   @RequestParam String zip, Model model) {
+    	
         BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
-        User user = new User();
-        user.setUsername(username);
-        user.setPassword(bCrypt.encode(pwd));
-        user.setEnabled(true);
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setPhoneNumber(phoneNumber);
-        user.setAddress(address);
-        user.setApartmentNumber(apartmentNumber);
-        user.setCity(city);
-        user.setState(state);
-        user.setZip(zip);
-        System.out.println(user);
+        User user = new User(username,bCrypt.encode(pwd),true,firstName,lastName,
+        		email,phoneNumber,address,apartmentNumber,city,state,zip);
+        
         Authorities auth = authService.findById(1L);
         user.addAuth(auth);
-        System.out.println(user);
         userService.insertUser(user);
 
         model.addAttribute("msg", "New User Added");
