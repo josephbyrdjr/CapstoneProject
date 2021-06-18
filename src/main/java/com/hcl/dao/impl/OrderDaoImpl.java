@@ -52,6 +52,6 @@ public class OrderDaoImpl implements OrderDao {
 	}
 
 	public List<Order> getOrdersByUserId(Long id){
-		return orderRepo.getOrdersByUserId(id);
+		return orderRepo.findOrdersByUserId(id);
 	}
 }

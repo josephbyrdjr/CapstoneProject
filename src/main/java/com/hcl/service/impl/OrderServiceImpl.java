@@ -50,7 +50,7 @@ public class OrderServiceImpl implements OrderService {
 	}
 
 	public List<Order> getOrdersByUserId(Long id){
-		return orderRepo.getOrdersByUserId(id);
+		return orderRepo.findOrdersByUserId(id);
 	}
 
 }
