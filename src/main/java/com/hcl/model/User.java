@@ -54,4 +54,22 @@ public class User {
 	public void addOrder(Order order){
 		orders.add(order);
 	}
+
+	public User(String username, String pwd, boolean enabled, String firstName, String lastName, String email,
+			String phoneNumber, String address, String apartmentNumber, String city, String state, String zip) {
+		this.username = username;
+		this.password = pwd;
+		this.enabled = enabled;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phoneNumber = phoneNumber;
+		this.address = address;
+		this.apartmentNumber = apartmentNumber;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+	}
+	
+	
 }

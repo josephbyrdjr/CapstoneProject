@@ -22,6 +22,7 @@ import java.io.Serializable;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Item implements Serializable {
 	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
@@ -31,4 +32,12 @@ public class Item implements Serializable {
 	private String category;
 	private String description;
 
+	//Allows for auto-generated id's
+	public Item(double price, String name, String thumbnail, String category, String description) {
+		this.price = price;
+		this.name = name;
+		this.thumbnail = thumbnail;
+		this.category = category;
+		this.description = description;
+	}
 }
