@@ -13,6 +13,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Data
@@ -29,6 +30,7 @@ public class Item implements Serializable {
 	private double price;
 	private String name;
 	private String thumbnail;
+	private String genre;
 	private String category;
 	private String description;
 

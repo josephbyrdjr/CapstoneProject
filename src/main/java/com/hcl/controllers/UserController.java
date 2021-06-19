@@ -74,12 +74,26 @@ public class UserController {
 
     @PostMapping("/editUser")
     public String editUser(@RequestParam String username, @RequestParam String pwd,
-                                  Model model) {
+				    	   @RequestParam String firstName, @RequestParam String lastName,
+				           @RequestParam String email, @RequestParam String phoneNumber,
+				           @RequestParam String address, @RequestParam String apartmentNumber,
+				           @RequestParam String city, @RequestParam String state, 
+				           @RequestParam String zip, Model model) {
+    	
         BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         User user = userService.getUserByUsername(auth.getName()); ///// Streams ??
-        user.setUsername(username);
+        //user.setUsername(username);
         user.setPassword(bCrypt.encode(pwd));
+        user.setFirstName(firstName);
+        user.setLastName(lastName);
+        user.setEmail(email);
+        user.setPhoneNumber(phoneNumber);
+        user.setAddress(address);
+        user.setApartmentNumber(apartmentNumber);
+        user.setCity(city);
+        user.setState(state);
+        user.setZip(zip);
         userService.updateUser(user);
         model.addAttribute("msg", "User updated");
         model.addAttribute("username", username);

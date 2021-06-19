@@ -1,5 +1,7 @@
 package com.hcl.controllers;
 
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -41,7 +43,7 @@ public class AdminController {
 		return "editItem";
 	}
 	
-	@PostMapping("/editItem")
+	@PostMapping("/addItem")
 	public String addItem(@RequestParam double price, @RequestParam String name,
 						@RequestParam String thumbnail, @RequestParam String category,
 						@RequestParam String description, Model model) {
@@ -53,16 +55,10 @@ public class AdminController {
 		return "editItem";
 	}
 	
-	@GetMapping("/editOrder")
-	public String displayEditOrder(Model model ) {
-		
-		return "editOrder";
-	}
+	//@PutMapping("editItem")
+	//public String editItem()
 	
-	@PutMapping("/editOrder")
-	public String editOrder(@RequestParam int quantity) {
-		return "editOrder";
-	}
+	
 	
 	
 }

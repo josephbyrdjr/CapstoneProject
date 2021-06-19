@@ -37,9 +37,8 @@ public class Order implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	
 	private int quantity;
-
+	private String status;
 
 	@ManyToOne(fetch=FetchType.LAZY)
 	Item item;
