@@ -4,7 +4,7 @@ pageEncoding="ISO-8859-1"%>
 <html>
     <head>
         <meta charset="ISO-8859-1">
-        <title>Insert title here</title>
+        <title>Register New User</title>
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
@@ -17,8 +17,6 @@ pageEncoding="ISO-8859-1"%>
                     <h2 class="form-heading">Register</h2>
 
                     <hr>
-<%--                     <input type="number" class="form-control"--%>
-<%--                    placeholder="Enter ID" name="userId" id="userId" required> <br>--%>
 					
 					<h3>Basic Info</h3>
                     <b>Username</b><input type="text" class="form-control"

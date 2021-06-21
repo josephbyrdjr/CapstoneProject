@@ -42,7 +42,7 @@
         </div><br>
         
         <div>
-            <form method="GET" action="/addItem">
+            <form method="GET" action="/admin/addItem">
                 <button class="btn bt-sm btn-primary" type="submit">Add Item</button>
             </form>
         </div>

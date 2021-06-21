@@ -67,6 +67,11 @@ public class AdminController {
 		return "allItems";
 	}
 	
+	@GetMapping("/addItem")
+	public String displayAddItem(Model model) {
+		return "addItem";
+	}
+	
 	@PostMapping("/addItem")
 	public String addItem(@RequestParam double price, @RequestParam String name,
 						@RequestParam String thumbnail, @RequestParam String category,
