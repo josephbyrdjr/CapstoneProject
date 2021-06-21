@@ -48,24 +48,22 @@
 </head>
 
 <body style="background-color:">
-<<<<<<< HEAD
-	<div class="card mb-3"
-		style="max-width: 500px; max-height: 20rem; margin: 0 auto; margin-top: 100px; background-color: lightgrey">
-		<div class="row no-gutters" oncanplaythrough="">
-			<div class="col-md-4" oncanplaythrough="">
-=======
+
+	
 <div class="topnav">
-  	<a class="active" href="#home">Home</a>
+  	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
   	<a href="#about">About</a>
   	<a href="/login">Login</a>
   	<a href="/register">Register</a>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="margin-left: 70rem;"></a>
+  	
 	</div>
 	<div class="card mb-3 bg-danger"
 		style="max-width: 500px; max-height: 20rem; margin: 0 auto; margin-top: 100px">
 		<div class="row no-gutters">
 			<div class="col-md-4">
->>>>>>> a91327fb0ff0842bbb9b73de68f56fc08f3a2a7f
+
 				<img src=${item.thumbnail } class="card-img"
 					style="width: 22rem; height: 20rem; padding: 1px; border: 1px solid #021a40; background-color: black"
 					alt="..." oncanplaythrough="">
@@ -83,6 +81,9 @@
 							<input type="text" class="form-control" style="width: 150px;"
 								placeholder="Enter Quantity" name="quantity" id="quantity"
 								required> <span>
+								<input type="hidden" class="form-control"
+								 name="itemId" id="itemId" value=${item.id}>
+								 </span><span>
 								<button class="btn bt-sm btn-primary" style="" type="submit">Buy</button>
 							</span>
 						</div>

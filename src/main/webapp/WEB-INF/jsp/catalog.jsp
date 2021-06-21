@@ -55,6 +55,8 @@
   	<a href="#about">About</a>
   	<a href="/login">Login</a>
   	<a href="/register">Register</a>
+  	<i class="glyphicon glyphicon-shopping-cart"></i>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="margin-left: 70rem;"></a>
 	</div>
 	
 	
