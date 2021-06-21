@@ -20,17 +20,26 @@
         <div style="top:0px; z-index:999;text-align:center">
         <h2 class="form-heading">Welcome, ${firstName}!</h2>
         </div>
-
-        <div style="position:absolute;top:15px;right:15px; z-index:999" >
-            <form method="GET" action="/editUsers">
-                <button class="btn bt-sm btn-primary" type="submit">Edit Users</button>
-            </form>
-        </div>
-        <div style="position:absolute;top:60px;right:15px; z-index:999" >
+		<div style="position:absolute;top:60px;right:15px; z-index:999" >
             <form method="POST" action="/logout">
                 <button class="btn bt-sm btn-primary" type="submit">Log Out</button>
             </form>
         </div>
+        <div>
+            <form method="GET" action="/admin/allUsers">
+                <button class="btn bt-sm btn-primary" type="submit">All Users</button>
+            </form>
+        </div><br>
+        <div>
+            <form method="GET" action="/admin/allOrders">
+                <button class="btn bt-sm btn-primary" type="submit">All Orders</button>
+            </form>
+        </div><br>
+        <div>
+            <form method="GET" action="/admin/allItems">
+                <button class="btn bt-sm btn-primary" type="submit">All Items</button>
+            </form>
+        </div><br>
         
         <div>
             <form method="GET" action="/addItem">

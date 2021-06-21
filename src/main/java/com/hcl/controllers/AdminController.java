@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,16 +32,39 @@ public class AdminController {
 	ItemService itemService;
 	
 	
-	@GetMapping("/")
+	@GetMapping
 	public String displayAdmin(Model model) {
 		return "admin";
 	}
 	
+	@GetMapping("/allUsers")
+	public String displayAllUsers(Model model) {
+		
+		return "allUsers";
+	}
 	
-	@GetMapping("/editItem")
-	public String displayEditItem(Model model) {
+	@GetMapping("/allOrders")
+	public String displayAllOrders(Model model) {
+		return "allOrders";
+	}
+	
+	@GetMapping("/allItems") 
+	public String displayAllItems(Model model) {
+		return "allItems";
+	}
+	
+	
+	@GetMapping("/editItem/{id}")
+	public String displayEditItem(@PathVariable long id, Model model) {
 		
 		return "editItem";
+	}
+	
+	@PutMapping("editItem")
+	public String editItem(Model model) {
+		
+		
+		return "allItems";
 	}
 	
 	@PostMapping("/addItem")
@@ -52,13 +76,9 @@ public class AdminController {
 		itemService.insertItem(item);
 		model.addAttribute("msg", "New Item Added");
 		
-		return "editItem";
+		
+		return "allItems";
 	}
-	
-	//@PutMapping("editItem")
-	//public String editItem()
-	
-	
 	
 	
 }

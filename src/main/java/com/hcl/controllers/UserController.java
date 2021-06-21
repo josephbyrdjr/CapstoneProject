@@ -72,7 +72,7 @@ public class UserController {
         return "editUser";
     }
 
-    @PostMapping("/editUser")
+    @PutMapping("/editUser")
     public String editUser(@RequestParam String username, @RequestParam String pwd,
 				    	   @RequestParam String firstName, @RequestParam String lastName,
 				           @RequestParam String email, @RequestParam String phoneNumber,
