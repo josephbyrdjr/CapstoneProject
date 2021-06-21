@@ -47,14 +47,14 @@
 	}
 </style>
 </head>
-
 <body>
 <div class="topnav">
-  	<a class="active" href="/home">Home</a>
+  	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
   	<a href="#about">About</a>
   	<a href="/login">Login</a>
   	<a href="/register">Register</a>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="margin-left: 70rem;"></a>
 	</div>
 	<div class="container" style="margin-top: 5rem">
 		<table id="cartTable" class="display">
@@ -65,6 +65,7 @@
 					<th>Price</th>
 					<th>Quantity</th>
 					<th>Quantity x Price</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody>
@@ -77,6 +78,15 @@
 						<td><c:out value="${order.quantity}" /></td>
 						<td id="money"><fmt:formatNumber
 								value="${order.item.price * order.quantity}" type="currency" /></td>
+						<td>
+							<form action="/deleteOrder/${order.id}" method = "GET">
+							<input class="btn btn-primary" type="submit" value="Delete">
+							
+							
+							</form>
+						
+						
+						</td>
 					</tr>
 				</c:forEach>
 				

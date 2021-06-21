@@ -55,6 +55,8 @@
   	<a href="#about">About</a>
   	<a href="/login">Login</a>
   	<a href="/register">Register</a>
+  	<i class="glyphicon glyphicon-shopping-cart"></i>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="margin-left: 70rem;"></a>
 	</div>
 	
 	
@@ -68,6 +70,7 @@
 					<th>Price</th>
 					<th>Image</th>
 					<th>Category</th>
+					<th>Genre</th>
 					<th>Description</th>
 					<th>View Item</th>
 
@@ -101,6 +104,7 @@
 				}
 				}, 
 				{"mData" : "category"}, 
+				{"mData" : "genre"},
 				{"mData" : "description"},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {

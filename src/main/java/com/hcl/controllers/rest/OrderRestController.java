@@ -1,7 +1,10 @@
 package com.hcl.controllers.rest;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
+
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -47,8 +50,9 @@ public class OrderRestController {
 	
 	@PostMapping("order")
 	private void createOrder(@RequestParam(name = "quantity") int quantity,
-							 @RequestParam(name = "itemId") long itemId
-							 ) {
+							 @RequestParam(name = "itemId") long itemId,
+							 HttpServletResponse response
+							 ) throws IOException {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
 		
@@ -60,6 +64,7 @@ public class OrderRestController {
 		order.setItem(item);
 		order.setUser(user);
 		orderService.insertOrder(order);
+		response.sendRedirect("/catalog");
 	}
 	
 	@PutMapping("order")
@@ -67,9 +72,10 @@ public class OrderRestController {
 		orderService.insertOrder(order);
 	}
 	
-	@DeleteMapping("order/{orderId}")
-	private void deleteOrder(@PathVariable(value = "orderId") long id) {
+	@GetMapping("deleteOrder/{orderId}")
+	private void deleteOrder(@PathVariable(value = "orderId") long id, HttpServletResponse response) throws IOException {
 		orderService.deleteOrderById(id);
+		response.sendRedirect("/order/shoppingCart");
 	}
 	
 }
