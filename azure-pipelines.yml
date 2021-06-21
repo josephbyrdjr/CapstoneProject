@@ -25,3 +25,10 @@ steps:
     inputs:
       command: build
       dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+  - task: Docker@2
+    displayName: Push Docker image
+    inputs:
+      containerRegistry: 'capstoneproject'
+      repository: 'Capstone-Project'
+      command: 'push'
+      tags: 'latest'
