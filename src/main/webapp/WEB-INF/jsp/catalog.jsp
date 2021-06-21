@@ -30,6 +30,7 @@
 					<th>Price</th>
 					<th>Image</th>
 					<th>Category</th>
+					<th>Genre</th>
 					<th>Description</th>
 					<th>View Item</th>
 
@@ -63,6 +64,7 @@
 				}
 				}, 
 				{"mData" : "category"}, 
+				{"mData" : "genre"},
 				{"mData" : "description"},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {

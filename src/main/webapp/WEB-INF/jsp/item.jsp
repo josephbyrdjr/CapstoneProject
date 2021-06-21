@@ -1,6 +1,8 @@
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
 <html lang="en">
@@ -17,20 +19,21 @@
 </head>
 
 <body style="background-color:">
-	<div class="card mb-3 bg-danger"
-		style="max-width: 500px; max-height: 20rem; margin: 0 auto; margin-top: 100px">
-		<div class="row no-gutters">
-			<div class="col-md-4">
+	<div class="card mb-3"
+		style="max-width: 500px; max-height: 20rem; margin: 0 auto; margin-top: 100px; background-color: lightgrey">
+		<div class="row no-gutters" oncanplaythrough="">
+			<div class="col-md-4" oncanplaythrough="">
 				<img src=${item.thumbnail } class="card-img"
-					style="width: auto; height: 20rem; padding: 1px; border: 1px solid #021a40; background-color: #ff0;"
-					alt="...">
+					style="width: 22rem; height: 20rem; padding: 1px; border: 1px solid #021a40; background-color: black"
+					alt="..." oncanplaythrough="">
 			</div>
 			<div class="col-md-8">
-				<div class="card-body" style="margin-left: 50px;">
+				<div class="card-body" style="margin-left: 60px;">
 					<h4 class="card-title">${item.name}</h4>
 					<h6 class="card-text">${item.category}</h6>
 					<p class="card-text">${item.description}</p>
-					<p class="card-text">$${item.price}</p>
+					<p class="card-text"><fmt:formatNumber
+								value="${item.price}" type="currency" /></p>
 					<form method="POST" action="/order">
 						<b>Quantity</b>
 						<div class="input-group">
