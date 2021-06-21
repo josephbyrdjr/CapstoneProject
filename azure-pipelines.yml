@@ -24,7 +24,7 @@ steps:
     displayName: Build and push an image
     inputs:
       containerRegistry: 'capstone-project'
-      repository: 'capstone-project'
+      repository: 'joebyrd32/capstone-project'
       command: 'buildandpush'
       dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
       tags: 'latest'
