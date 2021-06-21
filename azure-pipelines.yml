@@ -20,3 +20,11 @@ steps:
       publishJUnitResults: true
       testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
+  - task: Docker@2
+    displayName: Build and push an image
+    inputs:
+      containerRegistry: 'capstone-project'
+      repository: 'capstone-project'
+      command: 'buildandpush'
+      dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
+      tags: 'latest'
