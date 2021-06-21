@@ -13,7 +13,7 @@ variables:
   dockerRegistryServiceConnection: 'e4c2b455-f85b-4cb5-bd69-446a073bd994'
   imageRepository: 'josephbyrdjrcapstoneproject'
   containerRegistry: 'capstoneproject.azurecr.io'
-  dockerfilePath: 'Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)'
   tag: '$(Build.BuildId)'
 
   # Agent VM image name
