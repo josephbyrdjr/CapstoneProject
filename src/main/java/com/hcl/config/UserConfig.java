@@ -56,7 +56,8 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 				"/authorities", "/authorities/**",
 				"/item", "/item/**",
 				"/catalog", "/catalog/**",
-				"/admin/**","/order/**").permitAll()
+				"/admin/**","/order/**",
+				"/").permitAll()
 				.anyRequest()
 				.authenticated()
 				.and()
