@@ -37,6 +37,8 @@ public class CartController {
     public String displayCart(Model model) {
 
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    	String name = auth.getName(); // get logged in username
+        model.addAttribute("username", name);
 		List<Order> orders = new ArrayList<Order>();
 		orders = orderService.getOrdersByUserId(userService.getUserByUsername(auth.getName()).getId());
 		model.addAttribute("orders", orders);

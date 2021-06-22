@@ -1,9 +1,15 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <!DOCTYPE html>
-<html>
+<html lang= "en">
     <head>
         <meta charset="ISO-8859-1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Register New User</title>
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -30,12 +36,8 @@ pageEncoding="ISO-8859-1"%>
   		color: black;
 	}
 
-	/* Add a color to the active/current link */
-	.topnav a.active {
-  		background-color: #04AA6D;
-  		color: white;
-	}
 </style>
+        
     </head>
 
     <body>
@@ -43,9 +45,17 @@ pageEncoding="ISO-8859-1"%>
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
   	<a href="#about">About</a>
-  	<a href="/login">Login</a>
-  	<a href="/register">Register</a>
-	</div>
+  	<c:choose>
+  		<c:when test="${username == 'anonymousUser'}">
+  			<a href="/login">Login</a>
+  			<a href="/register">Register</a>
+  		</c:when>
+  		<c:otherwise>
+  			<a href="/logout">Logout</a>
+  		</c:otherwise>
+  	</c:choose>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
+        </div>
         <br>
         <div class="container">
             <form method="POST" action="/register" class="form-signin">
