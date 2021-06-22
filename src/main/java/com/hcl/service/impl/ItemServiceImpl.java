@@ -2,6 +2,7 @@ package com.hcl.service.impl;
 
 import java.util.List;
 
+import com.hcl.dao.ItemDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,39 +14,39 @@ import com.hcl.service.ItemService;
 public class ItemServiceImpl implements ItemService {
 
 	@Autowired
-	ItemRepository itemRepo;
+	ItemDao itemDao;
 	
 	@Override
 	public void insertItem(Item item) {
-		itemRepo.save(item);
+		itemDao.insertItem(item);
 		
 	}
 
 	@Override
 	public void insertItems(List<Item> items) {
-		itemRepo.saveAll(items);
+		itemDao.insertItems(items);
 		
 	}
 
 	@Override
 	public List<Item> getAllItems() {
-		return itemRepo.findAll();
+		return itemDao.getAllItems();
 	}
 
 	@Override
 	public Item getItemById(Long itemId) {
-		return itemRepo.findById(itemId).orElse(null);
+		return itemDao.getItemById(itemId);
 	}
 
 	@Override
 	public void updateItem(Item item) {
-		itemRepo.save(item);
+		itemDao.updateItem(item);
 		
 	}
 
 	@Override
 	public void deleteItemById(long itemId) {
-		itemRepo.deleteById(itemId);
+		itemDao.deleteItemById(itemId);
 		
 	}
 	
