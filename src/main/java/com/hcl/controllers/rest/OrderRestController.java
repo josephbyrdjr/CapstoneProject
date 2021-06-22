@@ -27,38 +27,36 @@ import com.hcl.model.User;
 
 @RestController
 public class OrderRestController {
-	
+
 	@Autowired
 	UserService userService;
-	
+
 	@Autowired
 	ItemService itemService;
 
 	@Autowired
 	OrderService orderService;
 	
+	private static List<Order> allOrders;
+
 	@GetMapping("/order")
-	private List<Order> getAllItems(){
+	private List<Order> getAllItems() {
 		return orderService.getAllOrders();
 	}
-	
+
 	@GetMapping("order/{orderId}")
 	private Order getOrder(@PathVariable(value = "orderId") long orderId) {
 		return orderService.getOrderById(orderId);
 	}
 
-	
 	@PostMapping("order")
-	private void createOrder(@RequestParam(name = "quantity") int quantity,
-							 @RequestParam(name = "itemId") long itemId,
-							 HttpServletResponse response
-							 ) throws IOException {
+	private void createOrder(@RequestParam(name = "quantity") int quantity, @RequestParam(name = "itemId") long itemId,
+			HttpServletResponse response) throws IOException {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
-		
 		User user = userService.getUserByUsername(auth.getName());
 		Item item = itemService.getItemById(itemId);
-		
+
 		Order order = new Order();
 		order.setQuantity(quantity);
 		order.setItem(item);
@@ -66,16 +64,23 @@ public class OrderRestController {
 		orderService.insertOrder(order);
 		response.sendRedirect("/catalog");
 	}
-	
-	@PutMapping("order")
-	private void updateOrder(@RequestBody Order order) {
+
+	@PostMapping("/updateOrder")
+	private void updateOrder(@RequestParam long orderId, @RequestParam int quantity, HttpServletResponse response)
+			throws IOException {
+		Order order = orderService.getOrderById(orderId);
+		order.setQuantity(quantity);
 		orderService.insertOrder(order);
+		response.sendRedirect("/order/shoppingCart");
+
 	}
-	
+
 	@GetMapping("deleteOrder/{orderId}")
-	private void deleteOrder(@PathVariable(value = "orderId") long id, HttpServletResponse response) throws IOException {
+	private void deleteOrder(@PathVariable(value = "orderId") long id, HttpServletResponse response)
+			throws IOException {
 		orderService.deleteOrderById(id);
 		response.sendRedirect("/order/shoppingCart");
 	}
 	
+
 }

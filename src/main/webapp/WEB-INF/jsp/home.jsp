@@ -53,7 +53,7 @@
   	<a href="#about">About</a>
   	<a href="/login">Login</a>
   	<a href="/register">Register</a>
-  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="margin-left: 70rem;"></a>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
 	</div>
         <div style="top:0px; z-index:999;text-align:center">
         <h2 class="form-heading">Welcome, ${username}!</h2>

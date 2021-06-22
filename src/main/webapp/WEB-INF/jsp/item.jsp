@@ -56,7 +56,7 @@
   	<a href="#about">About</a>
   	<a href="/login">Login</a>
   	<a href="/register">Register</a>
-  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="margin-left: 70rem;"></a>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
   	
 	</div>
 	<div class="card mb-3 bg-danger"
@@ -84,7 +84,7 @@
 								<input type="hidden" class="form-control"
 								 name="itemId" id="itemId" value=${item.id}>
 								 </span><span>
-								<button class="btn bt-sm btn-primary" style="" type="submit">Buy</button>
+								<button class="btn bt-sm btn-primary" style="" type="submit">Add To Cart</button>
 							</span>
 						</div>
 
