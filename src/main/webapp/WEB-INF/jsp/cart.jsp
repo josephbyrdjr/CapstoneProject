@@ -52,7 +52,7 @@
 		<a class="active" href="/">Home</a> <a href="/catalog">Products</a> <a
 			href="#about">About</a> <a href="/login">Login</a> <a
 			href="/register">Register</a> <a href="/order/shoppingCart"
-			class="glyphicon glyphicon-shopping-cart" style="margin-left: 70rem;"></a>
+			class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
 	</div>
 	<div class="container" style="margin-top: 5rem; height: 10; width: 20">
 		<table id="cartTable" class="display">
