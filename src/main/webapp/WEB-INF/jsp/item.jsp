@@ -84,7 +84,7 @@
 								<input type="hidden" class="form-control"
 								 name="itemId" id="itemId" value=${item.id}>
 								 </span><span>
-								<button class="btn bt-sm btn-primary" style="" type="submit">Buy</button>
+								<button class="btn bt-sm btn-primary" style="" type="submit">Add To Cart</button>
 							</span>
 						</div>
 
