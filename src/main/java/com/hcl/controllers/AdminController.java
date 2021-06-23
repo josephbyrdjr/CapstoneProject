@@ -35,6 +35,8 @@ public class AdminController {
 
 	@GetMapping
 	public String displayAdmin(Model model) {
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        model.addAttribute("user", userService.getUserByUsername(auth.getName())); 
 		return "admin";
 	}
 
@@ -56,13 +58,22 @@ public class AdminController {
 
 	@GetMapping("/editItem/{id}")
 	public String displayEditItem(@PathVariable long id, Model model) {
-
+		model.addAttribute("item", itemService.getItemById(id));
 		return "editItem";
 	}
 
-	@PutMapping("editItem")
-	public String editItem(Model model) {
+	@PostMapping("/editItem/{id}")
+	public String editItem(@PathVariable long id, @RequestParam double price, @RequestParam String name, @RequestParam String thumbnail,
+			@RequestParam String category, @RequestParam String description, Model model) {
 
+		Item item = itemService.getItemById(id);
+		item.setPrice(price);
+		item.setName(name);
+		item.setThumbnail(thumbnail);
+		item.setCategory(category);
+		item.setDescription(description);
+		itemService.updateItem(item);
+		
 		return "allItems";
 	}
 
@@ -84,8 +95,7 @@ public class AdminController {
 	
 	@GetMapping("/editUserById/{id}")
 	public String displayEditUser(@PathVariable long id, Model model) {
-		
-		model.addAttribute("userId", id);
+		model.addAttribute("user", userService.getUserById(id));
 		return "editUserById";
 	}
 

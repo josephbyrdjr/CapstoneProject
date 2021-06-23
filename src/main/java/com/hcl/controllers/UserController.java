@@ -74,7 +74,9 @@ public class UserController {
     }
 
     @GetMapping("/editUser")
-    public String edit() {
+    public String edit(Model model) {
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        model.addAttribute("user", userService.getUserByUsername(auth.getName()));
         return "editUser";
     }
 
@@ -88,7 +90,7 @@ public class UserController {
     	
         BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        User user = userService.getUserByUsername(auth.getName()); ///// Streams ??
+        User user = userService.getUserByUsername(auth.getName()); 
         //user.setUsername(username);
         user.setPassword(bCrypt.encode(pwd));
         user.setFirstName(firstName);

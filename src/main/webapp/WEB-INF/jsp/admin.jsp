@@ -18,7 +18,7 @@
 
     <body>
         <div style="top:0px; z-index:999;text-align:center">
-        <h2 class="form-heading">Welcome, ${firstName}!</h2>
+        <h2 class="form-heading">Welcome, ${user.firstName}!</h2>
         </div>
 		<div style="position:absolute;top:60px;right:15px; z-index:999" >
             <form method="POST" action="/logout">
