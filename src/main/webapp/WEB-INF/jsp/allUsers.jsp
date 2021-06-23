@@ -56,7 +56,7 @@
 				{"mData" : "phoneNumber"},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {
-					return '<a class="btn btn-primary" href="/editUser/'+mData+'" role="button">Edit</button>'
+					return '<a class="btn btn-primary" href="/admin/editUserById/'+mData+'" role="button">Edit</button>'
 				}}
 				]
 		})

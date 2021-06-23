@@ -72,7 +72,7 @@ public class UserController {
         return "editUser";
     }
 
-    @PutMapping("/editUser")
+    @PostMapping("/editUser")
     public String editUser(@RequestParam String username, @RequestParam String pwd,
 				    	   @RequestParam String firstName, @RequestParam String lastName,
 				           @RequestParam String email, @RequestParam String phoneNumber,
@@ -99,5 +99,6 @@ public class UserController {
         model.addAttribute("username", username);
         return "home";
     }
+    
 
 }
