@@ -42,8 +42,4 @@ public class ItemDaoImpl implements ItemDao {
 		itemRepo.deleteById(itemId);
 		
 	}
-
-	public Item getItemByName(String name){
-		return itemRepo.getItemByName(name);
-	}
 }

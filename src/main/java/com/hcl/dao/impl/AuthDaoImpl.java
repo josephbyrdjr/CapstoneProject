@@ -31,4 +31,7 @@ public class AuthDaoImpl implements AuthDao{
 		authRepo.deleteById(id);
 	}
 
+	public void updateAuth(Authority auth){
+		authRepo.save(auth);
+	}
 }

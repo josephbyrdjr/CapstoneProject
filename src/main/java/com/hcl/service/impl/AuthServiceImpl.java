@@ -31,4 +31,8 @@ public class AuthServiceImpl implements AuthService{
 	public void deleteById(long id){
 		authDao.deleteById(id);
 	}
+
+	public void updateAuth(Authority auth){
+		authDao.updateAuth(auth);
+	}
 }
