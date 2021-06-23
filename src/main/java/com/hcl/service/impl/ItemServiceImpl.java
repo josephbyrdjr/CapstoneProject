@@ -23,12 +23,6 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
-	public void insertItems(List<Item> items) {
-		itemDao.insertItems(items);
-		
-	}
-
-	@Override
 	public List<Item> getAllItems() {
 		return itemDao.getAllItems();
 	}
@@ -49,5 +43,8 @@ public class ItemServiceImpl implements ItemService {
 		itemDao.deleteItemById(itemId);
 		
 	}
-	
+
+	public Item getItemByName(String name){
+		return itemDao.getItemByName(name);
+	}
 }

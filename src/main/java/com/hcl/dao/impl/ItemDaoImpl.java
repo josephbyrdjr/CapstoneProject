@@ -22,12 +22,6 @@ public class ItemDaoImpl implements ItemDao {
 	}
 
 	@Override
-	public void insertItems(List<Item> items) {
-		itemRepo.saveAll(items);
-		
-	}
-
-	@Override
 	public List<Item> getAllItems() {
 		return itemRepo.findAll();
 	}
@@ -49,4 +43,7 @@ public class ItemDaoImpl implements ItemDao {
 		
 	}
 
+	public Item getItemByName(String name){
+		return itemRepo.getItemByName(name);
+	}
 }
