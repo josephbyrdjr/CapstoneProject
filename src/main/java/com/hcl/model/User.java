@@ -69,5 +69,13 @@ public class User {
 		this.zip = zip;
 	}
 	
+	//Constructor to make JUnit testing a lot easier
+		public User(long id, String username, String firstName, String lastName) {
+			this.id = id;
+			this.username = username;
+			this.firstName = firstName;
+			this.lastName = lastName;
+		}
+	
 	
 }
