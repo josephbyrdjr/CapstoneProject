@@ -49,56 +49,56 @@ pageEncoding="ISO-8859-1"%>
         <br>
         
         <div class="container">
-            <form method="POST" action="/admin/editUserById/${userId}" class="form-signin">
+            <form method="POST" action="/admin/editUserById/${user.id}" class="form-signin">
                 <div class="container">
                 
                     <h2 class="form-heading">Edit User</h2>
 
                     <hr>
 					<b>Username</b><input
-                    type="text" class="form-control" placeholder="Enter Username" name="username" id="username"
+                    type="text" class="form-control" value="${user.username}" name="username" id="username"
                     required> <br>
                     
                     <b>Password</b><input
-                    type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd"
+                    type="password" class="form-control" value="${user.password}" name="pwd" id="pwd"
                     required> <br>
                     
                      <b>First Name</b><input
-                    type="text" class="form-control" placeholder="Enter First Name" name="firstName" id="firstName"
+                    type="text" class="form-control" value="${user.firstName}" name="firstName" id="firstName"
                     required> <br>
                     
                     <b>Last Name</b><input
-                    type="text" class="form-control" placeholder="Enter Last Name" name="lastName" id="lastName"
+                    type="text" class="form-control" value="${user.lastName}" name="lastName" id="lastName"
                     required> <br>
                     
                     <b>Email</b><input
-                    type="text" class="form-control" placeholder="Enter Email" name="email" id="email"
+                    type="text" class="form-control" value="${user.email}" name="email" id="email"
                     required> <br>
                     
                     <b>Phone Number</b><input
-                    type="text" class="form-control" placeholder="Enter Phone Number" name="phoneNumber" id="phoneNumber"
+                    type="text" class="form-control" value="${user.phoneNumber}" name="phoneNumber" id="phoneNumber"
                     required> <br>
                     
                     <h3>Billing Info</h3>
                     
                     <b>Street Address</b><input
-                    type="text" class="form-control" placeholder="Enter Street Address" name="address" id="address"
+                    type="text" class="form-control" value="${user.address}" name="address" id="address"
                     required> <br>
                     
                     <b>Apartment Number</b><input
-                    type="text" class="form-control" placeholder="Enter Apartment Number" name="apartmentNumber" id="apartmentNumber"
+                    type="text" class="form-control" value="${user.apartmentNumber}" name="apartmentNumber" id="apartmentNumber"
                     > <br>
                     
                     <b>City</b><input
-                    type="text" class="form-control" placeholder="Enter City" name="city" id="city"
+                    type="text" class="form-control" value="${user.city}" name="city" id="city"
                     required> <br>
                     
                     <b>State</b><input
-                    type="text" class="form-control" placeholder="Enter State" name="state" id="state"
+                    type="text" class="form-control" value="${user.state}" name="state" id="state"
                     required> <br>
                     
                     <b>Zip</b><input
-                    type="text" class="form-control" placeholder="Enter Zip Code" name="zip" id="zip"
+                    type="text" class="form-control" value="${user.zip}" name="zip" id="zip"
                     required> <br>
 
                      <hr>
