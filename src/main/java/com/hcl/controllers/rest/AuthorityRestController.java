@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-public class AuthoritiesRestController {
+public class AuthorityRestController {
 
     @Autowired
     AuthService authService;
