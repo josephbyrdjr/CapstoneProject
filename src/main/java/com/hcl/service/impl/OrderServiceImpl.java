@@ -2,6 +2,7 @@ package com.hcl.service.impl;
 
 import java.util.List;
 
+import com.hcl.dao.OrderDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,44 +14,47 @@ import com.hcl.service.OrderService;
 public class OrderServiceImpl implements OrderService {
 
 	@Autowired
-	OrderRepository orderRepo;
+	OrderDao orderDao;
 	
 	@Override
-	public void insertOrder(Order order) {
-		orderRepo.save(order);
+	public void insertOrders(Order order) {
+		orderDao.insertOrder(order);
 		
 	}
 
 	@Override
-	public void insertOrder(List<Order> order) {
-		orderRepo.saveAll(order);
+	public void insertOrders(List<Order> order) {
+		orderDao.insertOrders(order);
 		
 	}
 
 	@Override
 	public List<Order> getAllOrders() {
-		return orderRepo.findAll();
+		return orderDao.getAllOrders();
 	}
 
 	@Override
 	public Order getOrderById(Long orderId) {
-		return orderRepo.findById(orderId).orElse(null);
+		return orderDao.getOrderById(orderId);
 	}
 
 	@Override
 	public void updateOrder(Order order) {
-		orderRepo.save(order);
+		orderDao.updateOrder(order);
 		
 	}
 
 	@Override
 	public void deleteOrderById(long orderId) {
-		orderRepo.deleteById(orderId);
+		orderDao.deleteOrderById(orderId);
 		
 	}
 
 	public List<Order> getOrdersByUserId(Long id){
-		return orderRepo.findOrdersByUserId(id);
+		return orderDao.getOrdersByUserId(id);
 	}
 
+	public Order getOrdersByUserIdAndItemId(long userId, long itemId){
+		return orderDao.getOrdersByUserIdAndItemId(userId, itemId);
+	}
 }

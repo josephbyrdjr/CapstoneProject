@@ -34,7 +34,10 @@ public class UserController {
     }
 
     @GetMapping("/register")
-    public String showRegisterForm() {
+    public String showRegisterForm(Model model) {
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName(); // get logged in username
+        model.addAttribute("username", name);
         return "userRegistration";
     }
 
@@ -64,6 +67,9 @@ public class UserController {
             model.addAttribute("errorMsg", "Your username and password are invalid.");
         if (logout != null)
             model.addAttribute("msg", "You have been logged out successfully.");
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName(); // get logged in username
+        model.addAttribute("username", name);
         return "login";
     }
 

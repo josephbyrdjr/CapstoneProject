@@ -6,12 +6,12 @@ import com.hcl.model.Order;
 
 public interface OrderService {
 
-	void insertOrder(Order order);
-	void insertOrder(List<Order> order);
+	void insertOrders(Order order);
+	void insertOrders(List<Order> order);
 	List<Order> getAllOrders();
 	Order getOrderById(Long orderId);
 	void updateOrder(Order order);
 	void deleteOrderById(long orderId);
 	List<Order> getOrdersByUserId(Long id);
-	
+	Order getOrdersByUserIdAndItemId(long userId, long itemId);
 }

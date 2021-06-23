@@ -30,12 +30,8 @@ pageEncoding="ISO-8859-1"%>
   		color: black;
 	}
 
-	/* Add a color to the active/current link */
-	.topnav a.active {
-  		background-color: #04AA6D;
-  		color: white;
-	}
 </style>
+        
     </head>
 
     <body>
@@ -43,9 +39,16 @@ pageEncoding="ISO-8859-1"%>
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
   	<a href="#about">About</a>
-  	<a href="/login">Login</a>
-  	<a href="/register">Register</a>
-	</div>
+  	<c:choose>
+  		<c:when test="${username == null}">
+  			<a href="/login">Login</a>
+  			<a href="/register">Register</a>
+  		</c:when>
+  		<c:otherwise>
+  			<a href="/logout">Logout</a>
+  		</c:otherwise>
+  	</c:choose>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
         <br>
         
         <div class="container">

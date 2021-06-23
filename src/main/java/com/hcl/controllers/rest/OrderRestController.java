@@ -2,19 +2,15 @@ package com.hcl.controllers.rest;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Optional;
 
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -56,13 +52,18 @@ public class OrderRestController {
 
 		User user = userService.getUserByUsername(auth.getName());
 		Item item = itemService.getItemById(itemId);
-
-		Order order = new Order();
-		order.setQuantity(quantity);
-		order.setItem(item);
-		order.setUser(user);
-		orderService.insertOrder(order);
-		response.sendRedirect("/catalog");
+		if(orderService.getOrdersByUserIdAndItemId(user.getId(),itemId) == null) {
+			Order order = new Order();
+			order.setQuantity(quantity);
+			order.setItem(item);
+			order.setUser(user);
+			orderService.insertOrders(order);
+			response.sendRedirect("/catalog");
+		} else{
+			Order order = orderService.getOrdersByUserIdAndItemId(user.getId(),itemId);
+			order.setQuantity(order.getQuantity() + quantity);
+			orderService.updateOrder(order);
+		}
 	}
 
 	@PostMapping("/updateOrder")
@@ -70,7 +71,7 @@ public class OrderRestController {
 			throws IOException {
 		Order order = orderService.getOrderById(orderId);
 		order.setQuantity(quantity);
-		orderService.insertOrder(order);
+		orderService.insertOrders(order);
 		response.sendRedirect("/order/shoppingCart");
 
 	}

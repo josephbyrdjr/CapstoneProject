@@ -37,11 +37,6 @@
   		color: black;
 	}
 
-	/* Add a color to the active/current link */
-	.topnav a.active {
-  		background-color: #04AA6D;
-  		color: white;
-	}
 </style>
         
     </head>
@@ -51,8 +46,15 @@
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
   	<a href="#about">About</a>
-  	<a href="/login">Login</a>
-  	<a href="/register">Register</a>
+  	<c:choose>
+  		<c:when test="${username == 'anonymousUser'}">
+  			<a href="/login">Login</a>
+  			<a href="/register">Register</a>
+  		</c:when>
+  		<c:otherwise>
+  			<a href="/logout">Logout</a>
+  		</c:otherwise>
+  	</c:choose>
   	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
 	</div>
         <div style="top:0px; z-index:999;text-align:center">

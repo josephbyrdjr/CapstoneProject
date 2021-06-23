@@ -31,7 +31,9 @@ public class CatalogController {
 
     @GetMapping("/catalog")
     public String displayCatalog(Model model) {
-
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName(); // get logged in username
+        model.addAttribute("username", name);
         return "catalog";
     }
     
@@ -40,6 +42,10 @@ public class CatalogController {
 
         model.addAttribute("item", itemService.getItemById(id));
     	
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String name = auth.getName(); // get logged in username
+        model.addAttribute("username", name);
+        
     	return "item";
     }
     
