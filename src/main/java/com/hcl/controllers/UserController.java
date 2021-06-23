@@ -53,7 +53,7 @@ public class UserController {
         User user = new User(username,bCrypt.encode(pwd),true,firstName,lastName,
         		email,phoneNumber,address,apartmentNumber,city,state,zip);
         
-        Authorities auth = authService.findById(1L);
+        Authority auth = authService.findById(1L);
         user.addAuth(auth);
         userService.insertUser(user);
 

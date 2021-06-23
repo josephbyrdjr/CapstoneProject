@@ -2,13 +2,12 @@ package com.hcl.dao;
 
 import java.util.List;
 
-import com.hcl.model.Authorities;
+import com.hcl.model.Authority;
 
 public interface AuthDao {
 	
-	void insertAuth(Authorities auth);
-    void insertAuths(List<Authorities> auths);
-    List<Authorities> getAllAuths();
-    Authorities findById(long id);
+	void insertAuth(Authority auth);
+    List<Authority> getAllAuths();
+    Authority findById(long id);
     void deleteById(long id);
 }

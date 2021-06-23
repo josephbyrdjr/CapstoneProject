@@ -17,17 +17,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name="authorities")
-public class Authorities {
+public class Authority {
 
 	@Id 
 	private long id;
 	private String authority;
-	
-//	@ManyToMany(fetch = FetchType.LAZY,mappedBy = "auths")
-//	@JsonIgnore
-//	Set<User> users = new HashSet<>();
 
-//	public void addUser(User user){
-//		users.add(user);
-//	}
+	public Authority(String authority){
+		this.authority = authority;
+	}
 }

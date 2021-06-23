@@ -6,33 +6,29 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hcl.dao.AuthDao;
-import com.hcl.model.Authorities;
+import com.hcl.model.Authority;
 import com.hcl.repository.AuthRepository;
 
 @Repository
 public class AuthDaoImpl implements AuthDao{
 
 	@Autowired
-	private AuthRepository repo;
+	private AuthRepository authRepo;
 	
-	public void insertAuth(Authorities auth) {
-		repo.save(auth);
+	public void insertAuth(Authority auth) {
+		authRepo.save(auth);
 	}
-	
-    public void insertAuths(List<Authorities> auths) {
-    	repo.saveAll(auths);
+    
+    public List<Authority> getAllAuths() {
+    	return authRepo.findAll();
     }
     
-    public List<Authorities> getAllAuths() {
-    	return repo.findAll();
-    }
-    
-    public Authorities findById(long id) {
-    	return repo.findById(id).orElse(null);
+    public Authority findById(long id) {
+    	return authRepo.findById(id).orElse(null);
     }
 
 	public void deleteById(long id){
-		repo.deleteById(id);
+		authRepo.deleteById(id);
 	}
 
 }

@@ -1,6 +1,6 @@
 package com.hcl.controllers.rest;
 
-import com.hcl.model.Authorities;
+import com.hcl.model.Authority;
 import com.hcl.model.User;
 import com.hcl.service.AuthService;
 import com.hcl.service.UserService;
@@ -34,7 +34,7 @@ public class UserRestController {
     @PostMapping("user")
     private void createUser(@RequestBody User user){
         BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
-        Set<Authorities> auths = user.getAuths();
+        Set<Authority> auths = user.getAuths();
         user.setAuths(new HashSet<>());
         user.setPassword(bCrypt.encode(user.getPassword()));
         auths.forEach((auth)->user.addAuth(authService.findById(auth.getId())));
@@ -55,7 +55,7 @@ public class UserRestController {
     }
     
     @PostMapping("user/{userId}/authority")
-    private void setRole(@PathVariable(name = "userId") long id, @RequestBody Authorities authority) {
+    private void setRole(@PathVariable(name = "userId") long id, @RequestBody Authority authority) {
     	User user = userService.getUserById(id);
     	user.addAuth(authority);
     	System.out.println("Setting authority to user");

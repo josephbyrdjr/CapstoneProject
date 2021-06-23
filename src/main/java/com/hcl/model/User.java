@@ -1,13 +1,11 @@
 package com.hcl.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.*;
@@ -41,13 +39,13 @@ public class User {
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch=FetchType.LAZY)
 	@JoinTable( name = "user_authorities", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "authorities_id"))
-	Set<Authorities> auths = new HashSet<>();
+	Set<Authority> auths = new HashSet<>();
 	
 	@OneToMany(mappedBy = "user",  fetch=FetchType.LAZY)
 	@JsonManagedReference
 	Set<Order> orders = new HashSet<>();
 	
-	public void addAuth(Authorities auth){
+	public void addAuth(Authority auth){
 		auths.add(auth);
 	}
 

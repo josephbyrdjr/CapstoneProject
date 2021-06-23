@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hcl.dao.AuthDao;
-import com.hcl.model.Authorities;
+import com.hcl.model.Authority;
 import com.hcl.service.AuthService;
 
 @Service
@@ -15,17 +15,15 @@ public class AuthServiceImpl implements AuthService{
 	@Autowired
 	AuthDao authDao;
 	
-	public void insertAuth(Authorities auth) {
+	public void insertAuth(Authority auth) {
 		authDao.insertAuth(auth);
 	}
-    public void insertAuths(List<Authorities> auths) {
-    	authDao.insertAuths(auths);
-    }
-    public List<Authorities> getAllAuths() {
+
+    public List<Authority> getAllAuths() {
     	return authDao.getAllAuths();
     }
     
-    public Authorities findById(long id) {
+    public Authority findById(long id) {
 		System.out.println("in auth service");
     	return authDao.findById(id);
     }
