@@ -2,6 +2,8 @@ package com.hcl.controllers;
 
 import java.util.Set;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,6 +25,8 @@ import com.hcl.service.UserService;
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
+	
+	private Logger logger = LogManager.getLogger(AdminController.class);
 
 	@Autowired
 	UserService userService;
@@ -37,6 +41,7 @@ public class AdminController {
 	public String displayAdmin(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         model.addAttribute("user", userService.getUserByUsername(auth.getName())); 
+        logger.info("here");
 		return "admin";
 	}
 
@@ -89,7 +94,7 @@ public class AdminController {
 		Item item = new Item(price, name, thumbnail, category, description);
 		itemService.insertItem(item);
 		model.addAttribute("msg", "New Item Added");
-
+		
 		return "allItems";
 	}
 	
