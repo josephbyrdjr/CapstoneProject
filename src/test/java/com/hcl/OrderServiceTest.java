@@ -7,6 +7,7 @@ import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.aspectj.lang.annotation.Before;
@@ -128,18 +129,18 @@ public class OrderServiceTest {
 		user.setId(1L);
 		user2.setId(2L);
 		List<Order> list = new ArrayList<Order>();
-		Order Order1 = new Order(1L, 1, "Test1", item, user);
-		Order Order2 = new Order(2L, 1, "Test2", item, user);
-		Order Order3 = new Order(3L, 1, "Test3", item, user2);
-		list.add(Order1);
-		list.add(Order2);
-		list.add(Order3);
+		Order order1 = new Order(1L, 1, "Test1", item, user);
+		Order order2 = new Order(2L, 1, "Test2", item, user);
+		Order order3 = new Order(3L, 1, "Test3", item, user2);
+		list.add(order1);
+		list.add(order2);
+		list.add(order3);
 //		for(int i = 0; i < list.size(); i++) {
 //			if(list.get(i).getUser().getId() != 1L) {
 //				list.remove(i);
 //			}
 //		}
-		when(dao.getOrdersByUserId(1L)).thenReturn(list);
+		when(dao.getOrdersByUserId(1L)).thenReturn(Arrays.asList(order1,order2));
 		List<Order> OrderList = OrderService.getOrdersByUserId(1L);
 		
 		//Should only pull 2 of the Orders from "list" but pulls all 3 from some reason
@@ -155,7 +156,7 @@ public class OrderServiceTest {
 		User user = new User();
 		item.setId(1L);
 		user.setId(1L);
-		when(dao.getOrderById(1L)).thenReturn(new Order(1L, 1, "Test", item, user));
+		when(dao.getOrdersByUserIdAndItemId(1L, 1L)).thenReturn(new Order(1L, 1, "Test", item, user));
 		Order Order = OrderService.getOrdersByUserIdAndItemId(1L, 1L);
 		
 		assertEquals("Test", Order.getStatus());
