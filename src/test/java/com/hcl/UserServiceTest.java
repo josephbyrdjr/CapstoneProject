@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,11 +33,6 @@ public class UserServiceTest {
 	
 	@Mock
 	UserDao dao;
-	
-//	@Before(value = "this")
-//	public void init() {
-//		MockitoAnnotations.initMocks(this);
-//	}
 	
 	@Test
 	public void testAutowired() {
@@ -117,7 +113,11 @@ public class UserServiceTest {
 	//Not finished
 	@Test
 	public void testDeleteUserById() {
-		User user1 = new User();
-		userService.deleteUserById(user1.getId());
+		when(dao.getUserByUsername("UsernameTest")).thenReturn(new User(1, "UsernameTest", "FirstNameTest", "LastNameTest"));
+		User user = userService.getUserByUsername("UsernameTest");
+		userService.deleteUserById(1);
+		//assertEquals("NULL", user.getUsername());
+		verify(dao, times(1)).deleteUserById(1);
+		
 	}
 }
