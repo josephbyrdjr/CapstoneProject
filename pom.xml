@@ -122,6 +122,8 @@
 				<configuration>
 					<excludes>
 						<exclude>**/com/hcl/model/*</exclude>
+						<exclude>**/com/hcl/dao/**</exclude>
+						<exclude>**/com/hcl/CapstoneProjectApplication.class</exclude>
 					</excludes>
 				</configuration>
 			</plugin>
