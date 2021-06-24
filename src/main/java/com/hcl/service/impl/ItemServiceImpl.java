@@ -44,7 +44,4 @@ public class ItemServiceImpl implements ItemService {
 		
 	}
 
-	public Item getItemByName(String name){
-		return itemDao.getItemByName(name);
-	}
 }
