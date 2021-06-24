@@ -71,7 +71,6 @@
 					<th>Price</th>
 					<th>Image</th>
 					<th>Category</th>
-					<th>Genre</th>
 					<th>Description</th>
 					<th>View Item</th>
 
@@ -104,8 +103,7 @@
 					return '<img src='+mData+' alt="images" width="100" height="75">'
 				}
 				}, 
-				{"mData" : "category"}, 
-				{"mData" : "genre"},
+				{"mData" : "category"},
 				{"mData" : "description"},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {
