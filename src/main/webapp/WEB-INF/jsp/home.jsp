@@ -14,6 +14,7 @@
         <title>Welcome to the App</title>
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
     /* Add a black background color to the top navigation */
 	.topnav {
@@ -71,10 +72,69 @@
                 <button class="btn bt-sm btn-primary" type="submit">Log Out</button>
             </form>
         </div>
+        
+      
+<div class="tradingview-widget-container" style="position: absolute; bottom: 0;">
+  <div class="tradingview-widget-container__widget" style="margin-top: 10px; bottom: 0"></div>
+  
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+	  "symbols": [
+		    {
+		      "description": "RCY",
+		      "proName": "NSE:RADIOCITY"
+		    },
+		    {
+		      "description": "Spotify",
+		      "proName": "NYSE:SPOT"
+		    },
+		    {
+		      "description": "TenCent",
+		      "proName": "NYSE:TME"
+		    },
+		    {
+		      "description": "Sony Music",
+		      "proName": "NYSE:SONY"
+		    },
+		    {
+		      "description": "Nashville Records",
+		      "proName": "OTC:NRCD"
+		    },
+		    {
+		      "description": "Warner",
+		      "proName": "NASDAQ:WMG"
+		    },
+		    {
+		        "description": "Apple",
+		        "proName": "NASDAQ:AAPL"
+		      }
+		  ],
+  "showSymbolLogo": true,
+  "colorTheme": "dark",
+  "isTransparent": false,
+  "displayMode": "regular",
+  "locale": "en"
+  
+}
+  </script>
+</div>
 
+  
+  
+  
+  
+ 
+  
+
+<!-- TradingView Widget END -->
+        
         <script
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script
         src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
+    <footer>
+    
+    
+    </footer>
 </html>
