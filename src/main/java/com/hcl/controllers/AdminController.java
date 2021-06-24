@@ -124,5 +124,15 @@ public class AdminController {
 		model.addAttribute("username", username);
 		return "allUsers";
 	}
+	
+	@PostMapping("/addAuth/{id}")
+	public String addAuth(@PathVariable long id, Model model) {
+		User user = userService.getUserById(id);
+		Authority auth = authService.findById(2L);
+		user.addAuth(auth);
+		userService.updateUser(user);
+		model.addAttribute("msg", "Admin Authority added to User");
+		return "allUsers";
+	}
 
 }

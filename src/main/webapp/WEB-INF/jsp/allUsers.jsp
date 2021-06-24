@@ -22,6 +22,7 @@
 	
 	<div class="container">
 		<h1>All Users</h1>
+		${msg}
 		<table id="usersTable" class="display">
 
 			<thead>
@@ -31,6 +32,7 @@
 					<th>Email</th>
 					<th>Phone Number</th>
 					<th>Edit User</th>
+					<th>Add Authorities</th>
 
 				</tr>
 			</thead>
@@ -57,6 +59,10 @@
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {
 					return '<a class="btn btn-primary" href="/admin/editUserById/'+mData+'" role="button">Edit</button>'
+				}},
+				{"mData" : "id",
+				"mRender" : function(mData, type, row) {
+					return '<form method="POST" action="/admin/addAuth/'+mData+'"><button class="btn btn-primary" name="add" value="admin">Add Admin Authorities</button></form>'
 				}}
 				]
 		})
