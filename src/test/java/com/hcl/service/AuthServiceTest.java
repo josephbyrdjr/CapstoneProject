@@ -1,4 +1,4 @@
-package com.hcl;
+package com.hcl.service;
 
 import com.hcl.model.Authority;
 import com.hcl.model.Item;
