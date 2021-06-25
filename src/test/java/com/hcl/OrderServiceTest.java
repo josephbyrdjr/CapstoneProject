@@ -114,13 +114,9 @@ public class OrderServiceTest {
 		when(dao.getOrderById(1L)).thenReturn(new Order(1, 1, "Test", item, user));
 		Order Order = OrderService.getOrderById(1L);
 		OrderService.deleteOrderById(1L);
-		//assertEquals("NULL", Order.getOrdername());
 		verify(dao, times(1)).deleteOrderById(1L);
 	}
 	
-	//Not sure if this is correct, still needs some work...
-	//Was returning 3 without the for loop for some reason
-	//Will look into this more later
 	@Test
 	public void testGetOrdersByUserId() {
 		Item item = new Item();
@@ -135,21 +131,13 @@ public class OrderServiceTest {
 		list.add(order1);
 		list.add(order2);
 		list.add(order3);
-//		for(int i = 0; i < list.size(); i++) {
-//			if(list.get(i).getUser().getId() != 1L) {
-//				list.remove(i);
-//			}
-//		}
 		when(dao.getOrdersByUserId(1L)).thenReturn(Arrays.asList(order1,order2));
 		List<Order> OrderList = OrderService.getOrdersByUserId(1L);
 		
-		//Should only pull 2 of the Orders from "list" but pulls all 3 from some reason
-		//Query wrong?
 		assertEquals(2, OrderList.size());
 		verify(dao, times(1)).getOrdersByUserId(1L);
 	}
 	
-	//Fails but I am not sure why... Throws a NullPointerException
 	@Test
 	public void testGetOrdersByUserIdAndItemId() {
 		Item item = new Item();
