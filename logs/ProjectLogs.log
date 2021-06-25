@@ -1,0 +1,110 @@
+[INFO ] 2021-06-24 15:30:25.427 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 23240 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 15:30:25.452 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 15:30:25.453 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[DEBUG] 2021-06-24 15:30:30.422 [restartedMain] HikariConfig - Driver class com.mysql.cj.jdbc.Driver found in Thread context class loader TomcatEmbeddedWebappClassLoader
+  context: ROOT
+  delegate: true
+----------> Parent Classloader:
+org.springframework.boot.devtools.restart.classloader.RestartClassLoader@50cd745
+
+[DEBUG] 2021-06-24 15:30:30.446 [restartedMain] HikariConfig - HikariPool-1 - configuration:
+[DEBUG] 2021-06-24 15:30:30.449 [restartedMain] HikariConfig - allowPoolSuspension................................false
+[DEBUG] 2021-06-24 15:30:30.449 [restartedMain] HikariConfig - autoCommit................................true
+[DEBUG] 2021-06-24 15:30:30.449 [restartedMain] HikariConfig - catalog................................none
+[DEBUG] 2021-06-24 15:30:30.449 [restartedMain] HikariConfig - connectionInitSql................................none
+[DEBUG] 2021-06-24 15:30:30.450 [restartedMain] HikariConfig - connectionTestQuery................................none
+[DEBUG] 2021-06-24 15:30:30.450 [restartedMain] HikariConfig - connectionTimeout................................30000
+[DEBUG] 2021-06-24 15:30:30.450 [restartedMain] HikariConfig - dataSource................................none
+[DEBUG] 2021-06-24 15:30:30.450 [restartedMain] HikariConfig - dataSourceClassName................................none
+[DEBUG] 2021-06-24 15:30:30.450 [restartedMain] HikariConfig - dataSourceJNDI................................none
+[DEBUG] 2021-06-24 15:30:30.451 [restartedMain] HikariConfig - dataSourceProperties................................{password=<masked>}
+[DEBUG] 2021-06-24 15:30:30.452 [restartedMain] HikariConfig - driverClassName................................"com.mysql.cj.jdbc.Driver"
+[DEBUG] 2021-06-24 15:30:30.452 [restartedMain] HikariConfig - exceptionOverrideClassName................................none
+[DEBUG] 2021-06-24 15:30:30.452 [restartedMain] HikariConfig - healthCheckProperties................................{}
+[DEBUG] 2021-06-24 15:30:30.452 [restartedMain] HikariConfig - healthCheckRegistry................................none
+[DEBUG] 2021-06-24 15:30:30.452 [restartedMain] HikariConfig - idleTimeout................................600000
+[DEBUG] 2021-06-24 15:30:30.452 [restartedMain] HikariConfig - initializationFailTimeout................................1
+[DEBUG] 2021-06-24 15:30:30.452 [restartedMain] HikariConfig - isolateInternalQueries................................false
+[DEBUG] 2021-06-24 15:30:30.453 [restartedMain] HikariConfig - jdbcUrl................................jdbc:mysql://35.222.109.240:3306/CapstoneProject
+[DEBUG] 2021-06-24 15:30:30.453 [restartedMain] HikariConfig - keepaliveTime................................0
+[DEBUG] 2021-06-24 15:30:30.453 [restartedMain] HikariConfig - leakDetectionThreshold................................0
+[DEBUG] 2021-06-24 15:30:30.453 [restartedMain] HikariConfig - maxLifetime................................1800000
+[DEBUG] 2021-06-24 15:30:30.453 [restartedMain] HikariConfig - maximumPoolSize................................10
+[DEBUG] 2021-06-24 15:30:30.453 [restartedMain] HikariConfig - metricRegistry................................none
+[DEBUG] 2021-06-24 15:30:30.454 [restartedMain] HikariConfig - metricsTrackerFactory................................none
+[DEBUG] 2021-06-24 15:30:30.454 [restartedMain] HikariConfig - minimumIdle................................10
+[DEBUG] 2021-06-24 15:30:30.454 [restartedMain] HikariConfig - password................................<masked>
+[DEBUG] 2021-06-24 15:30:30.454 [restartedMain] HikariConfig - poolName................................"HikariPool-1"
+[DEBUG] 2021-06-24 15:30:30.454 [restartedMain] HikariConfig - readOnly................................false
+[DEBUG] 2021-06-24 15:30:30.454 [restartedMain] HikariConfig - registerMbeans................................false
+[DEBUG] 2021-06-24 15:30:30.455 [restartedMain] HikariConfig - scheduledExecutor................................none
+[DEBUG] 2021-06-24 15:30:30.455 [restartedMain] HikariConfig - schema................................none
+[DEBUG] 2021-06-24 15:30:30.455 [restartedMain] HikariConfig - threadFactory................................internal
+[DEBUG] 2021-06-24 15:30:30.455 [restartedMain] HikariConfig - transactionIsolation................................default
+[DEBUG] 2021-06-24 15:30:30.455 [restartedMain] HikariConfig - username................................"root"
+[DEBUG] 2021-06-24 15:30:30.455 [restartedMain] HikariConfig - validationTimeout................................5000
+[INFO ] 2021-06-24 15:30:30.455 [restartedMain] HikariDataSource - HikariPool-1 - Starting...
+[DEBUG] 2021-06-24 15:30:32.308 [restartedMain] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6df4659b
+[INFO ] 2021-06-24 15:30:32.311 [restartedMain] HikariDataSource - HikariPool-1 - Start completed.
+[DEBUG] 2021-06-24 15:30:32.412 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Pool stats (total=1, active=0, idle=1, waiting=0)
+[DEBUG] 2021-06-24 15:30:32.833 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7cb74ad1
+[DEBUG] 2021-06-24 15:30:33.257 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d8a40ea
+[DEBUG] 2021-06-24 15:30:33.689 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@cfd982e
+[DEBUG] 2021-06-24 15:30:34.124 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5da5bfa5
+[DEBUG] 2021-06-24 15:30:34.722 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@222fb37d
+[DEBUG] 2021-06-24 15:30:35.147 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@59eb06b9
+[DEBUG] 2021-06-24 15:30:35.573 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1f662d86
+[DEBUG] 2021-06-24 15:30:35.984 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23876f47
+[DEBUG] 2021-06-24 15:30:36.415 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a7e1052
+[DEBUG] 2021-06-24 15:30:36.415 [HikariPool-1 connection adder] HikariPool - HikariPool-1 - After adding stats (total=10, active=0, idle=10, waiting=0)
+[INFO ] 2021-06-24 15:30:37.801 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 12.904 seconds (JVM running for 17.125)
+[DEBUG] 2021-06-24 15:31:02.414 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[DEBUG] 2021-06-24 15:31:02.414 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+[INFO ] 2021-06-24 15:31:13.176 [http-nio-9000-exec-4] AdminController - here
+[DEBUG] 2021-06-24 15:31:32.415 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[DEBUG] 2021-06-24 15:31:32.415 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+[DEBUG] 2021-06-24 15:32:02.416 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[DEBUG] 2021-06-24 15:32:02.416 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+[DEBUG] 2021-06-24 15:32:32.416 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[DEBUG] 2021-06-24 15:32:32.416 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+[DEBUG] 2021-06-24 15:33:02.417 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Pool stats (total=10, active=0, idle=10, waiting=0)
+[DEBUG] 2021-06-24 15:33:02.417 [HikariPool-1 housekeeper] HikariPool - HikariPool-1 - Fill pool skipped, pool is at sufficient level.
+[INFO ] 2021-06-24 15:37:37.669 [http-nio-9000-exec-4] AdminController - here
+[INFO ] 2021-06-24 15:41:37.676 [http-nio-9000-exec-1] AdminController - here
+[INFO ] 2021-06-24 15:44:32.853 [http-nio-9000-exec-1] AdminController - here
+[INFO ] 2021-06-24 15:50:13.311 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 22168 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 15:50:13.322 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 15:50:13.323 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 15:50:27.256 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 14.627 seconds (JVM running for 18.908)
+[INFO ] 2021-06-24 15:51:46.819 [http-nio-9000-exec-4] AdminController - here
+[INFO ] 2021-06-24 16:25:45.987 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 7184 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 16:25:45.998 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 16:25:45.999 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 16:25:56.449 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 11.013 seconds (JVM running for 14.202)
+[INFO ] 2021-06-24 16:28:18.834 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 7184 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 16:28:18.843 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 16:28:18.843 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 16:28:28.260 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 9.56 seconds (JVM running for 166.014)
+[DEBUG] 2021-06-24 16:28:28.268 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-24 16:28:28.268 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-24 16:28:28.268 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-24 16:28:28.268 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-24 16:28:28.268 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-24 16:29:39.367 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 7184 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 16:29:39.374 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 16:29:39.375 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 16:29:48.061 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 8.815 seconds (JVM running for 245.814)
+[DEBUG] 2021-06-24 16:29:48.068 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-24 16:29:48.068 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-24 16:29:48.068 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-24 16:29:48.068 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-24 16:29:48.068 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-24 16:32:14.843 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 10540 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 16:32:14.857 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 16:32:14.858 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 16:32:26.632 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 12.339 seconds (JVM running for 15.653)
+[DEBUG] 2021-06-24 16:32:26.650 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-24 16:32:26.650 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-24 16:32:26.650 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-24 16:32:26.650 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-24 16:32:26.650 [restartedMain] CapstoneProjectApplication - This is a fatal message

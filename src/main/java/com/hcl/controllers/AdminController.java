@@ -41,7 +41,7 @@ public class AdminController {
 	public String displayAdmin(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         model.addAttribute("user", userService.getUserByUsername(auth.getName())); 
-        logger.info("here");
+        
 		return "admin";
 	}
 
@@ -78,7 +78,7 @@ public class AdminController {
 		item.setCategory(category);
 		item.setDescription(description);
 		itemService.updateItem(item);
-		
+		logger.info("Item editted successfully");
 		return "allItems";
 	}
 
@@ -94,7 +94,7 @@ public class AdminController {
 		Item item = new Item(price, name, thumbnail, category, description);
 		itemService.insertItem(item);
 		model.addAttribute("msg", "New Item Added");
-		
+		logger.info("New item added");
 		return "allItems";
 	}
 	
@@ -127,6 +127,7 @@ public class AdminController {
 		userService.updateUser(user);
 		model.addAttribute("msg", "User updated");
 		model.addAttribute("username", username);
+		logger.info("User editted successfully");
 		return "allUsers";
 	}
 	
@@ -137,6 +138,7 @@ public class AdminController {
 		user.addAuth(auth);
 		userService.updateUser(user);
 		model.addAttribute("msg", "Admin Authority added to User");
+		logger.info("User: "+user.getUsername()+" given Admin authority");
 		return "allUsers";
 	}
 
