@@ -40,29 +40,33 @@ public class OrderRestController {
 		return orderService.getAllOrders();
 	}
 
-	@GetMapping("order/{orderId}")
+	@GetMapping("/order/{orderId}")
 	private Order getOrder(@PathVariable(value = "orderId") long orderId) {
 		return orderService.getOrderById(orderId);
 	}
 
-	@PostMapping("order")
+	@PostMapping("/order")
 	private void createOrder(@RequestParam(name = "quantity") int quantity, @RequestParam(name = "itemId") long itemId,
 			HttpServletResponse response) throws IOException {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 
 		User user = userService.getUserByUsername(auth.getName());
 		Item item = itemService.getItemById(itemId);
-		if(orderService.getOrdersByUserIdAndItemId(user.getId(),itemId) == null) {
-			Order order = new Order();
-			order.setQuantity(quantity);
-			order.setItem(item);
-			order.setUser(user);
-			orderService.insertOrders(order);
+		if(item == null){
+			response.sendError(400);
+		} else {
+			if (orderService.getOrdersByUserIdAndItemId(user.getId(), itemId) == null) {
+				Order order = new Order();
+				order.setQuantity(quantity);
+				order.setItem(item);
+				order.setUser(user);
+				orderService.insertOrders(order);
+			} else {
+				Order order = orderService.getOrdersByUserIdAndItemId(user.getId(), itemId);
+				order.setQuantity(order.getQuantity() + quantity);
+				orderService.updateOrder(order);
+			}
 			response.sendRedirect("/catalog");
-		} else{
-			Order order = orderService.getOrdersByUserIdAndItemId(user.getId(),itemId);
-			order.setQuantity(order.getQuantity() + quantity);
-			orderService.updateOrder(order);
 		}
 	}
 
@@ -76,7 +80,7 @@ public class OrderRestController {
 
 	}
 
-	@GetMapping("deleteOrder/{orderId}")
+	@GetMapping("/deleteOrder/{orderId}")
 	private void deleteOrder(@PathVariable(value = "orderId") long id, HttpServletResponse response)
 			throws IOException {
 		orderService.deleteOrderById(id);

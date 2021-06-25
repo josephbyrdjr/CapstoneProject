@@ -5,14 +5,18 @@ import com.hcl.controllers.rest.OrderRestController;
 import com.hcl.model.Item;
 import com.hcl.model.Order;
 import com.hcl.model.User;
+import com.hcl.repository.UserRepository;
 import com.hcl.service.OrderService;
+import com.hcl.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -36,6 +40,9 @@ public class OrderRestControllerTest {
     @InjectMocks
     OrderRestController orderRestController;
 
+    @Autowired
+    UserService userService;
+
     private MockMvc mockMvc;
     @BeforeEach
     public void init(){
@@ -43,6 +50,7 @@ public class OrderRestControllerTest {
         MockitoAnnotations.openMocks(this);
         this.mockMvc = MockMvcBuilders.standaloneSetup(orderRestController).build();
     }
+
     @Test
     public void getAllOrdersTest() throws Exception {
     	Item item = new Item();
@@ -71,18 +79,6 @@ public class OrderRestControllerTest {
         mockMvc.perform(get("/order/1")
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.status").value("Test"));
-    }
-
-    @Test
-    public void postOrderTest() throws  Exception{
-    	Item item = new Item();
-		User user = new User();
-        Order order = new Order(1L, 1, "Test", item, user);
-
-        mockMvc.perform(post("/order")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(mapper.writeValueAsString(order)))
-                .andExpect(status().isOk());
     }
 
     @Test
