@@ -86,14 +86,14 @@
 	<script>
   $(document).ready(function() {
 	    $.ajax({
-	        url: "https://newsapi.org/v2/everything?q=music&apiKey=e03753c9126b408d870a44318813ac3d"
+	        url: "https://gnews.io/api/v4/search?q=music+performance&token=41ad6cca1555dd435aaa6a2fbe57d542"
 	    }).then(function(data) {
 	    	console.log(data);
-	        let randNum = Math.floor(Math.random() * 18) + 1;
+	        let randNum = Math.floor(Math.random() * 9) + 1;
 	      	var description = data.articles[randNum].description;
 	      	var title = data.articles[randNum].title;
-	      	var image = data.articles[randNum].urlToImage;
-	      	var url = data.articles[randNum].url;
+	      	var image = data.articles[randNum].image;
+	      	var url = data.articles[randNum].source.url;
 
 	      	$('#title').append(title);
 	      	$('#description').append(description);
