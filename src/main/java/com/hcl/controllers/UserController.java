@@ -8,7 +8,8 @@ import com.hcl.service.UserService;
 import java.util.Set;
 import java.util.HashSet;
 
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 @Controller
 public class UserController {
+	
+	private Logger logger = LogManager.getLogger(UserController.class);
+	
     @Autowired
     UserService userService;
     
@@ -56,8 +60,8 @@ public class UserController {
         Authority auth = authService.findById(1L);
         user.addAuth(auth);
         userService.insertUser(user);
-
         model.addAttribute("msg", "New User Added");
+        logger.info("New User: "+user.getUsername()+" was added successfully");
         return "login";
     }
 
@@ -105,6 +109,7 @@ public class UserController {
         userService.updateUser(user);
         model.addAttribute("msg", "User updated");
         model.addAttribute("username", username);
+        logger.info("User: "+ user.getUsername()+" was updated successfully");
         return "home";
     }
     

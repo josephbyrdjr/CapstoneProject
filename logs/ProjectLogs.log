@@ -108,3 +108,79 @@ org.springframework.boot.devtools.restart.classloader.RestartClassLoader@50cd745
 [WARN ] 2021-06-24 16:32:26.650 [restartedMain] CapstoneProjectApplication - This is a warn message
 [ERROR] 2021-06-24 16:32:26.650 [restartedMain] CapstoneProjectApplication - This is an error message
 [FATAL] 2021-06-24 16:32:26.650 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-24 20:01:11.576 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 10540 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 20:01:11.585 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 20:01:11.585 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 20:01:19.445 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 8.03 seconds (JVM running for 12548.494)
+[DEBUG] 2021-06-24 20:01:19.455 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-24 20:01:19.455 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-24 20:01:19.455 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-24 20:01:19.455 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-24 20:01:19.455 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-24 20:04:18.227 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 10540 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 20:04:18.247 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 20:04:18.247 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 20:04:25.245 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 7.21 seconds (JVM running for 12734.294)
+[DEBUG] 2021-06-24 20:04:25.252 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-24 20:04:25.252 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-24 20:04:25.252 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-24 20:04:25.252 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-24 20:04:25.252 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-24 20:16:56.060 [http-nio-9000-exec-6] AdminController - New item added
+[INFO ] 2021-06-24 20:17:10.965 [http-nio-9000-exec-1] AdminController - Item editted successfully
+[INFO ] 2021-06-24 20:18:52.192 [http-nio-9000-exec-1] AdminController - User: Sam given Admin authority
+[INFO ] 2021-06-24 20:19:37.370 [http-nio-9000-exec-5] AdminController - User editted successfully
+[INFO ] 2021-06-24 20:20:37.045 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 10540 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 20:20:37.056 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 20:20:37.056 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 20:20:48.257 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 11.349 seconds (JVM running for 13717.306)
+[DEBUG] 2021-06-24 20:20:48.271 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-24 20:20:48.271 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-24 20:20:48.271 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-24 20:20:48.271 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-24 20:20:48.271 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-24 20:50:53.615 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 10540 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-24 20:50:53.625 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-24 20:50:53.625 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-24 20:50:58.806 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 5.325 seconds (JVM running for 15527.855)
+[DEBUG] 2021-06-24 20:50:58.812 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-24 20:50:58.812 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-24 20:50:58.812 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-24 20:50:58.812 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-24 20:50:58.812 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-25 09:30:25.412 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 10540 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-25 09:30:25.421 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-25 09:30:25.421 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-25 09:30:31.332 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 6.024 seconds (JVM running for 61100.437)
+[DEBUG] 2021-06-25 09:30:31.337 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-25 09:30:31.338 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-25 09:30:31.338 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-25 09:30:31.338 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-25 09:30:31.338 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-25 09:35:24.084 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 10540 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-25 09:35:24.091 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-25 09:35:24.091 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-25 09:35:29.137 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 5.17 seconds (JVM running for 61398.242)
+[DEBUG] 2021-06-25 09:35:29.142 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-25 09:35:29.142 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-25 09:35:29.142 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-25 09:35:29.142 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-25 09:35:29.142 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-25 09:41:05.560 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 10540 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-25 09:41:05.567 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-25 09:41:05.567 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-25 09:41:10.904 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 5.446 seconds (JVM running for 61740.01)
+[DEBUG] 2021-06-25 09:41:10.907 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-25 09:41:10.907 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-25 09:41:10.907 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-25 09:41:10.907 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-25 09:41:10.907 [restartedMain] CapstoneProjectApplication - This is a fatal message
+[INFO ] 2021-06-25 10:03:14.062 [restartedMain] CapstoneProjectApplication - Starting CapstoneProjectApplication using Java 1.8.0_281 on LP-PF20SMDS with PID 7844 (C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject\target\classes started by braiden.king in C:\Users\braiden.king\OneDrive - HCL Technologies Ltd\Documents\coursework\Projects\CapstoneProject)
+[DEBUG] 2021-06-25 10:03:14.077 [restartedMain] CapstoneProjectApplication - Running with Spring Boot v2.5.0, Spring v5.3.7
+[INFO ] 2021-06-25 10:03:14.079 [restartedMain] CapstoneProjectApplication - No active profile set, falling back to default profiles: default
+[INFO ] 2021-06-25 10:03:28.985 [restartedMain] CapstoneProjectApplication - Started CapstoneProjectApplication in 15.687 seconds (JVM running for 19.99)
+[DEBUG] 2021-06-25 10:03:29.005 [restartedMain] CapstoneProjectApplication - This is a debug message
+[INFO ] 2021-06-25 10:03:29.005 [restartedMain] CapstoneProjectApplication - This is an info message
+[WARN ] 2021-06-25 10:03:29.005 [restartedMain] CapstoneProjectApplication - This is a warn message
+[ERROR] 2021-06-25 10:03:29.005 [restartedMain] CapstoneProjectApplication - This is an error message
+[FATAL] 2021-06-25 10:03:29.005 [restartedMain] CapstoneProjectApplication - This is a fatal message

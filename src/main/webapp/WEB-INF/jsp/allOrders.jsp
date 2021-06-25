@@ -30,7 +30,7 @@
 					<th>Item Name</th>
 					<th>Quantity</th>
 					<th>Status</th>
-					
+					<th>Edit Order</th>
 
 				</tr>
 			</thead>
@@ -53,7 +53,11 @@
 				{"mData" : "item.id"},
 				{"mData" : "item.name"}, 
 				{"mData" : "quantity"}, 
-				{"mData" : "status"}
+				{"mData" : "status"},
+				{"mData" : "id",
+				"mRender" : function(mData, type, row) {
+					return '<a class="btn btn-primary" href="/admin/editOrderById/'+mData+'" role="button">Edit</button>'
+				}}
 				]
 		})
 

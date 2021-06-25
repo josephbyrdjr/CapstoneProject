@@ -102,10 +102,15 @@ pageEncoding="ISO-8859-1"%>
                     required> <br>
 
                      <hr>
-                    <button type="submit" class="btn btn-md btn-primary">Edit User</button>
+                    <button type="submit" class="btn btn-md btn-primary">Edit User</button><br>
+                    
                 </div>
             </form>
+            <br>
         </div>
+        <form  action = "../deleteUser/${user.id}"  method = "delete" >
+      		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete User" /> 
+      	</ form>
         <br>
         <br>
     </body>

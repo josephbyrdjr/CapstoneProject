@@ -2,14 +2,15 @@ package com.hcl.controllers;
 
 import java.util.Set;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,22 +18,27 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.hcl.CapstoneProjectApplication;
 import com.hcl.model.*;
 import com.hcl.service.AuthService;
 import com.hcl.service.ItemService;
+import com.hcl.service.OrderService;
 import com.hcl.service.UserService;
 
 @Controller
 @RequestMapping("/admin")
 public class AdminController {
 	
-	private Logger logger = LogManager.getLogger(AdminController.class);
+	private static Logger logger = LoggerFactory.getLogger(AdminController.class);
 
 	@Autowired
 	UserService userService;
 
 	@Autowired
 	AuthService authService;
+	
+	@Autowired
+	OrderService orderService;
 
 	@Autowired
 	ItemService itemService;
@@ -78,7 +84,7 @@ public class AdminController {
 		item.setCategory(category);
 		item.setDescription(description);
 		itemService.updateItem(item);
-		logger.info("Item editted successfully");
+		logger.info("Item edited successfully");
 		return "allItems";
 	}
 
@@ -96,6 +102,20 @@ public class AdminController {
 		model.addAttribute("msg", "New Item Added");
 		logger.info("New item added");
 		return "allItems";
+	}
+	
+	@GetMapping("/editOrderById/{id}")
+	public String displayEditOrder(@PathVariable long id, Model model) {
+		System.out.println(orderService.getOrdersByUserId(id));
+		model.addAttribute("order", orderService.getOrdersByUserId(id));
+		return "editOrderById";
+	}
+	
+	@PostMapping("editOrderById/{id}")
+	public String editOrderById(@PathVariable long id, @RequestParam int quantity,
+								@RequestParam String status, Model model) {
+		Order order = orderService.getOrderById(id);
+		return "allOrders";
 	}
 	
 	@GetMapping("/editUserById/{id}")
@@ -127,7 +147,7 @@ public class AdminController {
 		userService.updateUser(user);
 		model.addAttribute("msg", "User updated");
 		model.addAttribute("username", username);
-		logger.info("User editted successfully");
+		logger.info("User edited successfully");
 		return "allUsers";
 	}
 	
@@ -140,6 +160,24 @@ public class AdminController {
 		model.addAttribute("msg", "Admin Authority added to User");
 		logger.info("User: "+user.getUsername()+" given Admin authority");
 		return "allUsers";
+	}
+	
+	@GetMapping("/deleteUser/{id}")
+	public String deleteUserById(@PathVariable long id, Model model) {
+		userService.deleteUserById(id);
+		return "allUsers";
+	}
+	
+	@GetMapping("/deleteOrder/{id}")
+	public String deleteOrderById(@PathVariable long id, Model model) {
+		orderService.deleteOrderById(id);
+		return "allOrders";
+	}
+	
+	@GetMapping("/deleteItem/{id}")
+	public String deleteItemById(@PathVariable long id, Model model) {
+		itemService.deleteItemById(id);
+		return "allItems";
 	}
 
 }

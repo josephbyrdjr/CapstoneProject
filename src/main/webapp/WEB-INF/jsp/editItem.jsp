@@ -45,6 +45,9 @@ pageEncoding="ISO-8859-1"%>
                 </div>
             </form>
         </div>
+        <form  action = "../deleteItem/${item.id}"  method = "delete" >
+      		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete Item" /> 
+      	</ form>
         <br>
         <br>
     </body>
