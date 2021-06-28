@@ -22,6 +22,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -36,6 +37,9 @@ public class h2DatabaseTests {
 
     @Autowired
     ItemService itemService;
+    
+    @Autowired
+    OrderService orderService;
 
     private MockMvc mockMvc;
 
@@ -65,5 +69,20 @@ public class h2DatabaseTests {
                 .param("quantity", "1")
                 .param("itemId", "1"))
                 .andExpect(status().is4xxClientError());
+    }
+    
+    @Test
+    @WithMockUser(username = "test", password = "pass", roles = "USER")
+    public void putOrderTest() throws Exception {
+    	Item item = new Item(1,9.99,"", "", "", "");
+		User user = new User("test", "pass", true, "", "", "", "", "", "","", "","");
+		itemService.insertItem(item);
+		userService.insertUser(user);
+    	orderService.insertOrders(new Order(1, 1, "Test", item, user));
+        
+        mockMvc.perform(post("/updateOrder") .contentType(MediaType.APPLICATION_JSON)
+                .param("orderId", "1")
+                .param("quantity", "1"))
+                .andExpect(status().is3xxRedirection());
     }
 }
