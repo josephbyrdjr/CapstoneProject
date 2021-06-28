@@ -82,23 +82,8 @@ public class OrderRestControllerTest {
     }
 
     @Test
-    public void putOrderTest() throws  Exception{
-    	Item item = new Item(1L, 9.99, "test1", "", "", "");
-		User user = new User(1L, "UsernameTest", "FirstNameTest", "LastNameTest");
-        Order order = new Order(1L, 1, "Test", item, user);
-
-        int quantity = order.getQuantity();
-        long itemId = item.getId();
-        
-        mockMvc.perform(put("/order").param("quantity", "$.quantity").param("itemId", "$.itemId")
-                .contentType(MediaType.APPLICATION_JSON)
-                .content(mapper.writeValueAsString(order)))
-                .andExpect(status().isOk());
-    }
-
-    @Test
     public void deleteOrderTest() throws Exception{
-        mockMvc.perform(delete("/order/1"))
-                .andExpect(status().isOk());
+        mockMvc.perform(get("/deleteOrder/1"))
+                .andExpect(status().is3xxRedirection());
     }
 }

@@ -33,14 +33,15 @@ public class CartController {
     UserService userService;
 
     
-    @RequestMapping("order/shoppingCart")
+    @RequestMapping("/order/shoppingCart")
     public String displayCart(Model model) {
 
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	String name = auth.getName(); // get logged in username
         model.addAttribute("username", name);
 		List<Order> orders = new ArrayList<Order>();
-		orders = orderService.getOrdersByUserId(userService.getUserByUsername(auth.getName()).getId());
+		User user = userService.getUserByUsername(auth.getName());
+		orders = orderService.getOrdersByUserId(user.getId());
 		model.addAttribute("orders", orders);
 		
 		double total = 0;
