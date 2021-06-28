@@ -2,9 +2,12 @@ package com.hcl.restcontroller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.hcl.controllers.rest.OrderRestController;
+import com.hcl.controllers.rest.UserRestController;
+import com.hcl.model.Authority;
 import com.hcl.model.Item;
 import com.hcl.model.Order;
 import com.hcl.model.User;
+import com.hcl.service.AuthService;
 import com.hcl.service.ItemService;
 import com.hcl.service.OrderService;
 import com.hcl.service.UserService;
@@ -20,7 +23,9 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.transaction.annotation.Transactional;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -28,12 +33,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @DirtiesContext(classMode = DirtiesContext.ClassMode.BEFORE_EACH_TEST_METHOD)
 public class h2DatabaseTests {
+	ObjectMapper mapper;
 
     @Autowired
     OrderRestController orderRestController;
+    
+    @Autowired
+    UserRestController userRestController;
 
     @Autowired
     UserService userService;
+    
+    @Autowired
+    AuthService authService;
 
     @Autowired
     ItemService itemService;
@@ -42,10 +54,13 @@ public class h2DatabaseTests {
     OrderService orderService;
 
     private MockMvc mockMvc;
+    private MockMvc mockMvc2;
 
     @BeforeEach
     public void init(){
+    	mapper = new ObjectMapper();
         mockMvc = MockMvcBuilders.standaloneSetup(orderRestController).build();
+        mockMvc2 = MockMvcBuilders.standaloneSetup(userRestController).build();
     }
 
     @Test
@@ -84,5 +99,26 @@ public class h2DatabaseTests {
                 .param("orderId", "1")
                 .param("quantity", "1"))
                 .andExpect(status().is3xxRedirection());
+    }
+    
+    @Test
+    @WithMockUser(username = "test", password = "pass", roles = "USER")
+    @Transactional
+    public void setRoleTest() throws Exception {
+    	User user = new User(1, "test", "firstNameTest", "lastNameTest");
+    	Authority authority = new Authority("USER");
+    	userService.insertUser(user);
+    	authService.insertAuth(authority);
+    	String body = new ObjectMapper().valueToTree(authority).toString();
+    	
+    	mockMvc2.perform(post("/user/1/authority").contentType(MediaType.APPLICATION_JSON).content(body))
+		.andExpect(status().isOk());
+    }
+    
+    @Test
+    @WithMockUser(username = "test", password = "pass", roles = "USER")
+    public void deleteUserTest() throws Exception {
+    	userService.insertUser(new User(1, "test", "firstNameTest", "lastNameTest"));
+    	mockMvc2.perform(delete("/user/1")).andExpect(status().isOk());
     }
 }

@@ -93,17 +93,4 @@ public class UserRestControllerTest {
 		mockMvc.perform(put("/user").contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsString(user)))
 				.andExpect(status().isOk());
 	}
-
-//	@Test
-//	public void deleteUserTest() throws Exception {
-//		mockMvc.perform(delete("/user/1")).andExpect(status().isOk());
-//	}
-//
-//	@Test
-//	public void setRoleTest() throws Exception {
-//		User user = new User(1L, "UsernameTest", "FirstNameTest", "LastNameTest");
-//
-//		mockMvc.perform(post("/user/1/authority").contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsString(user)))
-//				.andExpect(status().isOk());
-//	}
 }
