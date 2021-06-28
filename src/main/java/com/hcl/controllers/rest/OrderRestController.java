@@ -60,6 +60,7 @@ public class OrderRestController {
 				order.setQuantity(quantity);
 				order.setItem(item);
 				order.setUser(user);
+				order.setStatus("Placed");
 				orderService.insertOrders(order);
 			} else {
 				Order order = orderService.getOrdersByUserIdAndItemId(user.getId(), itemId);

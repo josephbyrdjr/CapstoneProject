@@ -90,7 +90,7 @@
 						</div>
 
 						<br>
-						<td><input type="hidden" name="itemId" value=${item.id
+						<td><input type="hidden" name="itemId" value=${item.id}
 				}
 							size="64" /></td>
 					</form>
