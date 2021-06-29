@@ -106,8 +106,8 @@ public class AdminController {
 	
 	@GetMapping("/editOrderById/{id}")
 	public String displayEditOrder(@PathVariable long id, Model model) {
-		System.out.println(orderService.getOrdersByUserId(id));
-		model.addAttribute("order", orderService.getOrdersByUserId(id));
+		System.out.println(orderService.getOrderById(id));
+		model.addAttribute("order", orderService.getOrderById(id));
 		return "editOrderById";
 	}
 	
