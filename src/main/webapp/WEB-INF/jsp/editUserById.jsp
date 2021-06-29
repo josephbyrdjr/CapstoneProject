@@ -39,12 +39,9 @@ pageEncoding="ISO-8859-1"%>
     </head>
 
     <body>
-    <div class="topnav">
+	<div class="topnav">
   	<a class="active" href="/">Home</a>
-  	<a href="/catalog">Products</a>
-  	<a href="#about">About</a>
-  	<a href="/login">Login</a>
-  	<a href="/register">Register</a>
+  	<a href="/admin">Admin Home</a>
 	</div>
         <br>
         
