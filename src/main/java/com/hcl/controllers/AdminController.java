@@ -115,6 +115,10 @@ public class AdminController {
 	public String editOrderById(@PathVariable long id, @RequestParam int quantity,
 								@RequestParam String status, Model model) {
 		Order order = orderService.getOrderById(id);
+		order.setQuantity(quantity);
+		order.setStatus(status);
+		orderService.updateOrder(order);
+		logger.info("Order "+order.getId()+" updated");
 		return "allOrders";
 	}
 	
