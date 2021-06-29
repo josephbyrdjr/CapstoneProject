@@ -35,12 +35,14 @@ public class ItemRestControllerTest {
     ItemRestController itemRestController;
 
     private MockMvc mockMvc;
+
     @BeforeEach
     public void init(){
         mapper = new ObjectMapper();
         MockitoAnnotations.openMocks(this);
         this.mockMvc = MockMvcBuilders.standaloneSetup(itemRestController).build();
     }
+
     @Test
     public void getAllItemsTest() throws Exception {
         List<Item> list = Arrays.asList(
