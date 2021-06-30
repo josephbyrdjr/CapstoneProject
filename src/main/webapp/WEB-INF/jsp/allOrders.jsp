@@ -6,6 +6,10 @@
 <html lang="en">
 
 <head>
+<title>All Orders</title>
+<link rel = "icon" href = 
+"http://www.clipartbest.com/cliparts/nTE/EMk/nTEEMk8TA.png" 
+        type = "image/x-icon">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script

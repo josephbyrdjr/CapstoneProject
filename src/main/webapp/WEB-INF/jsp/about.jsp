@@ -43,6 +43,9 @@
 </head>
 <meta charset="ISO-8859-1">
 <title>About Page</title>
+<link rel = "icon" href = 
+"http://www.clipartbest.com/cliparts/nTE/EMk/nTEEMk8TA.png" 
+        type = "image/x-icon">
 </head>
 
 <body>
