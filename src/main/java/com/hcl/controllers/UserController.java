@@ -131,7 +131,9 @@ public class UserController {
 	@GetMapping("/about")
 	public String displayAbout(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		if(auth.getName() == "anonymousUser") {
+		String name = auth.getName(); // get logged in username
+		model.addAttribute("username", name);
+		if(name == "anonymousUser") {
 			return "about";
 		}
 		
