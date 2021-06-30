@@ -4,7 +4,10 @@ pageEncoding="ISO-8859-1"%>
 <html>
     <head>
         <meta charset="ISO-8859-1">
-        <title>Insert title here</title>
+        <title>Edit Order</title>
+        <link rel = "icon" href = 
+"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
+        type = "image/x-icon">
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>

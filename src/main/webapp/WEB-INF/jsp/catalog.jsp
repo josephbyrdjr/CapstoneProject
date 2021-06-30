@@ -6,6 +6,10 @@
 <html lang="en">
 
 <head>
+<title>Catalog</title>
+<link rel = "icon" href = 
+"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
+        type = "image/x-icon">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -47,7 +51,7 @@
     <div class="topnav">
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
-  	<a href="#about">About</a>
+  	<a href="/about">About</a>
   	<c:choose>
   		<c:when test="${username == 'anonymousUser'}">
   			<a href="/login">Login</a>
@@ -57,7 +61,7 @@
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
-  	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
+  	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 	</div>
 	
 	

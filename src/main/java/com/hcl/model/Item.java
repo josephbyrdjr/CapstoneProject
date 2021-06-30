@@ -32,13 +32,15 @@ public class Item implements Serializable {
 	private String thumbnail;
 	private String category;
 	private String description;
+	private long inventoryLeft;
 
 	//Allows for auto-generated id's
-	public Item(double price, String name, String thumbnail, String category, String description) {
+	public Item(double price, String name, String thumbnail, String category, String description, long inventoryLeft) {
 		this.price = price;
 		this.name = name;
 		this.thumbnail = thumbnail;
 		this.category = category;
 		this.description = description;
+		this.inventoryLeft = inventoryLeft;
 	}
 }

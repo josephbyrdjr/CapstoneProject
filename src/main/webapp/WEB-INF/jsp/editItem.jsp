@@ -5,6 +5,9 @@ pageEncoding="ISO-8859-1"%>
     <head>
         <meta charset="ISO-8859-1">
         <title>Add New Item</title>
+        <link rel = "icon" href = 
+"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
+        type = "image/x-icon">
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
@@ -66,9 +69,10 @@ pageEncoding="ISO-8859-1"%>
                     <br>
                     
                     <b>Description</b><input
-                    type="text" class="form-control" value="${item.description}"  name="description" id="description">
+                    type="text" class="form-control" value="${item.description}"  name="description" id="description"><br>
                     
-                    
+                     <b>Inventory</b><input
+                    type="text" class="form-control" value="${item.inventoryLeft}"  name="inventoryLeft" id="inventoryLeft">
                     
 
                      <hr>
