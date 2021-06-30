@@ -48,7 +48,7 @@
     <div class="topnav">
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
-  	<a href="#about">About</a>
+  	<a href="/about">About</a>
   	<c:choose>
   		<c:when test="${username == null}">
   			<a href="/login">Login</a>
@@ -58,8 +58,9 @@
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
-  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 	</div>
+	
 	<div class="container" style="margin-top: 5rem; height: 10; width: 20">
 		<table id="cartTable" class="display">
 			<thead>
@@ -92,7 +93,7 @@
 
 								<div class="input-group">
 									<input type="text" class="form-control" style="width: 50px;"
-										placeholder=${order.quantity } name="quantity" id="quantity">
+										placeholder=${order.quantity} name="quantity" id="quantity">
 									<span> <input type="hidden" class="form-control"
 										name="orderId" id="orderId" value=${order.id}>
 									</span><span>

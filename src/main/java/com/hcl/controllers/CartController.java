@@ -45,11 +45,14 @@ public class CartController {
 		model.addAttribute("orders", orders);
 		
 		double total = 0;
+		int cartQuantity = 0;
 		for(int i = 0; i < orders.size(); i++) {
 			total += orders.get(i).getQuantity() * orders.get(i).getItem().getPrice();
+			cartQuantity += orders.get(i).getQuantity();
 		}
 		BigDecimal tot = new BigDecimal(total).setScale(2, 1);
 		model.addAttribute("total", tot);
+		model.addAttribute("cartQuantity", cartQuantity);
     	
     	return "cart";
     }

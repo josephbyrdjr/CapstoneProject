@@ -35,9 +35,10 @@ pageEncoding="ISO-8859-1"%>
                     <br>
                     
                     <b>Description</b><input
-                    type="text" class="form-control" value="${item.description}"  name="description" id="description">
+                    type="text" class="form-control" value="${item.description}"  name="description" id="description"><br>
                     
-                    
+                     <b>Inventory</b><input
+                    type="text" class="form-control" value="${item.inventoryLeft}"  name="inventoryLeft" id="inventoryLeft">
                     
 
                      <hr>

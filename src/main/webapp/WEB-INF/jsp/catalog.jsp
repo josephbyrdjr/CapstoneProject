@@ -47,7 +47,7 @@
     <div class="topnav">
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
-  	<a href="#about">About</a>
+  	<a href="/about">About</a>
   	<c:choose>
   		<c:when test="${username == 'anonymousUser'}">
   			<a href="/login">Login</a>
@@ -57,7 +57,7 @@
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
-  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
+  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 	</div>
 	
 	

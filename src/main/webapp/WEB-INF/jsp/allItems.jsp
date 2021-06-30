@@ -31,6 +31,7 @@
 					<th>Image</th>
 					<th>Category</th>
 					<th>Description</th>
+					<th>Inventory</th>
 					<th>View Item</th>
 
 				</tr>
@@ -64,6 +65,7 @@
 				}, 
 				{"mData" : "category"}, 
 				{"mData" : "description"},
+				{"mData" : "inventoryLeft"},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {
 					return '<a class="btn btn-primary" href="/admin/editItem/'+mData+'" role="button">Edit</button>'

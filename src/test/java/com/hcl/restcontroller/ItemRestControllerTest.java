@@ -44,9 +44,9 @@ public class ItemRestControllerTest {
     @Test
     public void getAllItemsTest() throws Exception {
         List<Item> list = Arrays.asList(
-                new Item(1L, 9.99,"test1", "", "", ""),
-                new Item(2L, 9.99, "test2", "", "", ""),
-                new Item(3L, 9.99, "test3", "", "", ""));
+                new Item(1L, 9.99,"test1", "", "", "", 100L),
+                new Item(2L, 9.99, "test2", "", "", "", 100L),
+                new Item(3L, 9.99, "test3", "", "", "", 100L));
         when(itemService.getAllItems()).thenReturn(list);
 
         mockMvc.perform(get("/item")
@@ -58,7 +58,7 @@ public class ItemRestControllerTest {
 
     @Test
     public void getItemTest() throws Exception{
-        Item item = new Item(1L, 9.99, "test1", "", "", "");
+        Item item = new Item(1L, 9.99, "test1", "", "", "", 100L);
 
         when(itemService.getItemById(1L)).thenReturn(item);
 
@@ -69,7 +69,7 @@ public class ItemRestControllerTest {
 
     @Test
     public void postItemTest() throws  Exception{
-        Item item = new Item(1L, 9.99, "test1", "", "", "");
+        Item item = new Item(1L, 9.99, "test1", "", "", "", 100L);
 
         mockMvc.perform(post("/item")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -79,7 +79,7 @@ public class ItemRestControllerTest {
 
     @Test
     public void putItemTest() throws  Exception{
-        Item item = new Item(1L, 9.99, "test1", "", "", "");
+        Item item = new Item(1L, 9.99, "test1", "", "", "", 100L);
 
         mockMvc.perform(put("/item")
                 .contentType(MediaType.APPLICATION_JSON)

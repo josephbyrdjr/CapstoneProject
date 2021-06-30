@@ -38,6 +38,9 @@ pageEncoding="ISO-8859-1"%>
                     type="text" class="form-control" placeholder="Enter Description" name="description" id="description">
                     <br>
                     
+                     <b>Inventory</b><input
+                    type="text" class="form-control" placeholder="Enter Inventory" name="inventoryLeft" id="inventoryLeft">
+                    <br>
                     
 
                      <hr>

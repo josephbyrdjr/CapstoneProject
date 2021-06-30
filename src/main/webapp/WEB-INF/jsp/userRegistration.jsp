@@ -44,7 +44,7 @@ pageEncoding="ISO-8859-1"%>
     <div class="topnav">
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
-  	<a href="#about">About</a>
+  	<a href="/about">About</a>
   	<c:choose>
   		<c:when test="${username == 'anonymousUser'}">
   			<a href="/login">Login</a>

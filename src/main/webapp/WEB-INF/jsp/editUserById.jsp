@@ -42,7 +42,7 @@ pageEncoding="ISO-8859-1"%>
     <div class="topnav">
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
-  	<a href="#about">About</a>
+  	<a href="/about">About</a>
   	<a href="/login">Login</a>
   	<a href="/register">Register</a>
 	</div>
@@ -110,7 +110,7 @@ pageEncoding="ISO-8859-1"%>
         </div>
         <form  action = "../deleteUser/${user.id}"  method = "delete" >
       		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete User" /> 
-      	</ form>
+      	</form>
         <br>
         <br>
     </body>

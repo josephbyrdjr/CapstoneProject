@@ -34,6 +34,16 @@ public class CatalogController {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String name = auth.getName(); // get logged in username
         model.addAttribute("username", name);
+        
+        List<Order> orders = new ArrayList<Order>();
+		User user = userService.getUserByUsername(auth.getName());
+		orders = orderService.getOrdersByUserId(user.getId());
+		
+		int cartQuantity = 0;
+		for(int i = 0; i < orders.size(); i++) {
+			cartQuantity += orders.get(i).getQuantity();
+		}
+		model.addAttribute("cartQuantity", cartQuantity);
         return "catalog";
     }
     
@@ -45,6 +55,16 @@ public class CatalogController {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String name = auth.getName(); // get logged in username
         model.addAttribute("username", name);
+        
+        List<Order> orders = new ArrayList<Order>();
+		User user = userService.getUserByUsername(auth.getName());
+		orders = orderService.getOrdersByUserId(user.getId());
+		
+		int cartQuantity = 0;
+		for(int i = 0; i < orders.size(); i++) {
+			cartQuantity += orders.get(i).getQuantity();
+		}
+		model.addAttribute("cartQuantity", cartQuantity);
         
     	return "item";
     }
