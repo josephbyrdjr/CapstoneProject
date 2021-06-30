@@ -62,7 +62,7 @@
 					<th>Item Name</th>
 					<th>Quantity</th>
 					<th>Status</th>
-					<th>Edit Order</th>
+					<th>Edit OrderItem</th>
 
 				</tr>
 			</thead>
@@ -78,9 +78,9 @@
 	$(document).ready(function() {
 		var table = $('#ordersTable').DataTable(
 		{
-			"sAjaxSource" : "/order",
+			"sAjaxSource" : "/orderItem",
 			"sAjaxDataProp" : "",
-			"order" : [ [ 0, "asc" ] ],
+			"orderItem" : [ [ 0, "asc" ] ],
 			"aoColumns" : [
 				{"mData" : "item.id"},
 				{"mData" : "item.name"}, 

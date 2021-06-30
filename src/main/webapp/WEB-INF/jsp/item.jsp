@@ -57,7 +57,7 @@
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
-  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
+  	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
   	
 	</div>
 	<div class="card mb-3 bg-danger"
@@ -76,7 +76,7 @@
 					<p class="card-text">${item.description}</p>
 					<p class="card-text"><fmt:formatNumber
 								value="${item.price}" type="currency" /></p>
-					<form method="POST" action="/order">
+					<form method="POST" action="/orderItem">
 						<b>Quantity</b>
 						<div class="input-group">
 							<input type="text" class="form-control" style="width: 150px;"

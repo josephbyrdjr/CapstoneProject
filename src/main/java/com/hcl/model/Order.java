@@ -1,51 +1,34 @@
 package com.hcl.model;
 
-
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import javax.persistence.Id;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
 @Table(name="orders")
 @NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode(exclude = { "user"})
-@ToString(exclude = { "user"})
-public class Order implements Serializable {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private int quantity;
-	private String status;
+public class Order {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    String status;
 
-	@ManyToOne(fetch=FetchType.LAZY)
-	Item item;
+    @OneToMany(mappedBy = "order" ,fetch=FetchType.LAZY)
+    Set<OrderItem> orderItems = new HashSet<>();
 
-	@ManyToOne(fetch=FetchType.LAZY,cascade = CascadeType.DETACH)
-	@JsonBackReference
-	User user;
+    @ManyToOne(fetch=FetchType.LAZY)
+    @JsonBackReference
+    User user;
 
-
+    public Order(String status, User user){
+        this.status = status;
+        this.user = user;
+    }
 }

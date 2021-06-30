@@ -1,13 +1,8 @@
 package com.hcl.controllers;
 
-import com.hcl.model.Order;
-import com.hcl.model.User;
 import com.hcl.service.ItemService;
-import com.hcl.service.OrderService;
+import com.hcl.service.OrderItemService;
 import com.hcl.service.UserService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -24,7 +19,7 @@ public class CatalogController {
     ItemService itemService;
 
     @Autowired
-    OrderService orderService;
+    OrderItemService orderItemService;
     
     @Autowired
     UserService userService;

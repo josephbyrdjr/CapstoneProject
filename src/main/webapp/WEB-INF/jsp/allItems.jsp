@@ -81,7 +81,7 @@
 		{
 			"sAjaxSource" : "/item",
 			"sAjaxDataProp" : "",
-			"order" : [ [ 0, "asc" ] ],
+			"orderItem" : [ [ 0, "asc" ] ],
 			"aoColumns" : [
 				{"mData" : "name"},
 				{"mData" : "price",

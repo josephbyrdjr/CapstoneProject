@@ -1,62 +1,39 @@
 package com.hcl.dao.impl;
 
-import java.util.List;
-
+import com.hcl.dao.OrderDao;
+import com.hcl.model.Order;
+import com.hcl.model.OrderItem;
+import com.hcl.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.hcl.dao.OrderDao;
-import com.hcl.model.Item;
-import com.hcl.model.Order;
-import com.hcl.repository.OrderRepository;
+import java.util.List;
 
 @Repository
 public class OrderDaoImpl implements OrderDao {
 
-	
-	@Autowired
-	OrderRepository orderRepo;
+    @Autowired
+    OrderRepository orderRepository;
 
-	@Override
-	public void insertOrder(Order order) {
-		orderRepo.save(order);
-		
-	}
-
-	@Override
-	public void insertOrders(List<Order> orders) {
-		orderRepo.saveAll(orders);
-		
-	}
-
-	@Override
-	public List<Order> getAllOrders() {
-		return orderRepo.findAll();
-	}
-
-	@Override
-	public Order getOrderById(long orderId) {
-		return orderRepo.findById(orderId).orElse(null);
-	}
-
-	@Override
-	public void updateOrder(Order order) {
-		orderRepo.save(order);
-		
-	}
-
-	@Override
-	public void deleteOrderById(long orderId) {
-		orderRepo.deleteById(orderId);
-		
-	}
-
-
-	public List<Order> getOrdersByUserId(long id){
-		return orderRepo.findOrdersByUserId(id);
-	}
-
-	public Order getOrdersByUserIdAndItemId(long userId, long itemId){
-		return orderRepo.findOrdersByUserIdAndItemId(userId, itemId);
-	}
+    public void insertOrder(Order order){
+        orderRepository.save(order);
+    }
+    public void insertOrders(List<Order> orders){
+        orderRepository.saveAll(orders);
+    }
+    public List<Order> getAllOrders(){
+        return orderRepository.findAll();
+    }
+    public Order getOrderById(long orderId){
+        return orderRepository.findById(orderId).orElse(null);
+    }
+    public void updateOrder(Order order){
+        orderRepository.save(order);
+    }
+    public void deleteOrderById(long orderId){
+        orderRepository.deleteById(orderId);
+    }
+    public Order getOrderByStatusAndUserId(String status, long userId) {
+        return orderRepository.findOrderByStatusAndUserId(status, userId);
+    }
 }

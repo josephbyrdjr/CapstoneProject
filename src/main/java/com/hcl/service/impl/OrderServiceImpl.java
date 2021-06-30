@@ -1,60 +1,40 @@
 package com.hcl.service.impl;
 
-import java.util.List;
-
 import com.hcl.dao.OrderDao;
+import com.hcl.model.Order;
+import com.hcl.model.OrderItem;
+import com.hcl.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.hcl.model.Order;
-import com.hcl.repository.OrderRepository;
-import com.hcl.service.OrderService;
+import java.util.List;
+import java.util.Set;
 
 @Service
 public class OrderServiceImpl implements OrderService {
 
-	@Autowired
-	OrderDao orderDao;
-	
-	@Override
-	public void insertOrders(Order order) {
-		orderDao.insertOrder(order);
-		
-	}
+    @Autowired
+    OrderDao orderDao;
 
-	@Override
-	public void insertOrders(List<Order> order) {
-		orderDao.insertOrders(order);
-		
-	}
-
-	@Override
-	public List<Order> getAllOrders() {
-		return orderDao.getAllOrders();
-	}
-
-	@Override
-	public Order getOrderById(Long orderId) {
-		return orderDao.getOrderById(orderId);
-	}
-
-	@Override
-	public void updateOrder(Order order) {
-		orderDao.updateOrder(order);
-		
-	}
-
-	@Override
-	public void deleteOrderById(long orderId) {
-		orderDao.deleteOrderById(orderId);
-		
-	}
-
-	public List<Order> getOrdersByUserId(Long id){
-		return orderDao.getOrdersByUserId(id);
-	}
-
-	public Order getOrdersByUserIdAndItemId(long userId, long itemId){
-		return orderDao.getOrdersByUserIdAndItemId(userId, itemId);
-	}
+    public void insertOrder(Order order){
+        orderDao.insertOrder(order);
+    }
+    public void insertOrders(List<Order> orders){
+        orderDao.insertOrders(orders);
+    }
+    public List<Order> getAllOrders(){
+        return orderDao.getAllOrders();
+    }
+    public Order getOrderById(Long orderId){
+        return orderDao.getOrderById(orderId);
+    }
+    public void updateOrder(Order order){
+        orderDao.updateOrder(order);
+    }
+    public void deleteOrderById(long orderId){
+        orderDao.deleteOrderById(orderId);
+    }
+    public Order getActiveOrder(long userId) {
+        return orderDao.getOrderByStatusAndUserId("ACTIVE", userId);
+    }
 }

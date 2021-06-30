@@ -1,8 +1,6 @@
 package com.hcl.controllers;
 
-import java.util.Set;
-
-import org.slf4j.Logger; 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -10,19 +8,16 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.hcl.CapstoneProjectApplication;
 import com.hcl.model.*;
 import com.hcl.service.AuthService;
 import com.hcl.service.ItemService;
-import com.hcl.service.OrderService;
+import com.hcl.service.OrderItemService;
 import com.hcl.service.UserService;
 
 @Controller
@@ -38,7 +33,7 @@ public class AdminController {
 	AuthService authService;
 	
 	@Autowired
-	OrderService orderService;
+    OrderItemService orderItemService;
 
 	@Autowired
 	ItemService itemService;
@@ -106,19 +101,17 @@ public class AdminController {
 	
 	@GetMapping("/editOrderById/{id}")
 	public String displayEditOrder(@PathVariable long id, Model model) {
-		System.out.println(orderService.getOrderById(id));
-		model.addAttribute("order", orderService.getOrderById(id));
+		System.out.println(orderItemService.getOrderItemById(id));
+		model.addAttribute("order", orderItemService.getOrderItemById(id));
 		return "editOrderById";
 	}
 	
 	@PostMapping("editOrderById/{id}")
-	public String editOrderById(@PathVariable long id, @RequestParam int quantity,
-								@RequestParam String status, Model model) {
-		Order order = orderService.getOrderById(id);
-		order.setQuantity(quantity);
-		order.setStatus(status);
-		orderService.updateOrder(order);
-		logger.info("Order "+order.getId()+" updated");
+	public String editOrderById(@PathVariable long id, @RequestParam int quantity, Model model) {
+		OrderItem orderItem = orderItemService.getOrderItemById(id);
+		orderItem.setQuantity(quantity);
+		orderItemService.updateOrderItem(orderItem);
+		logger.info("Order "+ orderItem.getId()+" updated");
 		return "allOrders";
 	}
 	
@@ -174,7 +167,7 @@ public class AdminController {
 	
 	@GetMapping("/deleteOrder/{id}")
 	public String deleteOrderById(@PathVariable long id, Model model) {
-		orderService.deleteOrderById(id);
+		orderItemService.deleteOrderItemById(id);
 		return "allOrders";
 	}
 	
