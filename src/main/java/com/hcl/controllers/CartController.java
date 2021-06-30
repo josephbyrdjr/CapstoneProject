@@ -1,5 +1,6 @@
 package com.hcl.controllers;
 
+
 import com.hcl.model.OrderItem;
 import com.hcl.model.User;
 import com.hcl.service.ItemService;
@@ -8,9 +9,9 @@ import com.hcl.service.OrderService;
 import com.hcl.service.UserService;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
+
 import java.util.HashSet;
-import java.util.List;
+
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -66,7 +68,7 @@ public class CartController {
     public String displayCheckout(Model model) {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	User user = userService.getUserByUsername(auth.getName()); // get logged in user
-    	List<Order> orders = orderService.getOrdersByUserId(user.getId());
+    	Set<OrderItem> orders = orderService.getActiveOrder(user.getId()).getOrderItems();
     	System.out.println("order id : "+orders);
     	model.addAttribute("user", user);
     	model.addAttribute("orders", orders);

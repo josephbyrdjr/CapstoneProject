@@ -65,13 +65,14 @@
     <div class="col-12 col-sm-8 col-lg-5">
       <h6 class="text-muted">List Group with Images</h6> 
       <ul class="list-group">
+      	<c:forEach items="${orders}" var="order">
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          Don Quixote 
+          ${order.item.name} 
           <div class="image-parent">
-              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-fluid" alt="quixote">
+              <img src=${order.item.thumbnail} alt="quixote">
           </div>
         </li>
-
+		</c:forEach>
       </ul>
     </div>
   </div>
