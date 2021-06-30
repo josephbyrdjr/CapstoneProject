@@ -58,9 +58,8 @@
 				<a href="/logout">Logout</a>
 			</c:otherwise>
 		</c:choose>
-		  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
-
-	</div>
+		  	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
+</div>
 	<div style="top: 0px; z-index: 999; text-align: center">
 		<h2 class="form-heading">Welcome, ${username}!</h2>
 	</div>

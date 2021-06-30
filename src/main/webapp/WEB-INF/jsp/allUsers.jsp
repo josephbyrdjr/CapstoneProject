@@ -86,7 +86,7 @@
 		{
 			"sAjaxSource" : "/user",
 			"sAjaxDataProp" : "",
-			"order" : [ [ 0, "asc" ] ],
+			"orderItem" : [ [ 0, "asc" ] ],
 			"aoColumns" : [
 				{"mData" : "firstName"}, 
 				{"mData" : "username"}, 

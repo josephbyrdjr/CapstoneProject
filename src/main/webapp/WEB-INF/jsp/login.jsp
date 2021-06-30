@@ -62,7 +62,7 @@
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
-  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
+  	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"></a>
 	</div>
 
 	<div class="container">

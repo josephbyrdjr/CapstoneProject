@@ -49,31 +49,31 @@ pageEncoding="ISO-8859-1"%>
         <br>
         
         <div class="container">
-            <form method="POST" action="/admin/editOrderById/${order.id}" class="form-signin">
+            <form method="POST" action="/admin/editOrderById/${orderItem.id}" class="form-signin">
                 <div class="container">
                 
-                    <h2 class="form-heading">Edit Order</h2>
+                    <h2 class="form-heading">Edit OrderItem</h2>
 
                     <hr>
 					
                     
                     <b>Quantity</b><input
-                    type="number" class="form-control" value="${order.quantity}" name="quantity" id="quantity"
+                    type="number" class="form-control" value="${orderItem.quantity}" name="quantity" id="quantity"
                     required> <br>
                     
                     <b>Status</b><input
-                    type="text" class="form-control" value="${order.status}" name="status" id="status"
+                    type="text" class="form-control" value="${orderItem.status}" name="status" id="status"
                     required> <br>
 
                      <hr>
-                    <button type="submit" class="btn btn-md btn-primary">Edit Order</button><br>
+                    <button type="submit" class="btn btn-md btn-primary">Edit OrderItem</button><br>
                     
                 </div>
             </form>
             <br>
         </div>
-        <form  action = "../deleteOrder/${order.id}"  method = "delete" >
-      		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete Order" /> 
+        <form  action = "../deleteOrder/${orderItem.id}"  method = "delete" >
+      		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete OrderItem" />
       	</ form>
         <br>
         <br>

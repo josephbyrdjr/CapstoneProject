@@ -62,7 +62,7 @@
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
-  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
+  	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 	</div>
 	
 	<div class="container" style="margin-top: 5rem; height: 10; width: 20">
@@ -79,27 +79,27 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach items="${orders}" var="order">
+				<c:forEach items="${orderItems}" var="orderItem">
 					<tr>
-						<td><c:out value="${order.item.name}" /></td>
+						<td><c:out value="${orderItem.item.name}" /></td>
 						<td><img height="100" width="125"
-							src="<c:out value="${order.item.thumbnail}"/>" /></td>
-						<td><fmt:formatNumber value="${order.item.price}"
+							src="<c:out value="${orderItem.item.thumbnail}"/>" /></td>
+						<td><fmt:formatNumber value="${orderItem.item.price}"
 								type="currency" /></td>
-						<td><c:out value="${order.quantity}" /></td>
-						<td id="money"><fmt:formatNumber value="${order.item.price}"
-								type="currency" /> x ${order.quantity} = <fmt:formatNumber
-								value="${order.item.price * order.quantity}" type="currency" /></td>
+						<td><c:out value="${orderItem.quantity}" /></td>
+						<td id="money"><fmt:formatNumber value="${orderItem.item.price}"
+								type="currency" /> x ${orderItem.quantity} = <fmt:formatNumber
+								value="${orderItem.item.price * orderItem.quantity}" type="currency" /></td>
 
 						<td>
-							<form method="POST" action="/updateOrder"
+							<form method="POST" action="/updateOrderItem"
 								style="margin-top: 2rem">
 
 								<div class="input-group">
 									<input type="text" class="form-control" style="width: 50px;"
-										placeholder=${order.quantity} name="quantity" id="quantity">
+										placeholder=${orderItem.quantity } name="quantity" id="quantity">
 									<span> <input type="hidden" class="form-control"
-										name="orderId" id="orderId" value=${order.id}>
+										name="orderId" id="orderId" value=${orderItem.id}>
 									</span><span>
 										<button class="btn bt-sm btn-primary" style="" type="submit">Edit</button>
 									</span>
@@ -110,7 +110,7 @@
 							</form>
 						</td>
 						<td>
-							<form action="/deleteOrder/${order.id}" method="GET">
+							<form action="/deleteOrderItem/${orderItem.id}" method="GET">
 								<input class="btn btn-primary" type="submit" value="Delete">
 							</form>
 

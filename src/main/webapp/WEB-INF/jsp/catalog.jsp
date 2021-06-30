@@ -61,7 +61,7 @@
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
-  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
+  	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 	</div>
 	
 	
@@ -94,7 +94,7 @@
 		{
 			"sAjaxSource" : "/item",
 			"sAjaxDataProp" : "",
-			"order" : [ [ 0, "asc" ] ],
+			"orderItem" : [ [ 0, "asc" ] ],
 			"aoColumns" : [
 				{"mData" : "name"},
 				{"mData" : "price",

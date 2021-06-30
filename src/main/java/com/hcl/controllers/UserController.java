@@ -43,14 +43,13 @@ public class UserController {
 		if(name == "anonymousUser") {
 			return "home";
 		}
-		List<Order> orders = new ArrayList<Order>();
+		Set<OrderItem> orderItems = new HashSet<>();
 		User user = userService.getUserByUsername(auth.getName());
-		orders = orderService.getOrdersByUserId(user.getId());
+		orderItems = orderService.getActiveOrder(user.getId()).getOrderItems();
 
 		int cartQuantity = 0;
-		for (int i = 0; i < orders.size(); i++) {
-			cartQuantity += orders.get(i).getQuantity();
-		}
+		cartQuantity = orderItems.stream().map(OrderItem::getQuantity)
+				.reduce(0, Integer::sum);
 		model.addAttribute("cartQuantity", cartQuantity);
 
 		return "home";
@@ -136,15 +135,14 @@ public class UserController {
 		if(name == "anonymousUser") {
 			return "about";
 		}
-		
-		List<Order> orders = new ArrayList<Order>();
+
+		Set<OrderItem> orderItems = new HashSet<>();
 		User user = userService.getUserByUsername(auth.getName());
-		orders = orderService.getOrdersByUserId(user.getId());
+		orderItems = orderService.getActiveOrder(user.getId()).getOrderItems();
 
 		int cartQuantity = 0;
-		for (int i = 0; i < orders.size(); i++) {
-			cartQuantity += orders.get(i).getQuantity();
-		}
+		cartQuantity = orderItems.stream().map(OrderItem::getQuantity)
+				.reduce(0, Integer::sum);
 		model.addAttribute("cartQuantity", cartQuantity);
 		return "about";
 	}
