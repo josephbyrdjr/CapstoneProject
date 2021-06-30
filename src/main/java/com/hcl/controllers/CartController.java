@@ -54,6 +54,19 @@ public class CartController {
     	return "cart";
     }
     
+    
+    @GetMapping("/checkout")
+    public String displayCheckout(Model model) {
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    	User user = userService.getUserByUsername(auth.getName()); // get logged in user
+    	model.addAttribute("username", user.getUsername());
+    	model.addAttribute("user", user);
+    	
+    	return "checkout";
+    }
+    
+    
+    
    
     
    

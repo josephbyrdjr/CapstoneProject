@@ -123,6 +123,12 @@
 			<h3 style="">Total: $${total}</h3>
 		</div>
 	</div>
+	
+	<div>
+	<form action="/checkout" method="GET">
+		<input class="btn btn-warning" type="submit" value="Proceed to Checkout">
+	</form>
+	</div>
 </body>
 
 <script>
