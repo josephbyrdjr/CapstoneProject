@@ -16,7 +16,7 @@
 
 <title>Log in with your credentials</title>
 <link rel = "icon" href = 
-"http://www.clipartbest.com/cliparts/nTE/EMk/nTEEMk8TA.png" 
+"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
         type = "image/x-icon">
 
 <link rel="stylesheet"
