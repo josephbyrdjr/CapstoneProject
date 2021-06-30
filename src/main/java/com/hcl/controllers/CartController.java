@@ -62,8 +62,10 @@ public class CartController {
     public String displayCheckout(Model model) {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	User user = userService.getUserByUsername(auth.getName()); // get logged in user
-    	model.addAttribute("username", user.getUsername());
+    	List<Order> orders = orderService.getOrdersByUserId(user.getId());
+    	System.out.println("order id : "+orders);
     	model.addAttribute("user", user);
+    	model.addAttribute("orders", orders);
     	
     	return "checkout";
     }

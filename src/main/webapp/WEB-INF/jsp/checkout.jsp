@@ -50,7 +50,7 @@
   	<a href="/catalog">Products</a>
   	<a href="#about">About</a>
   	<c:choose>
-  		<c:when test="${username == null}">
+  		<c:when test="${user.username == null}">
   			<a href="/login">Login</a>
   			<a href="/register">Register</a>
   		</c:when>
@@ -58,10 +58,30 @@
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
+  	</div>
+  	
+  <div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-8 col-lg-5">
+      <h6 class="text-muted">List Group with Images</h6> 
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          Don Quixote 
+          <div class="image-parent">
+              <img src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/don_quixote.jpg" class="img-fluid" alt="quixote">
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+	<div id="orderContainer"></div>
   	
 </body>
 
 <script>
+
+
 
 </script>
 
