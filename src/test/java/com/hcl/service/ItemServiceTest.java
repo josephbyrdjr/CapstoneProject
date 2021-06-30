@@ -28,7 +28,7 @@ public class ItemServiceTest {
 
     @Test
     public void insertItemTest(){
-        Item item = new Item(1L, 9.99, "test1", "", "cat", "test");
+        Item item = new Item(1L, 9.99, "test1", "", "cat", "test", 100L);
         itemService.insertItem(item);
         verify(itemRepository, times(1)).save(item);
     }
@@ -36,9 +36,9 @@ public class ItemServiceTest {
     @Test
     public void getAllItemTest(){
         List<Item> list = new ArrayList<>();
-        list.add(new Item(1L, 9.99, "test1", "", "cat", "test"));
-        list.add(new Item(2L, 9.99, "test2", "", "cat", "test"));
-        list.add(new Item(3L, 9.99, "test3", "", "cat", "test"));
+        list.add(new Item(1L, 9.99, "test1", "", "cat", "test", 100L));
+        list.add(new Item(2L, 9.99, "test2", "", "cat", "test", 100L));
+        list.add(new Item(3L, 9.99, "test3", "", "cat", "test", 100L));
         when(itemRepository.findAll()).thenReturn(list);
         List<Item> items = itemService.getAllItems();
         assertTrue(items.stream().anyMatch(item -> item.getName().equals("test1")));
@@ -51,13 +51,13 @@ public class ItemServiceTest {
     public void getItemByIdTest(){
         long id = 1L;
         when(itemRepository.findById(id)).thenReturn(java.util.Optional.of(
-                new Item(1L, 9.99, "test1", "", "cat", "test")));
+                new Item(1L, 9.99, "test1", "", "cat", "test", 100L)));
         assertEquals(itemService.getItemById(1L).getName(), "test1");
     }
 
     @Test
     public void updateItemTest(){
-        Item item = new Item(1L, 9.99, "test1", "", "cat", "test");
+        Item item = new Item(1L, 9.99, "test1", "", "cat", "test", 100L);
         item.setName("testing");
         itemService.updateItem(item);
         verify(itemRepository, times(1)).save(item);

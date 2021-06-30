@@ -80,7 +80,7 @@ public class AdminControllerTest  {
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
     @WithMockUser(username = "user", password = "password", roles = "ADMIN")
     public void editItemsPostTest() throws Exception {
-        Item item1 = new Item(9.99, "test1", "", "", "");
+        Item item1 = new Item(9.99, "test1", "", "", "", 100L);
         itemRepository.save(item1);
         mockMvc.perform(post("/admin/editItem/" + item1.getId())
                 .param("price", "9.99")
@@ -104,7 +104,7 @@ public class AdminControllerTest  {
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
     @WithMockUser(username = "user", password = "password", roles = "ADMIN")
     public void addItemPostTest() throws Exception {
-        Item item1 = new Item(9.99, "test1", "", "", "");
+        Item item1 = new Item(9.99, "test1", "", "", "", 100L);
         mockMvc.perform(post("/admin/addItem")
                 .param("price", "9.99")
                 .param("name", "test1")
@@ -162,7 +162,7 @@ public class AdminControllerTest  {
         userRepository.save(new User(1L, "test", "pass", true,
                 "", "", "", "", "",
                 "","", "","", new HashSet<>(), new HashSet<>()));
-        itemRepository.save(new Item(1L, 9.99, "", "", "", ""));
+        itemRepository.save(new Item(1L, 9.99, "", "", "", "", 100L));
         orderRepository.save(new Order(1L, 1, "",
                 itemRepository.getById(1L) ,userRepository.getById(1L)));
         mockMvc.perform(get("/admin/editOrderById/1")).andExpect(status().isOk());
@@ -175,7 +175,7 @@ public class AdminControllerTest  {
         userRepository.save(new User(1L, "test", "pass", true,
                 "", "", "", "", "",
                 "","", "","", new HashSet<>(), new HashSet<>()));
-        itemRepository.save(new Item(1L, 9.99, "", "", "", ""));
+        itemRepository.save(new Item(1L, 9.99, "", "", "", "", 100L));
         orderRepository.save(new Order(1L, 1, "",
                 itemRepository.getById(1L) ,userRepository.getById(1L)));
         mockMvc.perform(post("/admin/editOrderById/1")

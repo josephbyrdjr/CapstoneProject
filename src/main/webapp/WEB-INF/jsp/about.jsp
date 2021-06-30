@@ -12,9 +12,6 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Welcome to the App</title>
-<link rel = "icon" href = 
-"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
-        type = "image/x-icon">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -44,6 +41,12 @@
 </style>
 
 </head>
+<meta charset="ISO-8859-1">
+<title>About Page</title>
+<link rel = "icon" href = 
+"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
+        type = "image/x-icon">
+</head>
 
 <body>
 	<div class="topnav">
@@ -58,11 +61,11 @@
 				<a href="/logout">Logout</a>
 			</c:otherwise>
 		</c:choose>
-		  	<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
+		<a href="/order/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 
 	</div>
 	<div style="top: 0px; z-index: 999; text-align: center">
-		<h2 class="form-heading">Welcome, ${username}!</h2>
+		<h2 class="form-heading"></h2>
 	</div>
 
 	<div style="float: right: 10px; z-index: 999">
@@ -71,51 +74,38 @@
 				User</button>
 		</form>
 	</div>
-	
 
-	<div class ="container" style="width: 100rem;">
-	<div class="jumbotron">
-		<h3 id="title" style="text-align: center"></h3>
-		<div id="image" style="text-align: center"></div>
-		<h5 id="description" style="text-align: center"></h5>
-		<div id="url" style="text-align: center"></div>
-		
+
+
+	<div class="container" style="width: 100rem; margin-top: 7rem;">
+		<div class="jumbotron" style="vertical-align: middle">
+			<h2 id="title" style="text-align: center; margin-bottom: 5rem;">About The Project</h2>
+			<section style="display: flex; justify-content:center">
+				<section style="margin-right: 5rem; width: 40rem; background-color: white; border-radius: 0.7rem;">
+					<h3 style="text-align: center">Summary</h3>
+					<p style="font-size: small; margin-left: 3rem; margin-right: 3rem">
+					The main goal of this project is to simulate a real life music store.
+					Users are able to register or login and browse the inventory. Buying is simplified
+					by the easy-to-read design. Administration is able to view, edit, and delete users, 
+					orders, and items. Securities are set in place to restrict unauthorized and unrecognized users.
+					<br><br>Developers: Joseph Byrd, Braiden King, Michael Crawford, Austin Emert, Katharyn Eimandoust
+					</section>
+
+				<section style="margin-left: 5rem; width: 40rem; background-color: white; border-radius: 0.7rem;">
+					<h3 style="text-align: center">Technologies Used</h3>
+					<ul style="text-align: center">
+						<li style="text-align: center">Java</li>
+						<li>Spring Boot</li>
+						<li>Maven</li>
+						<li>MySQL</li>
+						<li>Javascript</li>
+						<li>Azure</li>
+						<li>Heroku</li>
+					</ul>
+					</section>
+			</section>
+
+		</div>
 	</div>
-	</div>
-
-
-	
-
-	<script>
-  $(document).ready(function() {
-	    $.ajax({
-	        url: "https://gnews.io/api/v4/search?q=music+performance&token=41ad6cca1555dd435aaa6a2fbe57d542"
-	    }).then(function(data) {
-	    	console.log(data);
-	        let randNum = Math.floor(Math.random() * 9) + 1;
-	      	var description = data.articles[randNum].description;
-	      	var title = data.articles[randNum].title;
-	      	var image = data.articles[randNum].image;
-	      	var url = data.articles[randNum].source.url;
-
-	      	$('#title').append(title);
-	      	$('#description').append(description);
-	      	$('#image').prepend('<img src ='+image+' style="width: 25rem; height: 20rem;"/>');
-	      	$('#url').prepend('<a class="btn btn-primary" href="'+url+'" role="button">Go To Article</a>');
-
-	    });
-	});
-  
-  
-  
-  </script>
-
-	
-
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<script
-		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
-<footer> </footer>
 </html>

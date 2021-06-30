@@ -15,6 +15,9 @@
 <meta name="author" content="">
 
 <title>Log in with your credentials</title>
+<link rel = "icon" href = 
+"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
+        type = "image/x-icon">
 
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -49,7 +52,7 @@
     <div class="topnav">
   	<a class="active" href="/">Home</a>
   	<a href="/catalog">Products</a>
-  	<a href="#about">About</a>
+  	<a href="/about">About</a>
   	<c:choose>
   		<c:when test="${username == 'anonymousUser'}">
   			<a href="/login">Login</a>

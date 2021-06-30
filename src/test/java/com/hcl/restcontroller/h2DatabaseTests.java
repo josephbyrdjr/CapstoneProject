@@ -67,7 +67,7 @@ public class h2DatabaseTests {
     @WithMockUser(username = "test", password = "pass", roles = "USER")
     public void postOrderTest() throws  Exception{
         userService.insertUser(new User("test", "pass", true, "", "", "", "", "", "","", "",""));
-        itemService.insertItem(new Item(1,9.99,"", "", "", ""));
+        itemService.insertItem(new Item(1,9.99,"", "", "", "", 100L));
         mockMvc.perform(post("/order")
                 .contentType(MediaType.APPLICATION_JSON)
                 .param("quantity", "1")
@@ -89,7 +89,7 @@ public class h2DatabaseTests {
     @Test
     @WithMockUser(username = "test", password = "pass", roles = "USER")
     public void putOrderTest() throws Exception {
-    	Item item = new Item(1,9.99,"", "", "", "");
+    	Item item = new Item(1,9.99,"", "", "", "", 100L);
 		User user = new User("test", "pass", true, "", "", "", "", "", "","", "","");
 		itemService.insertItem(item);
 		userService.insertUser(user);

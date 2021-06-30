@@ -4,7 +4,10 @@ pageEncoding="ISO-8859-1"%>
 <html>
     <head>
         <meta charset="ISO-8859-1">
-        <title>Insert title here</title>
+        <title>Edit User</title>
+        <link rel = "icon" href = 
+"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
+        type = "image/x-icon">
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
@@ -41,7 +44,12 @@ pageEncoding="ISO-8859-1"%>
     <body>
 	<div class="topnav">
   	<a class="active" href="/">Home</a>
+  	<a href="/catalog">Products</a>
+  	<a href="/about">About</a>
+  	<a href="/login">Login</a>
+  	<a href="/register">Register</a>
   	<a href="/admin">Admin Home</a>
+
 	</div>
         <br>
         
@@ -107,7 +115,7 @@ pageEncoding="ISO-8859-1"%>
         </div>
         <form  action = "../deleteUser/${user.id}"  method = "delete" >
       		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete User" /> 
-      	</ form>
+      	</form>
         <br>
         <br>
     </body>

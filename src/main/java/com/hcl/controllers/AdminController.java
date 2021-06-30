@@ -75,7 +75,7 @@ public class AdminController {
 
 	@PostMapping("/editItem/{id}")
 	public String editItem(@PathVariable long id, @RequestParam double price, @RequestParam String name, @RequestParam String thumbnail,
-			@RequestParam String category, @RequestParam String description, Model model) {
+			@RequestParam String category, @RequestParam String description, @RequestParam long inventoryLeft, Model model) {
 
 		Item item = itemService.getItemById(id);
 		item.setPrice(price);
@@ -83,6 +83,7 @@ public class AdminController {
 		item.setThumbnail(thumbnail);
 		item.setCategory(category);
 		item.setDescription(description);
+		item.setInventoryLeft(inventoryLeft);
 		itemService.updateItem(item);
 		logger.info("Item edited successfully");
 		return "allItems";
@@ -95,9 +96,9 @@ public class AdminController {
 
 	@PostMapping("/addItem")
 	public String addItem(@RequestParam double price, @RequestParam String name, @RequestParam String thumbnail,
-			@RequestParam String category, @RequestParam String description, Model model) {
+			@RequestParam String category, @RequestParam String description, @RequestParam long inventoryLeft, Model model) {
 
-		Item item = new Item(price, name, thumbnail, category, description);
+		Item item = new Item(price, name, thumbnail, category, description, inventoryLeft);
 		itemService.insertItem(item);
 		model.addAttribute("msg", "New Item Added");
 		logger.info("New item added");

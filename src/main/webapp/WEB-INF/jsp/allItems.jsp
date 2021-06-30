@@ -6,6 +6,10 @@
 <html lang="en">
 
 <head>
+<title>All Items</title>
+<link rel = "icon" href = 
+"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
+        type = "image/x-icon">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
@@ -63,6 +67,7 @@
 					<th>Image</th>
 					<th>Category</th>
 					<th>Description</th>
+					<th>Inventory</th>
 					<th>View Item</th>
 
 				</tr>
@@ -96,6 +101,7 @@
 				}, 
 				{"mData" : "category"}, 
 				{"mData" : "description"},
+				{"mData" : "inventoryLeft"},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {
 					return '<a class="btn btn-primary" href="/admin/editItem/'+mData+'" role="button">Edit</button>'
