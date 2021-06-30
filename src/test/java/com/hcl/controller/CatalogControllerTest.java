@@ -45,7 +45,7 @@ public class CatalogControllerTest {
     @WithMockUser(username = "user", password = "password", roles = "USER")
     @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
     public void catalogItemGetTest() throws Exception {
-        Item item = new Item(1, 9.99, "", "", "", "");
+        Item item = new Item(1, 9.99, "", "", "", "", 100L);
         itemRepository.save(item);
         mockMvc.perform(get("/catalog/1")).andExpect(status().isOk());
     }
