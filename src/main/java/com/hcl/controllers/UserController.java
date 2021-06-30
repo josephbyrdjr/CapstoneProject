@@ -144,7 +144,6 @@ public class UserController {
 		cartQuantity = orderItems.stream().map(OrderItem::getQuantity)
 				.reduce(0, Integer::sum);
 		model.addAttribute("cartQuantity", cartQuantity);
-		model.addAttribute("cartQuantity", cartQuantity);
 		return "about";
 	}
 
