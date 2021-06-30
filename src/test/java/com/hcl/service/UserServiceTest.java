@@ -1,4 +1,4 @@
-package com.hcl;
+package com.hcl.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.times;

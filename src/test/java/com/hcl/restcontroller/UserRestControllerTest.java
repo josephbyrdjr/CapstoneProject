@@ -1,4 +1,4 @@
-package com.hcl;
+package com.hcl.restcontroller;
 
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;

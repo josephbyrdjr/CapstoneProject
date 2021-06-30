@@ -107,8 +107,8 @@ public class AdminController {
 	
 	@GetMapping("/editOrderById/{id}")
 	public String displayEditOrder(@PathVariable long id, Model model) {
-		System.out.println(orderService.getOrdersByUserId(id));
-		model.addAttribute("order", orderService.getOrdersByUserId(id));
+		System.out.println(orderService.getOrderById(id));
+		model.addAttribute("order", orderService.getOrderById(id));
 		return "editOrderById";
 	}
 	
@@ -116,6 +116,10 @@ public class AdminController {
 	public String editOrderById(@PathVariable long id, @RequestParam int quantity,
 								@RequestParam String status, Model model) {
 		Order order = orderService.getOrderById(id);
+		order.setQuantity(quantity);
+		order.setStatus(status);
+		orderService.updateOrder(order);
+		logger.info("Order "+order.getId()+" updated");
 		return "allOrders";
 	}
 	

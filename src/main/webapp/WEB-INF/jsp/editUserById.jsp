@@ -39,12 +39,16 @@ pageEncoding="ISO-8859-1"%>
     </head>
 
     <body>
-    <div class="topnav">
+	<div class="topnav">
   	<a class="active" href="/">Home</a>
+<<<<<<< HEAD
   	<a href="/catalog">Products</a>
   	<a href="/about">About</a>
   	<a href="/login">Login</a>
   	<a href="/register">Register</a>
+=======
+  	<a href="/admin">Admin Home</a>
+>>>>>>> f9e2a6979928dbf8f73dbde6c4d1977d41085375
 	</div>
         <br>
         

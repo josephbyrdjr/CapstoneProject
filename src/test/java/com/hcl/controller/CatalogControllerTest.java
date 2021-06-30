@@ -47,6 +47,6 @@ public class CatalogControllerTest {
     public void catalogItemGetTest() throws Exception {
         Item item = new Item(1, 9.99, "", "", "", "");
         itemRepository.save(item);
-        mockMvc.perform(get("/order/1")).andExpect(status().isOk());
+        mockMvc.perform(get("/catalog/1")).andExpect(status().isOk());
     }
 }
