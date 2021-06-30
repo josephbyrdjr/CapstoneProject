@@ -48,8 +48,9 @@ public class CartController {
 		model.addAttribute("orderItems", orderItems);
 		
 		double total = 0;
-		total = orderItems.stream().map(orderItem -> orderItem.getItem().getPrice() * orderItem.getQuantity())
-			.reduce(0.0, Double::sum);
+		total = orderItems.stream()
+				.map(orderItem -> orderItem.getItem().getPrice() * orderItem.getQuantity())
+				.reduce(0.0, Double::sum);
 		BigDecimal tot = new BigDecimal(total).setScale(2, 1);
 		model.addAttribute("total", tot);
     	

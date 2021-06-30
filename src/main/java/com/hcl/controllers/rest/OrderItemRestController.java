@@ -87,7 +87,7 @@ public class OrderItemRestController {
 		OrderItem orderItem = orderItemService.getOrderItemById(orderId);
 		orderItem.setQuantity(quantity);
 		orderItemService.insertOrderItem(orderItem);
-		response.sendRedirect("/order/shoppingCart");
+		response.sendRedirect("/orderItem/shoppingCart");
 
 	}
 
@@ -95,7 +95,7 @@ public class OrderItemRestController {
 	private void deleteOrder(@PathVariable(value = "orderItemId") long id, HttpServletResponse response)
 			throws IOException {
 		orderItemService.deleteOrderItemById(id);
-		response.sendRedirect("/order/shoppingCart");
+		response.sendRedirect("/orderItem/shoppingCart");
 	}
 	
 

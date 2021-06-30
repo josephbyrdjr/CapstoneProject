@@ -87,7 +87,7 @@
 								value="${orderItem.item.price * orderItem.quantity}" type="currency" /></td>
 
 						<td>
-							<form method="POST" action="/updateOrder"
+							<form method="POST" action="/updateOrderItem"
 								style="margin-top: 2rem">
 
 								<div class="input-group">
@@ -105,7 +105,7 @@
 							</form>
 						</td>
 						<td>
-							<form action="/deleteOrder/${orderItem.id}" method="GET">
+							<form action="/deleteOrderItem/${orderItem.id}" method="GET">
 								<input class="btn btn-primary" type="submit" value="Delete">
 							</form>
 
