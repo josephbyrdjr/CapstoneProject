@@ -40,7 +40,9 @@ public class UserController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String name = auth.getName(); // get logged in username
 		model.addAttribute("username", name);
-
+		if(name == "anonymousUser") {
+			return "home";
+		}
 		List<Order> orders = new ArrayList<Order>();
 		User user = userService.getUserByUsername(auth.getName());
 		orders = orderService.getOrdersByUserId(user.getId());
@@ -129,6 +131,9 @@ public class UserController {
 	@GetMapping("/about")
 	public String displayAbout(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		if(auth.getName() == "anonymousUser") {
+			return "about";
+		}
 		
 		List<Order> orders = new ArrayList<Order>();
 		User user = userService.getUserByUsername(auth.getName());

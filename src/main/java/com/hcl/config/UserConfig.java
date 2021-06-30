@@ -54,7 +54,7 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests().antMatchers("/register",
 				"/home", "/user", "/user/**",
 				"/authorities", "/authorities/**",
-				"/item", "/item/**",
+				"/item", "/item/**", "/about/**",
 				"/catalog", "/catalog/**",
 				"/").permitAll()
 				.antMatchers("order/shoppingCart").hasRole("USER")
