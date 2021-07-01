@@ -2,6 +2,7 @@ package com.hcl.controllers;
 
 
 
+import com.hcl.model.Item;
 import com.hcl.model.Order;
 import com.hcl.model.OrderItem;
 import com.hcl.model.User;
@@ -13,7 +14,7 @@ import com.hcl.service.UserService;
 import java.math.BigDecimal;
 
 import java.util.HashSet;
-
+import java.util.Iterator;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,13 +85,22 @@ public class CartController {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	User user = userService.getUserByUsername(auth.getName()); // get logged in user
     	Order order = orderService.getActiveOrder(user.getId());
-    	Set<OrderItem> orders = order.getOrderItems();
-    	
-    	
-    			
+    	Set<OrderItem> orderItems = order.getOrderItems();
+    	Iterator<OrderItem> iter = orderItems.iterator();
+    	while(iter.hasNext()){
+    		OrderItem orderItem = iter.next();
+    		System.out.println(orderItem);
+    		Item item = orderItem.getItem();
+    		System.out.println("invent:" +item.getInventoryLeft());
+    		System.out.println("quant: "+ orderItem.getQuantity());
+    		item.setInventoryLeft(item.getInventoryLeft()-orderItem.getQuantity());
+    		itemService.updateItem(item);
+    	}
     	order.setStatus("ORDERED");
+    	orderService.updateOrder(order);
     	
-    	return "confirm";
+    	model.addAttribute("msg", "Order Placed!!");
+    	return "catalog";
     }
     
    
