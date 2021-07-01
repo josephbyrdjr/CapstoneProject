@@ -126,14 +126,12 @@
 		</table>
 		<div style="float: right;">
 			<h3 style="">Total: $${total}</h3>
+			<form action="/checkout" method="GET">
+		<input class="btn btn-warning" type="submit" value="Proceed to Checkout">
+	</form>
 		</div>
 	</div>
 	
-	<div>
-	<form action="/checkout" method="GET">
-		<input class="btn btn-warning" type="submit" value="Proceed to Checkout">
-	</form>
-	</div>
 </body>
 
 <script>

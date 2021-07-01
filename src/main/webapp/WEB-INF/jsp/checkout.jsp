@@ -63,14 +63,14 @@
   <div class="container">
   <div class="row">
     <div class="col-12 col-sm-8 col-lg-5">
-      <h6 class="text-muted">List Group with Images</h6> 
+      <h6 class="text-muted">Your Order</h6> 
       <ul class="list-group">
       	<c:forEach items="${orderItems}" var="order">
         <li class="list-group-item d-flex justify-content-between align-items-center">
           <div class="image-parent">
               <img src=${order.item.thumbnail} style= "width: 22rem; height: 20;" alt="quixote">
           </div>
-          ${order.item.name}
+          <b>${order.item.name}</b>
           ${order.item.price}
         </li>
 		</c:forEach>
@@ -79,7 +79,7 @@
   </div>
 	
 	<form  action = "/confirmation"  method = "POST" >
-      		<input  class = "btn btn-primary btn-md"  type = "submit" value="Place Order" /> 
+      		<input  class = "btn btn-warning btn-md"  type = "submit" value="Place Order" /> 
       	</form>
   	
 </body>
