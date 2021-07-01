@@ -56,7 +56,7 @@ public class UserConfig extends WebSecurityConfigurerAdapter {
 				"/authorities", "/authorities/**",
 				"/item", "/item/**", "/about/**",
 				"/catalog", "/catalog/**",
-				"/").permitAll()
+				"/", "/order").permitAll()
 				.antMatchers("order/shoppingCart").hasRole("USER")
 				.antMatchers("/admin/**").hasRole("ADMIN")
 				.anyRequest()

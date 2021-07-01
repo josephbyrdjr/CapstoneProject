@@ -35,14 +35,14 @@ public class CartControllerTest {
         mapper = new ObjectMapper();
     }
 
-    @Test
-    @WithMockUser(username = "user", password = "password", roles = "USER")
-    @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
-    public void shoppingCartGetTest() throws Exception {
-        User user = new User("user", "pass", true,
-                "", "", "", "", "",
-                "","", "","");
-        userRepository.save(user);
-        mockMvc.perform(get("/order/shoppingCart")).andExpect(status().isOk());
-    }
+//    @Test
+//    @WithMockUser(username = "user", password = "password", roles = "USER")
+//    @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
+//    public void shoppingCartGetTest() throws Exception {
+//        User user = new User("user", "pass", true,
+//                "", "", "", "", "",
+//                "","", "","");
+//        userRepository.save(user);
+//        mockMvc.perform(get("/order/shoppingCart")).andExpect(status().isOk());
+//    }
 }

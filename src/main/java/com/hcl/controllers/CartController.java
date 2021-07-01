@@ -1,6 +1,9 @@
 package com.hcl.controllers;
 
 
+
+import com.hcl.model.Item;
+import com.hcl.model.Order;
 import com.hcl.model.OrderItem;
 import com.hcl.model.User;
 import com.hcl.service.ItemService;
@@ -8,6 +11,7 @@ import com.hcl.service.OrderItemService;
 import com.hcl.service.OrderService;
 import com.hcl.service.UserService;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 
 import java.util.HashSet;
@@ -20,7 +24,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class CartController {
@@ -59,24 +66,50 @@ public class CartController {
 		BigDecimal tot = new BigDecimal(total).setScale(2, 1);
 		model.addAttribute("total", tot);
 		model.addAttribute("cartQuantity", cartQuantity);
+		if(orderItems.stream().anyMatch(orderItem -> orderItem.getQuantity() > orderItem.getItem().getInventoryLeft())){
+			model.addAttribute("msg", "Order quantity is above inventory");
+		}
     	
     	return "cart";
     }
     
     
     @GetMapping("/checkout")
-    public String displayCheckout(Model model) {
+    public String displayCheckout(Model model, HttpServletResponse httpServletResponse) throws IOException {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	User user = userService.getUserByUsername(auth.getName()); // get logged in user
-    	Set<OrderItem> orders = orderService.getActiveOrder(user.getId()).getOrderItems();
-    	System.out.println("order id : "+orders);
+    	Set<OrderItem> orderItems = orderService.getActiveOrder(user.getId()).getOrderItems();
+    	if(orderItems.stream().anyMatch(orderItem -> orderItem.getQuantity() > orderItem.getItem().getInventoryLeft())){
+    		httpServletResponse.sendRedirect("/orderItem/shoppingCart");
+		}
     	model.addAttribute("user", user);
-    	model.addAttribute("orders", orders);
+    	model.addAttribute("orderItems", orderItems);
     	
     	return "checkout";
     }
     
-    
+    @PostMapping("/confirmation")
+    public String placeOrder(Model model) {
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    	User user = userService.getUserByUsername(auth.getName()); // get logged in user
+    	Order order = orderService.getActiveOrder(user.getId());
+    	Set<OrderItem> orderItems = order.getOrderItems();
+    	Iterator<OrderItem> iter = orderItems.iterator();
+    	while(iter.hasNext()){
+    		OrderItem orderItem = iter.next();
+    		System.out.println(orderItem);
+    		Item item = orderItem.getItem();
+    		System.out.println("invent:" +item.getInventoryLeft());
+    		System.out.println("quant: "+ orderItem.getQuantity());
+    		item.setInventoryLeft(item.getInventoryLeft()-orderItem.getQuantity());
+    		itemService.updateItem(item);
+    	}
+    	order.setStatus("ORDERED");
+    	orderService.updateOrder(order);
+    	
+    	model.addAttribute("msg", "Order Placed!!");
+    	return "catalog";
+    }
     
    
     

@@ -1,6 +1,7 @@
 package com.hcl.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,10 +22,11 @@ public class Order {
     String status;
 
     @OneToMany(mappedBy = "order" ,fetch=FetchType.LAZY)
+    @JsonManagedReference
     Set<OrderItem> orderItems = new HashSet<>();
 
     @ManyToOne(fetch=FetchType.LAZY)
-    @JsonBackReference
+    @JsonManagedReference
     User user;
 
     public Order(String status, User user){

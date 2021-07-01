@@ -62,11 +62,10 @@
 
 			<thead>
 				<tr>
-					<th>Item Id</th>
-					<th>Item Name</th>
-					<th>Quantity</th>
+					<th>ID</th>
 					<th>Status</th>
-					<th>Edit OrderItem</th>
+					<th>User</th>
+					<th>Edit</th>
 
 				</tr>
 			</thead>
@@ -82,14 +81,19 @@
 	$(document).ready(function() {
 		var table = $('#ordersTable').DataTable(
 		{
-			"sAjaxSource" : "/orderItem",
+			"sAjaxSource" : "/order",
 			"sAjaxDataProp" : "",
 			"orderItem" : [ [ 0, "asc" ] ],
 			"aoColumns" : [
+<<<<<<< HEAD
 				{"mData" : "order.item.id"},
 				{"mData" : "order.item.name"}, 
 				{"mData" : "order.quantity"}, 
+=======
+				{"mData" : "id"},
+>>>>>>> 15917b79d7446282eb9b04c53c3839aa4f08ef68
 				{"mData" : "status"},
+				{"mData" : "user.username"},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {
 					return '<a class="btn btn-primary" href="/admin/editOrderById/'+mData+'" role="button">Edit</button>'
