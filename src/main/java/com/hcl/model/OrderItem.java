@@ -43,6 +43,7 @@ public class OrderItem implements Serializable {
 	Item item;
 
 	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonBackReference
 	Order order;
 
 

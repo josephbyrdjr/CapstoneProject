@@ -1,5 +1,6 @@
 package com.hcl.controllers;
 
+import com.hcl.service.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,10 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.hcl.model.*;
-import com.hcl.service.AuthService;
-import com.hcl.service.ItemService;
-import com.hcl.service.OrderItemService;
-import com.hcl.service.UserService;
 
 @Controller
 @RequestMapping("/admin")
@@ -34,6 +31,9 @@ public class AdminController {
 	
 	@Autowired
     OrderItemService orderItemService;
+
+	@Autowired
+	OrderService orderService;
 
 	@Autowired
 	ItemService itemService;
@@ -103,16 +103,16 @@ public class AdminController {
 	@GetMapping("/editOrderById/{id}")
 	public String displayEditOrder(@PathVariable long id, Model model) {
 		System.out.println(orderItemService.getOrderItemById(id));
-		model.addAttribute("order", orderItemService.getOrderItemById(id));
+		model.addAttribute("order", orderService.getOrderById(id));
 		return "editOrderById";
 	}
 	
 	@PostMapping("editOrderById/{id}")
-	public String editOrderById(@PathVariable long id, @RequestParam int quantity, Model model) {
-		OrderItem orderItem = orderItemService.getOrderItemById(id);
-		orderItem.setQuantity(quantity);
-		orderItemService.updateOrderItem(orderItem);
-		logger.info("Order "+ orderItem.getId()+" updated");
+	public String editOrderById(@PathVariable long id, @RequestParam String status, Model model) {
+		Order order = orderService.getOrderById(id);
+		order.setStatus(status);
+		orderService.updateOrder(order);
+		logger.info("Order "+ order.getId()+" updated");
 		return "allOrders";
 	}
 	

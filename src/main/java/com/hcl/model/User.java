@@ -1,5 +1,8 @@
 package com.hcl.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -42,7 +45,7 @@ public class User {
 	Set<Authority> auths = new HashSet<>();
 	
 	@OneToMany(mappedBy = "user",  fetch=FetchType.LAZY)
-	@JsonManagedReference
+	@JsonBackReference
 	Set<Order> orders = new HashSet<>();
 	
 	public void addAuth(Authority auth){
