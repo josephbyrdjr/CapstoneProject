@@ -10,6 +10,7 @@ import com.hcl.service.OrderItemService;
 import com.hcl.service.OrderService;
 import com.hcl.service.UserService;
 
+import java.io.IOException;
 import java.math.BigDecimal;
 
 import java.util.HashSet;
@@ -24,6 +25,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.servlet.http.HttpServletResponse;
 
 @Controller
 public class CartController {
@@ -62,17 +65,22 @@ public class CartController {
 		BigDecimal tot = new BigDecimal(total).setScale(2, 1);
 		model.addAttribute("total", tot);
 		model.addAttribute("cartQuantity", cartQuantity);
+		if(orderItems.stream().anyMatch(orderItem -> orderItem.getQuantity() > orderItem.getItem().getInventoryLeft())){
+			model.addAttribute("msg", "Order quantity is above inventory");
+		}
     	
     	return "cart";
     }
     
     
     @GetMapping("/checkout")
-    public String displayCheckout(Model model) {
+    public String displayCheckout(Model model, HttpServletResponse httpServletResponse) throws IOException {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	User user = userService.getUserByUsername(auth.getName()); // get logged in user
     	Set<OrderItem> orderItems = orderService.getActiveOrder(user.getId()).getOrderItems();
-    	
+    	if(orderItems.stream().anyMatch(orderItem -> orderItem.getQuantity() > orderItem.getItem().getInventoryLeft())){
+    		httpServletResponse.sendRedirect("/orderItem/shoppingCart");
+		}
     	model.addAttribute("user", user);
     	model.addAttribute("orderItems", orderItems);
     	
