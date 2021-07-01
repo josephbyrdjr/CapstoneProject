@@ -65,11 +65,11 @@ pageEncoding="ISO-8859-1"%>
                     
                 </div>
             </form>
-            <br>
+            <br><form  action = "../deleteOrder/${order.id}"  method = "delete" >
+            <input  class = "btn btn-danger btn-md"  type = "submit" value="Delete Order" />
+        </ form>
         </div>
-        <form  action = "../deleteOrder/${order.id}"  method = "delete" >
-      		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete OrderItem" />
-      	</ form>
+
         <br>
         <br>
     </body>

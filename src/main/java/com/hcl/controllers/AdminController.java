@@ -168,7 +168,9 @@ public class AdminController {
 	
 	@GetMapping("/deleteOrder/{id}")
 	public String deleteOrderById(@PathVariable long id, Model model) {
-		orderItemService.deleteOrderItemById(id);
+		Order order = orderService.getOrderById(id);
+		order.getOrderItems().forEach(orderItem -> orderItemService.deleteOrderItemById(orderItem.getId()));
+		orderService.deleteOrderById(id);
 		return "allOrders";
 	}
 	
