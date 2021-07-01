@@ -96,8 +96,8 @@
 								style="margin-top: 2rem">
 
 								<div class="input-group">
-									<input type="text" class="form-control" style="width: 50px;"
-										placeholder=${orderItem.quantity } name="quantity" id="quantity">
+									<input type="number" style="width: 7rem" min="1" max=${orderItem.item.inventoryLeft} class="form-control" style="width: 50px;"
+										placeholder=${orderItem.quantity} name="quantity" id="quantity">
 									<span> <input type="hidden" class="form-control"
 										name="orderId" id="orderId" value=${orderItem.id}>
 									</span><span>

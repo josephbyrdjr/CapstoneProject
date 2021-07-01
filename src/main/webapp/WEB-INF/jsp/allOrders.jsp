@@ -86,9 +86,9 @@
 			"sAjaxDataProp" : "",
 			"orderItem" : [ [ 0, "asc" ] ],
 			"aoColumns" : [
-				{"mData" : "item.id"},
-				{"mData" : "item.name"}, 
-				{"mData" : "quantity"}, 
+				{"mData" : "order.item.id"},
+				{"mData" : "order.item.name"}, 
+				{"mData" : "order.quantity"}, 
 				{"mData" : "status"},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {
