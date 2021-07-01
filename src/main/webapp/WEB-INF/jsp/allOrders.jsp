@@ -85,6 +85,7 @@
 			"sAjaxDataProp" : "",
 			"orderItem" : [ [ 0, "asc" ] ],
 			"aoColumns" : [
+
 				{"mData" : "id"},
 				{"mData" : "status"},
 				{"mData" : "user.username"},
@@ -94,7 +95,6 @@
 				}}
 				]
 		})
-
 	});
 </script>
 

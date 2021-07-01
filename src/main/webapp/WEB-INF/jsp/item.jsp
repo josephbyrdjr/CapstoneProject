@@ -79,9 +79,9 @@
 					<p class="card-text"><fmt:formatNumber
 								value="${item.price}" type="currency" /></p>
 					<form method="POST" action="/orderItem">
-						<b>Quantity</b>
+						<b>Quantity</b> Inventory: ${item.inventoryLeft}
 						<div class="input-group">
-							<input type="text" class="form-control" style="width: 150px;"
+							<input type="number" min="1" max=${item.inventoryLeft} class="form-control" style="width: 150px;"
 								placeholder="Enter Quantity" name="quantity" id="quantity"
 								required> <span>
 								<input type="hidden" class="form-control"
