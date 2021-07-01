@@ -85,13 +85,8 @@
 			"sAjaxDataProp" : "",
 			"orderItem" : [ [ 0, "asc" ] ],
 			"aoColumns" : [
-<<<<<<< HEAD
-				{"mData" : "order.item.id"},
-				{"mData" : "order.item.name"}, 
-				{"mData" : "order.quantity"}, 
-=======
+
 				{"mData" : "id"},
->>>>>>> 15917b79d7446282eb9b04c53c3839aa4f08ef68
 				{"mData" : "status"},
 				{"mData" : "user.username"},
 				{"mData" : "id",
