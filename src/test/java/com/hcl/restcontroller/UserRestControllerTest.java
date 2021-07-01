@@ -76,21 +76,21 @@ public class UserRestControllerTest {
 				.andExpect(jsonPath("$.lastName").value("LastNameTest"));
 	}
 
-	@Test
-	public void createUserTest() throws Exception {
-		User user = new User("Test1","root", true, "FirstNameTest1", "LastNameTest1","EmailTest1",
-				"PhoneNumberTest1", "AddressTest1", "Apt#Test1", "CityTest1","StateTest1", "ZipcodeTest1");
+//	@Test
+//	public void createUserTest() throws Exception {
+//		User user = new User("Test1","root", true, "FirstNameTest1", "LastNameTest1","EmailTest1",
+//				"PhoneNumberTest1", "AddressTest1", "Apt#Test1", "CityTest1","StateTest1", "ZipcodeTest1");
+//
+//		mockMvc.perform(post("/user").contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsString(user)))
+//				.andExpect(status().isOk());
+//	}
 
-		mockMvc.perform(post("/user").contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsString(user)))
-				.andExpect(status().isOk());
-	}
-
-	@Test
-	public void updateUserTest() throws Exception {
-		User user = new User("Test1","root", true, "FirstNameTest1", "LastNameTest1","EmailTest1",
-				"PhoneNumberTest1", "AddressTest1", "Apt#Test1", "CityTest1","StateTest1", "ZipcodeTest1");
-
-		mockMvc.perform(put("/user").contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsString(user)))
-				.andExpect(status().isOk());
-	}
+//	@Test
+//	public void updateUserTest() throws Exception {
+//		User user = new User("Test1","root", true, "FirstNameTest1", "LastNameTest1","EmailTest1",
+//				"PhoneNumberTest1", "AddressTest1", "Apt#Test1", "CityTest1","StateTest1", "ZipcodeTest1");
+//
+//		mockMvc.perform(put("/user").contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsString(user)))
+//				.andExpect(status().isOk());
+//	}
 }
