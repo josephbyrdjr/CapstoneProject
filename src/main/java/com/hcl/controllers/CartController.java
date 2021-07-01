@@ -1,6 +1,8 @@
 package com.hcl.controllers;
 
 
+
+import com.hcl.model.Order;
 import com.hcl.model.OrderItem;
 import com.hcl.model.User;
 import com.hcl.service.ItemService;
@@ -20,6 +22,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -68,15 +71,27 @@ public class CartController {
     public String displayCheckout(Model model) {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	User user = userService.getUserByUsername(auth.getName()); // get logged in user
-    	Set<OrderItem> orders = orderService.getActiveOrder(user.getId()).getOrderItems();
-    	System.out.println("order id : "+orders);
+    	Set<OrderItem> orderItems = orderService.getActiveOrder(user.getId()).getOrderItems();
+    	
     	model.addAttribute("user", user);
-    	model.addAttribute("orders", orders);
+    	model.addAttribute("orderItems", orderItems);
     	
     	return "checkout";
     }
     
-    
+    @PostMapping("/confirmation")
+    public String placeOrder(Model model) {
+    	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+    	User user = userService.getUserByUsername(auth.getName()); // get logged in user
+    	Order order = orderService.getActiveOrder(user.getId());
+    	Set<OrderItem> orders = order.getOrderItems();
+    	
+    	
+    			
+    	order.setStatus("ORDERED");
+    	
+    	return "confirm";
+    }
     
    
     

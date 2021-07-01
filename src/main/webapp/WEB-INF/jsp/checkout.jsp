@@ -65,18 +65,22 @@
     <div class="col-12 col-sm-8 col-lg-5">
       <h6 class="text-muted">List Group with Images</h6> 
       <ul class="list-group">
-      	<c:forEach items="${orders}" var="order">
+      	<c:forEach items="${orderItems}" var="order">
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          ${order.item.name} 
           <div class="image-parent">
-              <img src=${order.item.thumbnail} alt="quixote">
+              <img src=${order.item.thumbnail} style= "width: 22rem; height: 20;" alt="quixote">
           </div>
+          ${order.item.name}
+          ${order.item.price}
         </li>
 		</c:forEach>
       </ul>
     </div>
   </div>
-	<div id="orderContainer"></div>
+	
+	<form  action = "/confirmation"  method = "POST" >
+      		<input  class = "btn btn-primary btn-md"  type = "submit" value="Place Order" /> 
+      	</form>
   	
 </body>
 
