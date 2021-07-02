@@ -117,4 +117,10 @@ public class UserControllerTest  {
         assertFalse(userRepository.findAll().stream().anyMatch(u -> u.getFirstName().equals("jeff")));
 
     }
+
+    @Test
+    public void displayAboutTest() throws Exception {
+    	mockMvc.perform(get("/about")).andExpect(status().isOk());
+    }
+    
 }

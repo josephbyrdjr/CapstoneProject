@@ -55,20 +55,21 @@
 				<a href="/register">Register</a>
 			</c:when>
 			<c:otherwise>
+				<a href="/editUser">Edit User</a>
 				<a href="/logout">Logout</a>
 			</c:otherwise>
 		</c:choose>
 		  	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 </div>
 	<div style="top: 0px; z-index: 999; text-align: center">
-		<h2 class="form-heading">Welcome, ${username}!</h2>
-	</div>
-
-	<div style="float: right: 10px; z-index: 999">
-		<form method="GET" action="/editUser">
-			<button style="float: right" class="btn bt-sm btn-primary" type="submit">Edit
-				User</button>
-		</form>
+		<c:choose>
+			<c:when test="${username == 'anonymousUser'}">
+				<h2 class="form-heading">Welcome to the Music Store!</h2>
+			</c:when>
+			<c:otherwise>
+				<h2 class="form-heading">Welcome, ${username}!</h2>
+			</c:otherwise>
+		</c:choose>
 	</div>
 	
 

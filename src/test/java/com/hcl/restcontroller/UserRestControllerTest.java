@@ -81,7 +81,7 @@ public class UserRestControllerTest {
 //		User user = new User("Test1","root", true, "FirstNameTest1", "LastNameTest1","EmailTest1",
 //				"PhoneNumberTest1", "AddressTest1", "Apt#Test1", "CityTest1","StateTest1", "ZipcodeTest1");
 //
-//		mockMvc.perform(post("/user").contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsString(user)))
+//		mockMvc.perform(post("/user").contentType(MediaType.APPLICATION_JSON)).andDo(print())
 //				.andExpect(status().isOk());
 //	}
 
@@ -90,7 +90,7 @@ public class UserRestControllerTest {
 //		User user = new User("Test1","root", true, "FirstNameTest1", "LastNameTest1","EmailTest1",
 //				"PhoneNumberTest1", "AddressTest1", "Apt#Test1", "CityTest1","StateTest1", "ZipcodeTest1");
 //
-//		mockMvc.perform(put("/user").contentType(MediaType.APPLICATION_JSON).content(mapper.writeValueAsString(user)))
+//		mockMvc.perform(put("/user").contentType(MediaType.APPLICATION_JSON)).andDo(print())
 //				.andExpect(status().isOk());
 //	}
 }
