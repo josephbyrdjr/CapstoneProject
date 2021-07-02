@@ -57,29 +57,34 @@
         </div>
 		<div style="position:absolute;top:60px;right:15px; z-index:999" >
             <form method="POST" action="/logout">
-                <button class="btn bt-sm btn-primary" type="submit">Log Out</button>
+                <button style="width: 10rem;" class="btn bt-sm btn-primary" type="submit">Log Out</button>
             </form>
         </div>
-        <div>
+        <div class="container" style="width: 50rem;">
+        <div class="jumbotron" style="vertical-align: middle; text-align: center">
+        <h3 style="margin-bottom: 5rem; ">Administration Actions</h3>
+        <div style="text-align: center; margin-top: 2rem;">
             <form method="GET" action="/admin/allUsers">
-                <button class="btn bt-sm btn-primary" type="submit">All Users</button>
+                <button style="width: 10rem;" class="btn bt-sm btn-primary" type="submit">All Users</button>
             </form>
         </div><br>
-        <div>
+        <div style="text-align: center">
             <form method="GET" action="/admin/allOrders">
-                <button class="btn bt-sm btn-primary" type="submit">All Orders</button>
+                <button style="width: 10rem;" class="btn bt-sm btn-primary" type="submit">All Orders</button>
             </form>
         </div><br>
-        <div>
+        <div style="text-align: center">
             <form method="GET" action="/admin/allItems">
-                <button class="btn bt-sm btn-primary" type="submit">All Items</button>
+                <button style="width: 10rem;" class="btn bt-sm btn-primary" type="submit">All Items</button>
             </form>
         </div><br>
         
-        <div>
+        <div style="text-align: center">
             <form method="GET" action="/admin/addItem">
-                <button class="btn bt-sm btn-primary" type="submit">Add Item</button>
+                <button style="width: 10rem;" class="btn bt-sm btn-primary" type="submit">Add Item</button>
             </form>
+        </div>
+        </div>
         </div>
 
         <script

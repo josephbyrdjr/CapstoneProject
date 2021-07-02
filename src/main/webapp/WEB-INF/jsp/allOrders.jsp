@@ -65,6 +65,7 @@
 					<th>ID</th>
 					<th>Status</th>
 					<th>User</th>
+					<th>Items Ordered</th>
 					<th>Edit</th>
 
 				</tr>
@@ -89,6 +90,16 @@
 				{"mData" : "id"},
 				{"mData" : "status"},
 				{"mData" : "user.username"},
+				{"mData" : "orderItems",
+				"mRender" : function(mData, type, row){
+					var nameArr = [];
+					for(var i = 0; i < mData.length; i++){
+						nameArr.push(" " + mData[i].item.name + ": " + mData[i].quantity);
+					}
+					return nameArr;
+				}
+				
+				},
 				{"mData" : "id",
 				"mRender" : function(mData, type, row) {
 					return '<a class="btn btn-primary" href="/admin/editOrderById/'+mData+'" role="button">Edit</button>'
