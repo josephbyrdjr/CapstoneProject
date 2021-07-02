@@ -93,6 +93,11 @@
 								value="${orderItem.item.price * orderItem.quantity}" type="currency" /></td>
 
 						<td>
+							<c:choose>
+								<c:when test="${orderItem.quantity > orderItem.item.inventoryLeft}">
+									Please enter a quantity of ${orderItem.item.inventoryLeft} or less
+								</c:when>
+							</c:choose>
 							<form method="POST" action="/updateOrderItem"
 								style="margin-top: 2rem">
 

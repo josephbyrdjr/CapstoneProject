@@ -7,51 +7,51 @@
 <html lang="en">
 
 <head>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-<script type="text/javascript" charset="uft8"
-	src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-<style>
-    /* Add a black background color to the top navigation */
-	.topnav {
-  		background-color: #333;
-  		overflow: hidden;
-	}
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+	<script type="text/javascript" charset="uft8"
+		src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+	<style>
+		/* Add a black background color to the top navigation */
+		.topnav {
+			background-color: #333;
+			overflow: hidden;
+		}
 
-	/* Style the links inside the navigation bar */
-	.topnav a {
-  		float: left;
-  		color: #f2f2f2;
-  		text-align: center;
- 		padding: 14px 16px;
- 		text-decoration: none;
-  		font-size: 17px;
-	}
+		/* Style the links inside the navigation bar */
+		.topnav a {
+			float: left;
+			color: #f2f2f2;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 17px;
+		}
 
-	/* Change the color of links on hover */
-	.topnav a:hover {
- 		background-color: #ddd;
-  		color: black;
-	}
-	
-	p{
-		font-size: 30px;
-	}
-	
-	.enMoney::before {
-		content:"$";
-	}
-	
-	
+		/* Change the color of links on hover */
+		.topnav a:hover {
+			background-color: #ddd;
+			color: black;
+		}
 
-</style>
-        
+		p{
+			font-size: 30px;
+		}
+
+		.enMoney::before {
+			content:"$";
+		}
+
+
+
+	</style>
+        <title>Checkout</title>
     </head>
 
     <body>
