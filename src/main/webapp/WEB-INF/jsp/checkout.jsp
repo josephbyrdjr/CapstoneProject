@@ -77,7 +77,7 @@
       	<c:forEach items="${orderItems}" var="orderItem">
         <li class="list-group-item d-flex  justify-content-start align-items-center">
           <span class="image-parent">
-              <img src=${orderItem.item.thumbnail} style= "width: 22rem; height: 20;" alt="quixote">
+              <img src=${orderItem.item.thumbnail} style= "width: 20rem; height: 18;" alt="quixote">
           </span>
           <b>${orderItem.quantity}x ${orderItem.item.name}:</b>
           <span id="money"><fmt:formatNumber value="${orderItem.item.price * orderItem.quantity}" type="currency" /> 
@@ -98,7 +98,7 @@
 	
 	<form  action = "/confirmation"  method = "POST" >
       		<input  class = "btn btn-warning btn-md"  type = "submit" value="Place Order" /> 
-      	</form>
+    </form>
   	
 </body>
 

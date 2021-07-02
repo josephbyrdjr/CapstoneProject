@@ -134,9 +134,18 @@
 		</table>
 		<div style="float: right;">
 			<h3 style="">Total: $${total}</h3>
+			<c:choose>
+			<c:when test="${cartQuantity > 0}">
 			<form action="/checkout" method="GET">
-		<input class="btn btn-warning" type="submit" value="Proceed to Checkout">
-	</form>
+				<input class="btn btn-warning" type="submit" value="Proceed to Checkout">
+			</form>
+			</c:when>
+			<c:otherwise>
+			<form action="/checkout" method="GET">
+				<input class="btn btn-warning" type="submit" disabled value="Proceed to Checkout">
+			</form>
+			</c:otherwise>
+			</c:choose>
 		</div>
 	</div>
 	
@@ -147,6 +156,8 @@
 		$('#cartTable').DataTable();
 
 	});
+	
+
 </script>
 
 
