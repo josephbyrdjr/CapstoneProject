@@ -75,8 +75,8 @@
 					class="form-control" placeholder="Username" autofocus="true" /> <input
 					name="password" type="password" class="form-control"
 					placeholder="Password" /> <span>${errorMsg}</span>
-
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Log
+				
+				<button class="btn btn-md btn-primary btn-block" style="margin-top: 3rem;" type="submit">Log
 					In</button>
 			</div>
 

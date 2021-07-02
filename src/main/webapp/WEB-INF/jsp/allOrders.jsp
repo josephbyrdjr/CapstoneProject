@@ -56,7 +56,7 @@
   	<a class="active" href="/">Home</a>
   	<a href="/admin">Admin Home</a>
 	</div>
-	<div class="container">
+	<div class="container" >
 		<h1>All Orders</h1>
 		<table id="ordersTable" class="display">
 
@@ -85,8 +85,9 @@
 			"sAjaxSource" : "/order",
 			"sAjaxDataProp" : "",
 			"orderItem" : [ [ 0, "asc" ] ],
+			"columnDefs" : [{"width" : "35%", "targets" : 3}],
 			"aoColumns" : [
-
+				
 				{"mData" : "id"},
 				{"mData" : "status"},
 				{"mData" : "user.username"},
