@@ -13,8 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -35,14 +37,38 @@ public class CartControllerTest {
         mapper = new ObjectMapper();
     }
 
-//    @Test
-//    @WithMockUser(username = "user", password = "password", roles = "USER")
-//    @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
-//    public void shoppingCartGetTest() throws Exception {
-//        User user = new User("user", "pass", true,
-//                "", "", "", "", "",
-//                "","", "","");
-//        userRepository.save(user);
-//        mockMvc.perform(get("/order/shoppingCart")).andExpect(status().isOk());
-//    }
+    @Test
+    @WithMockUser(username = "user", password = "password", roles = "USER")
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
+    public void displayCartTest() throws Exception {
+        User user = new User("user", "pass", true,
+                "", "", "", "", "",
+                "","", "","");
+        userRepository.save(user);
+        mockMvc.perform(get("/orderItem/shoppingCart")).andExpect(status().isOk());
+    }
+    
+    @Test
+    @Transactional
+    @WithMockUser(username = "user", password = "password", roles = "USER")
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
+    public void displayCheckoutTest() throws Exception {
+    	User user = new User("user", "pass", true,
+                "", "", "", "", "",
+                "","", "","");
+        userRepository.save(user);
+        mockMvc.perform(get("/checkout")).andExpect(status().isOk());
+    }
+    
+    @Test
+    @WithMockUser(username = "user", password = "password", roles = "USER")
+    @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
+    public void placeOrderTest() throws Exception {
+    	User user = new User("user", "pass", true,
+                "", "", "", "", "",
+                "","", "","");
+        userRepository.save(user);
+        mockMvc.perform(post("/confirmation")).andExpect(status().isOk());
+    }
+    
 }

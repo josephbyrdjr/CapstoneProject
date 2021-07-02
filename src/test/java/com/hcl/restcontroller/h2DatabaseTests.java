@@ -5,11 +5,13 @@ import com.hcl.controllers.rest.OrderItemRestController;
 import com.hcl.controllers.rest.UserRestController;
 import com.hcl.model.Authority;
 import com.hcl.model.Item;
+import com.hcl.model.Order;
 import com.hcl.model.OrderItem;
 import com.hcl.model.User;
 import com.hcl.service.AuthService;
 import com.hcl.service.ItemService;
 import com.hcl.service.OrderItemService;
+import com.hcl.service.OrderService;
 import com.hcl.service.UserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -49,6 +51,9 @@ public class h2DatabaseTests {
     
     @Autowired
     OrderItemService orderItemService;
+    
+    @Autowired
+	OrderService orderService;
 
     private MockMvc mockMvc;
     private MockMvc mockMvc2;
@@ -59,13 +64,14 @@ public class h2DatabaseTests {
         mockMvc = MockMvcBuilders.standaloneSetup(orderItemRestController).build();
         mockMvc2 = MockMvcBuilders.standaloneSetup(userRestController).build();
     }
-
+//Need to add cascade stuff to annotations in model... Then something wrong with sql injection
 //    @Test
 //    @WithMockUser(username = "test", password = "pass", roles = "USER")
-//    public void postOrderTest() throws  Exception{
+//    public void createOrderItemTest() throws  Exception{
 //        userService.insertUser(new User("test", "pass", true, "", "", "", "", "", "","", "",""));
 //        itemService.insertItem(new Item(1,9.99,"", "", "", "", 100L));
-//        mockMvc.perform(post("/order")
+//        orderService.insertOrder(new Order("Test", (new User("test", "pass", true, "", "", "", "", "", "","", "",""))));
+//        mockMvc.perform(post("/orderItem")
 //                .contentType(MediaType.APPLICATION_JSON)
 //                .param("quantity", "1")
 //                .param("itemId", "1"))
@@ -85,17 +91,17 @@ public class h2DatabaseTests {
     
     @Test
     @WithMockUser(username = "test", password = "pass", roles = "USER")
-    public void putOrderTest() throws Exception {
-//    	Item item = new Item(1,9.99,"", "", "", "");
-//		User user = new User("test", "pass", true, "", "", "", "", "", "","", "","");
-//		itemService.insertItem(item);
-//		userService.insertUser(user);
-//    	orderItemService.insertOrderItems(new OrderItem(1, 1, "Test", item, user));
-//
-//        mockMvc.perform(post("/updateOrder") .contentType(MediaType.APPLICATION_JSON)
-//                .param("orderId", "1")
-//                .param("quantity", "1"))
-//                .andExpect(status().is3xxRedirection());
+    public void updateOrderItemTest() throws Exception {
+    	Item item = new Item(1,9.99,"", "", "", "", 100L);
+		User user = new User("test", "pass", true, "", "", "", "", "", "","", "","");
+		itemService.insertItem(item);
+		userService.insertUser(user);
+    	orderItemService.insertOrderItem(new OrderItem());
+
+        mockMvc.perform(post("/updateOrderItem") .contentType(MediaType.APPLICATION_JSON)
+                .param("orderId", "1")
+                .param("quantity", "1"))
+                .andExpect(status().is3xxRedirection());
     }
     
     @Test
@@ -118,4 +124,5 @@ public class h2DatabaseTests {
     	userService.insertUser(new User(1, "test", "firstNameTest", "lastNameTest"));
     	mockMvc2.perform(delete("/user/1")).andExpect(status().isOk());
     }
+    
 }
