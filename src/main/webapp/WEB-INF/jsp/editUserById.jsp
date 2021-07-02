@@ -4,10 +4,7 @@ pageEncoding="ISO-8859-1"%>
 <html>
     <head>
         <meta charset="ISO-8859-1">
-        <title>Edit User</title>
-        <link rel = "icon" href = 
-"https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
-        type = "image/x-icon">
+        <title>Insert title here</title>
         <link rel="stylesheet"
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
@@ -45,7 +42,6 @@ pageEncoding="ISO-8859-1"%>
 	<div class="topnav">
   	<a class="active" href="/">Home</a>
   	<a href="/admin">Admin Home</a>
-
 	</div>
         <br>
         
@@ -61,7 +57,7 @@ pageEncoding="ISO-8859-1"%>
                     required> <br>
                     
                     <b>Password</b><input
-                    type="password" class="form-control" value="${user.password}" name="pwd" id="pwd"
+                    type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd"
                     required> <br>
                     
                      <b>First Name</b><input
@@ -112,7 +108,6 @@ pageEncoding="ISO-8859-1"%>
             </form>
             <br>
         </div>
-
         <br>
         <br>
     </body>
