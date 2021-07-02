@@ -1,7 +1,5 @@
 package com.hcl.controller;
 
-import com.hcl.model.Item;
-import com.hcl.model.OrderItem;
 import com.hcl.model.User;
 import com.hcl.repository.ItemRepository;
 import com.hcl.repository.OrderItemRepository;
@@ -13,8 +11,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
-
-import java.util.HashSet;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

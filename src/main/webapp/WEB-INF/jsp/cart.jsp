@@ -65,7 +65,7 @@
   	</c:choose>
   	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 	</div>
-	${msg}
+	<h1 style="text-align: center">${msg}</h1>
 	<div class="container" style="margin-top: 5rem; height: 10; width: 20">
 		<table id="cartTable" class="display">
 			<thead>

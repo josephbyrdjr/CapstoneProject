@@ -89,12 +89,17 @@ public class CartController {
     }
     
     @PostMapping("/confirmation")
-    public String placeOrder(Model model) {
+    public String placeOrder(Model model, HttpServletResponse httpServletResponse) throws IOException {
     	Authentication auth = SecurityContextHolder.getContext().getAuthentication();
     	User user = userService.getUserByUsername(auth.getName()); // get logged in user
     	Order order = orderService.getActiveOrder(user.getId());
     	Set<OrderItem> orderItems = order.getOrderItems();
-    	Iterator<OrderItem> iter = orderItems.iterator();
+
+		if(orderItems.stream().anyMatch(orderItem -> orderItem.getQuantity() > orderItem.getItem().getInventoryLeft())){
+			httpServletResponse.sendRedirect("/orderItem/shoppingCart");
+			return null;
+		}
+		Iterator<OrderItem> iter = orderItems.iterator();
     	while(iter.hasNext()){
     		OrderItem orderItem = iter.next();
     		System.out.println(orderItem);
