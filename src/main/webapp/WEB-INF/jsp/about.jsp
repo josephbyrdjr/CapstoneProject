@@ -33,6 +33,11 @@
 	font-size: 17px;
 }
 
+.topnav a.active {
+  		background-color: #04AA6D;
+  		color: white;
+	}
+
 /* Change the color of links on hover */
 .topnav a:hover {
 	background-color: #ddd;
