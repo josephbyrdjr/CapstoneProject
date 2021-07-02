@@ -57,7 +57,7 @@ pageEncoding="ISO-8859-1"%>
                     required> <br>
                     
                     <b>Password</b><input
-                    type="password" class="form-control" value="${user.password}" name="pwd" id="pwd"
+                    type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd"
                     required> <br>
                     
                      <b>First Name</b><input
@@ -108,7 +108,6 @@ pageEncoding="ISO-8859-1"%>
             </form>
             <br>
         </div>
-
         <br>
         <br>
     </body>
