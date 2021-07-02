@@ -61,8 +61,11 @@ pageEncoding="ISO-8859-1"%>
                     <h2 class="form-heading">Edit User</h2>
 
                     <hr>
-
-                     <br><input
+					<b>Username</b><input
+                    type="text" class="form-control" value="${user.username}" name="username" id="username"
+                    required> <br>
+					
+                    <b>Password</b><br><input
                     type="password" class="form-control" placeholder="Enter Password" name="pwd" id="pwd"
                     required> <br>
                     

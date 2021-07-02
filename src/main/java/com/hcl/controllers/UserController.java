@@ -109,7 +109,7 @@ public class UserController {
 		BCryptPasswordEncoder bCrypt = new BCryptPasswordEncoder();
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		User user = userService.getUserByUsername(auth.getName());
-		// user.setUsername(username);
+		user.setUsername(username);
 		user.setPassword(bCrypt.encode(pwd));
 		user.setFirstName(firstName);
 		user.setLastName(lastName);

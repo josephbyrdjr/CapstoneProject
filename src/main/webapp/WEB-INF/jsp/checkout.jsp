@@ -39,6 +39,10 @@
  		background-color: #ddd;
   		color: black;
 	}
+	
+	p{
+	font-size: 30px;
+	}
 
 </style>
         
@@ -62,20 +66,29 @@
   	
   <div class="container">
   <div class="row">
-    <div class="col-12 col-sm-8 col-lg-5">
-      <h6 class="text-muted">Your Order</h6> 
+    <div class="col-12 col-sm-8 col-lg-5"  style="text-align: left;">
+      <h6>Your Order</h6> 
       <ul class="list-group">
       	<c:forEach items="${orderItems}" var="order">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          <div class="image-parent">
+        <li class="list-group-item d-flex  justify-content-start align-items-center">
+          <span class="image-parent">
               <img src=${order.item.thumbnail} style= "width: 22rem; height: 20;" alt="quixote">
-          </div>
+          </span>
           <b>${order.item.name}</b>
           ${order.item.price}
         </li>
 		</c:forEach>
       </ul>
     </div>
+  	<div class="col-sm">
+  		<h4><u> Shipping Information </u></h4>
+  		<p>
+ 			<b>Name: </b>${user.firstName} ${user.lastName} <br>
+ 			<b>Address: </b>${user.address}, ${user.apartmentNumber}
+ 			${user.city}, ${user.state} ${user.zip}
+ 		</p>	
+  		
+  	</div>
   </div>
 	
 	<form  action = "/confirmation"  method = "POST" >
