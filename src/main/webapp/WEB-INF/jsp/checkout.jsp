@@ -59,6 +59,7 @@
   			<a href="/register">Register</a>
   		</c:when>
   		<c:otherwise>
+			<a href="/editUser">Edit User</a>
   			<a href="/logout">Logout</a>
   		</c:otherwise>
   	</c:choose>
