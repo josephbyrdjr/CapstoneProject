@@ -41,8 +41,14 @@
 	}
 	
 	p{
-	font-size: 30px;
+		font-size: 30px;
 	}
+	
+	.enMoney::before {
+		content:"$";
+	}
+	
+	
 
 </style>
         
@@ -67,15 +73,15 @@
   <div class="container">
   <div class="row">
     <div class="col-12 col-sm-8 col-lg-5"  style="text-align: left;">
-      <h6>Your Order</h6> 
+      <h4>Your Order</h4> 
       <ul class="list-group">
       	<c:forEach items="${orderItems}" var="order">
         <li class="list-group-item d-flex  justify-content-start align-items-center">
           <span class="image-parent">
               <img src=${order.item.thumbnail} style= "width: 22rem; height: 20;" alt="quixote">
           </span>
-          <b>${order.item.name}</b>
-          ${order.item.price}
+          <b>${order.item.name}:</b>
+          <span id="money"><fmt:formatNumber value="${order.item.price}" type="currency" /> 
         </li>
 		</c:forEach>
       </ul>
@@ -98,7 +104,6 @@
 </body>
 
 <script>
-
 
 
 </script>
