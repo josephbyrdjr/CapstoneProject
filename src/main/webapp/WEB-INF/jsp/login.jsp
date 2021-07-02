@@ -24,25 +24,28 @@
 <style>
     /* Add a black background color to the top navigation */
 	.topnav {
-  		background-color: #333;
-  		overflow: hidden;
-	}
+	background-color: #333;
+	overflow: hidden;
+}
 
-	/* Style the links inside the navigation bar */
-	.topnav a {
-  		float: left;
-  		color: #f2f2f2;
-  		text-align: center;
- 		padding: 14px 16px;
- 		text-decoration: none;
-  		font-size: 17px;
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+.topnav a.active {
+  		background-color: #04AA6D;
+  		color: white;
 	}
-
-	/* Change the color of links on hover */
-	.topnav a:hover {
- 		background-color: #ddd;
-  		color: black;
-	}
+/* Change the color of links on hover */
+.topnav a:hover {
+	background-color: #ddd;
+	color: black;
+}
 
 </style>
         
@@ -75,8 +78,8 @@
 					class="form-control" placeholder="Username" autofocus="true" /> <input
 					name="password" type="password" class="form-control"
 					placeholder="Password" /> <span>${errorMsg}</span>
-
-				<button class="btn btn-lg btn-primary btn-block" type="submit">Log
+				
+				<button class="btn btn-md btn-primary btn-block" style="margin-top: 3rem;" type="submit">Log
 					In</button>
 			</div>
 

@@ -48,8 +48,6 @@
 			content:"$";
 		}
 
-
-
 	</style>
         <title>Checkout</title>
     </head>
