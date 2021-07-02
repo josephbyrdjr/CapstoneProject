@@ -45,7 +45,7 @@
 
 </head>
 
-<body style="background-color: #818181">
+<body>
 	<div class="topnav">
 		<a class="active" href="/">Home</a> <a href="/catalog">Products</a> <a
 			href="/about">About</a>
