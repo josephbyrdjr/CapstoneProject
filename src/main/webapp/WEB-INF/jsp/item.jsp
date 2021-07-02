@@ -89,6 +89,7 @@
 								 </span><span>
 								<button class="btn bt-sm btn-primary" style="" type="submit">Add To Cart</button>
 							</span>
+
 						</div>
 
 						<br>

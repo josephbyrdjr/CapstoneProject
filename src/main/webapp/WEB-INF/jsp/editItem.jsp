@@ -78,11 +78,12 @@ pageEncoding="ISO-8859-1"%>
                      <hr>
                     <button type="submit" class="btn btn-md btn-primary">Edit Item</button>
                 </div>
-            </form>
+            </form><br>
+            <form  action = "../deleteItem/${item.id}"  method = "delete" >
+                <input  class = "btn btn-danger btn-md"  type = "submit" value="Delete Item" />
+            </ form>
         </div>
-        <form  action = "../deleteItem/${item.id}"  method = "delete" >
-      		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete Item" /> 
-      	</ form>
+
         <br>
         <br>
     </body>

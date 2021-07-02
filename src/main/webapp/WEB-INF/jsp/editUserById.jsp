@@ -44,10 +44,6 @@ pageEncoding="ISO-8859-1"%>
     <body>
 	<div class="topnav">
   	<a class="active" href="/">Home</a>
-  	<a href="/catalog">Products</a>
-  	<a href="/about">About</a>
-  	<a href="/login">Login</a>
-  	<a href="/register">Register</a>
   	<a href="/admin">Admin Home</a>
 
 	</div>
@@ -110,12 +106,13 @@ pageEncoding="ISO-8859-1"%>
                     <button type="submit" class="btn btn-md btn-primary">Edit User</button><br>
                     
                 </div>
+            </form><br>
+            <form  action = "../deleteUser/${user.id}"  method = "delete" >
+                <input  class = "btn btn-danger btn-md"  type = "submit" value="Delete User" />
             </form>
             <br>
         </div>
-        <form  action = "../deleteUser/${user.id}"  method = "delete" >
-      		<input  class = "btn btn-danger btn-md"  type = "submit" value="Delete User" /> 
-      	</form>
+
         <br>
         <br>
     </body>
