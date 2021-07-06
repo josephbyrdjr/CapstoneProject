@@ -11,7 +11,7 @@
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Welcome to the App</title>
+<title>Welcome to the Music Store</title>
 <link rel = "icon" href = 
 "https://t3.ftcdn.net/jpg/00/91/21/44/240_F_91214478_4YVDMLguSsobtMnFqgTuySCNFayrCOA6.jpg" 
         type = "image/x-icon">
