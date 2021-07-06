@@ -85,6 +85,7 @@
 		</c:forEach>
       </ul>
     </div>
+    </div>
   	<div class="col-sm">
   		<h4><u> Shipping Information </u></h4>
   		<p>

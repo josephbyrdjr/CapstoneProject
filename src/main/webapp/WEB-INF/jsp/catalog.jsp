@@ -68,7 +68,13 @@
   	<a href="/orderItem/shoppingCart" class="glyphicon glyphicon-shopping-cart" style="float:right"><span class="badge" style="background-color: blue">${cartQuantity}</span></a>
 	</div>
 
-	<h1 style="text-align: center">${msg}</h1>
+	<c:choose>
+			<c:when test="${msg == null}">
+			</c:when>
+			<c:otherwise>
+			 <div style="margin: 0 auto" class="alert alert-success" style="width: 20rem; margin-top: 5rem;"role="alert">${msg}</div>
+			</c:otherwise>
+			</c:choose>
 	<div class="container">
 		<h1>All Items</h1>
 		<table id="itemTable" class="display">
