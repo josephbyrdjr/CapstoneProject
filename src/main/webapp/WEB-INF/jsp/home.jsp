@@ -44,6 +44,10 @@
 	background-color: #ddd;
 	color: black;
 }
+.tradingview-widget-container {
+	position: absolute;
+	left: 20%;
+}
 
 
 </style>
@@ -88,7 +92,40 @@
 	</div>
 	</div>
 
-
+<!-- BEGIN Stock Widget -->
+<div class="tradingview-widget-container">
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-overview.js" async>
+  {
+  "colorTheme": "light",
+  "dateRange": "12M",
+  "showSymbolLogo": true,
+  "width": "78%",
+  "height": "90%",
+  "plotLineColorGrowing": "rgb(4,170,109)",
+  "plotLineColorFalling": "rgb(4,170,109)",
+  "gridLineColor": "rgba(240, 243, 250, 1)",
+  "scaleFontColor": "rgba(120, 123, 134, 1)",
+  "belowLineFillColorGrowing": "rgba(123, 234, 193, 0.27)",
+  "belowLineFillColorFalling": "rgba(123, 234, 193, 0.27)",
+  "symbolActiveColor": "rgba(33, 150, 243, 0.12)",
+  "tabs": [
+    {
+      "title": "Music Stocks",
+      "symbols": [
+        {"s": "NYSE:SPOT", "d": "Spotify"},
+        {"s": "NASDAQ:AAPL", "d": "Apple"},
+        {"s": "NASDAQ:SIRI", "d": "Sirius XM"},
+        {"s": "NASDAQ:AMZN", "d": "Amazon"},
+        {"s": "NYSE:TME", "d": "Tencent Music Entertainment Group"},
+        {"s": "NYSE:SONY", "d": "Sony"}
+      ],
+      "originalTitle": "Indices"
+    }
+  ]
+}
+</script>
+</div>
+<!-- END Stock Widget -->
 	
 
 	<script>
