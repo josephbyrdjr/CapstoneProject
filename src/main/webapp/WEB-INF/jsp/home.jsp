@@ -117,7 +117,8 @@
         {"s": "NASDAQ:SIRI", "d": "Sirius XM"},
         {"s": "NASDAQ:AMZN", "d": "Amazon"},
         {"s": "NYSE:TME", "d": "Tencent Music Entertainment Group"},
-        {"s": "NYSE:SONY", "d": "Sony"}
+        {"s": "NYSE:SONY", "d": "Sony"},
+        {"s": "CRYPTOCAP:DOGE", "d": "Dogecoin"}
       ],
       "originalTitle": "Indices"
     }
