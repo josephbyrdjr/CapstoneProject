@@ -77,9 +77,9 @@
       	<c:forEach items="${orderItems}" var="orderItem">
         <li class="list-group-item d-flex  justify-content-start align-items-center">
           <span class="image-parent">
-              <img src=${orderItem.item.thumbnail} style= "width: 20rem; height: 18;" alt="quixote">
+              <img src=${orderItem.item.thumbnail} style= "width: 10rem; height: 8;" alt="quixote">
           </span>
-          <b>${orderItem.quantity}x ${orderItem.item.name}:</b>
+          <b style="margin-left: 5rem">${orderItem.quantity}x ${orderItem.item.name}:</b>
           <span id="money"><fmt:formatNumber value="${orderItem.item.price * orderItem.quantity}" type="currency" /> 
         </li>
 		</c:forEach>
@@ -89,15 +89,15 @@
   	<div class="col-sm">
   		<h4><u> Shipping Information </u></h4>
   		<p>
- 			<b>Name: </b>${user.firstName} ${user.lastName} <br>
- 			<b>Address: </b>${user.address}, ${user.apartmentNumber}
- 			${user.city}, ${user.state} ${user.zip}
+ 			<b style="font-size: 20px">Name: </b><h5>${user.firstName} ${user.lastName} </h5><br>
+ 			<b style="font-size: 20px">Address: </b><h5>${user.address}, ${user.apartmentNumber}
+ 			${user.city}, ${user.state} ${user.zip}</h5>
  		</p>	
   		
   	</div>
   </div>
 	
-	<form  action = "/confirmation"  method = "POST" >
+	<form  action = "/confirmation"  method = "POST" style="margin-left: 6rem">
       		<input  class = "btn btn-warning btn-md"  type = "submit" value="Place Order" /> 
     </form>
   	
