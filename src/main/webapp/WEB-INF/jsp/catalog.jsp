@@ -23,7 +23,7 @@
 <style>
     /* Add a black background color to the top navigation */
 .topnav {
-	background-color: #4B0C03;
+	background-color: #1B2039;
 	overflow: hidden;
 }
 
@@ -37,15 +37,14 @@
 	font-size: 17px;
 }
 .topnav a.active {
-  	background: linear-gradient(to bottom, #9E1A03 50%, #4B0C03 100%);
+  	background: #2CC8E5;
   	color: white;
 	}
 /* Change the color of links on hover */
 .topnav a:hover {
-  	background: linear-gradient(to bottom, #9E1A03 50%, #4B0C03 100%);
+  	background: #2CC8E5;
 	color: white;
-	opacity: 2.5;
-	transition: 1.5s;
+	transition: 0.3s;
 	
 }
 </style>

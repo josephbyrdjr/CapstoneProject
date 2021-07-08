@@ -19,26 +19,31 @@
 		src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 	<style>
 		/* Add a black background color to the top navigation */
-		.topnav {
-			background-color: #333;
-			overflow: hidden;
-		}
+.topnav {
+	background-color: #1B2039;
+	overflow: hidden;
+}
 
-		/* Style the links inside the navigation bar */
-		.topnav a {
-			float: left;
-			color: #f2f2f2;
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-			font-size: 17px;
-		}
-
-		/* Change the color of links on hover */
-		.topnav a:hover {
-			background-color: #ddd;
-			color: black;
-		}
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #d3e0e8;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+}
+.topnav a.active {
+  	background: #2CC8E5;
+  	color: white;
+	}
+/* Change the color of links on hover */
+.topnav a:hover {
+  	background: #2CC8E5;
+	color: white;
+	transition: 0.3s;
+	
+}
 
 		p{
 			font-size: 30px;
