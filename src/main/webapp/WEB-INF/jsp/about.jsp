@@ -19,7 +19,7 @@
 <style>
 /* Add a black background color to the top navigation */
 .topnav {
-	background-color: #2e3099;
+	background-color: #1B2039;
 	overflow: hidden;
 }
 
@@ -33,12 +33,12 @@
 	font-size: 17px;
 }
 .topnav a.active {
-  	background: #3f72d9;
+  	background: #2CC8E5;
   	color: white;
 	}
 /* Change the color of links on hover */
 .topnav a:hover {
-  	background: #3f72d9;
+  	background: #2CC8E5;
 	color: white;
 	transition: 0.3s;
 	
@@ -72,13 +72,6 @@
 	</div>
 	<div style="top: 0px; z-index: 999; text-align: center">
 		<h2 class="form-heading"></h2>
-	</div>
-
-	<div style="float: right: 10px; z-index: 999">
-		<form method="GET" action="/editUser">
-			<button style="float: right" class="btn bt-sm btn-primary" type="submit">Edit
-				User</button>
-		</form>
 	</div>
 
 
