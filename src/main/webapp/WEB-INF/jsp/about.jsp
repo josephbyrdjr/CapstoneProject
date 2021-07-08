@@ -19,29 +19,29 @@
 <style>
 /* Add a black background color to the top navigation */
 .topnav {
-	background-color: #333;
+	background-color: #3366cc;
 	overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
 	float: left;
-	color: #f2f2f2;
+	color: #d3e0e8;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
 }
-
 .topnav a.active {
-  		background-color: #04AA6D;
-  		color: white;
+  	background: linear-gradient(to bottom, #3f72d9 70%, #000066 100%);;
+  	color: white;
 	}
-
 /* Change the color of links on hover */
 .topnav a:hover {
-	background-color: #ddd;
-	color: black;
+  	background: linear-gradient(to bottom, #3f72d9 70%, #000066 100%);
+	color: white;
+	transition: 1.5s;
+	
 }
 </style>
 
