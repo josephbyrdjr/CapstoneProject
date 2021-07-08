@@ -22,30 +22,32 @@
 	src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 <style>
     /* Add a black background color to the top navigation */
-	.topnav {
-	background-color: #333;
+.topnav {
+	background-color: #4B0C03;
 	overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
 	float: left;
-	color: #f2f2f2;
+	color: #d3e0e8;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
 }
 .topnav a.active {
-  		background-color: #04AA6D;
-  		color: white;
+  	background: linear-gradient(to bottom, #9E1A03 50%, #4B0C03 100%);
+  	color: white;
 	}
 /* Change the color of links on hover */
 .topnav a:hover {
-	background-color: #ddd;
-	color: black;
+  	background: linear-gradient(to bottom, #9E1A03 50%, #4B0C03 100%);
+	color: white;
+	opacity: 2.5;
+	transition: 1.5s;
+	
 }
-
 </style>
         
     </head>
