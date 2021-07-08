@@ -34,7 +34,7 @@ pageEncoding="ISO-8859-1"%>
 	transition: 0.3s;
 	
 }
-}
+
 </style>
     </head>
 
