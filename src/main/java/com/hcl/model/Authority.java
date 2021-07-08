@@ -23,7 +23,4 @@ public class Authority {
 	private long id;
 	private String authority;
 
-	public Authority(String authority){
-		this.authority = authority;
-	}
 }

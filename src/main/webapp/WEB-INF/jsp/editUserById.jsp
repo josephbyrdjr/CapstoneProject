@@ -103,7 +103,7 @@ pageEncoding="ISO-8859-1"%>
                     
                 </div>
             </form><br>
-            <form  action = "../deleteUser/${user.id}"  method = "delete" >
+            <form  action = "../deleteUser/${user.id}"  method = "GET" >
                 <input  class = "btn btn-danger btn-md"  type = "submit" value="Delete User" />
             </form>
             <br>
