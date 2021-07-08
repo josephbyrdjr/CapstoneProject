@@ -46,6 +46,7 @@
 	transition: 0.3s;
 	
 }
+
 .tradingview-widget-container {
 	position: absolute;
 	left: 20%;
