@@ -18,28 +18,30 @@ pageEncoding="ISO-8859-1"%>
         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style>
     /* Add a black background color to the top navigation */
-	.topnav {
-	background-color: #333;
+.topnav {
+	background-color: #1B2039;
 	overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
 	float: left;
-	color: #f2f2f2;
+	color: #d3e0e8;
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
 	font-size: 17px;
 }
 .topnav a.active {
-  		background-color: #04AA6D;
-  		color: white;
+  	background: #2CC8E5;
+  	color: white;
 	}
 /* Change the color of links on hover */
 .topnav a:hover {
-	background-color: #ddd;
-	color: black;
+  	background: #2CC8E5;
+	color: white;
+	transition: 0.3s;
+	
 }
 
 </style>

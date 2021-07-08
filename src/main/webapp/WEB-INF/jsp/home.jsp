@@ -22,7 +22,7 @@
 <style>
 /* Add a black background color to the top navigation */
 .topnav {
-	background-color: #3366cc;
+	background-color: #1B2039;
 	overflow: hidden;
 }
 
@@ -36,14 +36,14 @@
 	font-size: 17px;
 }
 .topnav a.active {
-  	background: linear-gradient(to bottom, #3f72d9 70%, #000066 100%);;
+  	background: #2CC8E5;
   	color: white;
 	}
 /* Change the color of links on hover */
 .topnav a:hover {
-  	background: linear-gradient(to bottom, #3f72d9 70%, #000066 100%);
+  	background: #2CC8E5;
 	color: white;
-	transition: 1.5s;
+	transition: 0.3s;
 	
 }
 .tradingview-widget-container {
